@@ -7,7 +7,8 @@ const path = require('path');
 const CDP_PORT = 9333;
 const APP = 'http://127.0.0.1:8779/';
 const OUTDIR = 'work/intro/shots';
-const BIN = 'E:\\ERtools\\tools\\Deepseek\\项目\\app\\NR地图种子编辑器\\work\\demo\\demo_regulation.bin';
+// 演示用 bin：默认用 work/demo 下的副本（自己放一份进去，或用环境变量 DEMO_BIN 指定）
+const BIN = process.env.DEMO_BIN || path.resolve('work/demo/demo_regulation.bin');
 const MAP_W = 1536;
 
 fs.mkdirSync(OUTDIR, { recursive: true });

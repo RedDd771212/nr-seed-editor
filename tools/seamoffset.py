@@ -1,6 +1,7 @@
-﻿import glob,os,numpy as np
+import glob,os,sys,numpy as np
 from PIL import Image
-d=r'C:\Users\19803\Desktop\普通地图'
+from pathlib import Path
+d=sys.argv[1] if len(sys.argv)>1 else str(Path.home()/'Desktop'/'普通地图')
 T={}
 for p in glob.glob(d+r'\*.png'):
     n=os.path.splitext(os.path.basename(p))[0].split('_')

@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 
 # 开发机上的原始位置（找不到 vendor 时兜底）
-_SKILL = Path(r'C:\Users\19803\.dsh\skills\fs-bin-modding')
+_SKILL = Path.home() / '.dsh' / 'skills' / 'fs-bin-modding'
 
 
 def _first_path(*cands):

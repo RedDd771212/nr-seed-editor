@@ -14,7 +14,7 @@ from pathlib import Path
 # 优先用项目自带的 src\vendor（发布包），找不到再退回开发机的技能目录
 _ROOT = Path(__file__).resolve().parents[2]
 _SCRIPT_CANDS = [_ROOT / 'src' / 'vendor',
-                 Path(r"C:\Users\19803\.dsh\skills\fs-bin-modding\scripts")]
+                 Path.home() / '.dsh' / 'skills' / 'fs-bin-modding' / 'scripts']
 _SCRIPTS = next((p for p in _SCRIPT_CANDS if p.exists()), None)
 if _SCRIPTS is None:
     raise SystemExit('缺少 paramtool/paramdump：请检查 src\\vendor\\')
