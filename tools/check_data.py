@@ -14,6 +14,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'src' / 'data'
 
+# Windows 的 CI（cp1252 控制台）打印中文会炸，统一成 UTF-8
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding='utf-8', errors='replace')
+    except (AttributeError, ValueError):
+        pass
+
 errors: list[str] = []
 warns: list[str] = []
 

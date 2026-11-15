@@ -11,6 +11,11 @@ jobs:
   check:
     name: 语法 + 数据 + 冒烟
     runs-on: windows-latest
+    env:
+      # Windows runner 的控制台是 cp1252，脚本里打印中文会炸
+      PYTHONUTF8: '1'
+      PYTHONIOENCODING: 'utf-8'
+      PYTHONWARNINGS: 'default'
     steps:
       - uses: actions/checkout@v4
 
