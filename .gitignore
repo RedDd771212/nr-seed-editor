@@ -14,6 +14,10 @@ dist/
 /assets/icon/**/*.png
 /assets/*.png
 
+# Oodle 解压库是 Radiant 的专有二进制，不随仓库分发
+# 需要时自己放一份 oo2core_9_win64.dll 到 tools\fsx\ 和 tools\menuextract\
+**/oo2core*.dll
+
 # ---------- Python ----------
 __pycache__/
 *.py[cod]

@@ -6,7 +6,7 @@
 > 只动 param（`MapPatternSet` / `LotResultMapPatternFlag` / `LotResultPlayAreaParam` / `LotResultSmallBaseAndSpot`），
 > 不碰 msb / emevd / onav。
 
-介绍视频和完整发布包见 [Releases](../../releases)；素材（地图底图 / 图标）不随代码分发，说明见[第八节](#八仓库说明github-版)。
+介绍视频和完整发布包只在本地，不随仓库公开；素材（地图底图 / 图标）说明见[第八节](#八仓库说明github-版)。
 
 ---
 
@@ -154,7 +154,8 @@ work\               运行时中间产物（可随时清空）
 | `assets/map/*.png` | 5 张地形底图，共 21 MB，由游戏里的 256×256 图块拼成 | 跑 `tools/stitch_tiles.py` |
 | `assets/icon/` | 430 张地图图标 / pin，共 21 MB，从游戏 UI 图集里切出 | 跑 `tools/cut_pin_all.py`、`tools/cut_menuicon42.py` |
 | `work/` | 解包中间产物、快照、截图（本机 1.7 GB） | 不用管，第一次打开 bin 自动生成，可随时清空 |
-| `dist/*.zip`、介绍视频 | 发布包 / 宣传片 | 见 **Releases** |
+| `tools/*/oo2core_9_win64.dll` | Oodle 解压库（Radiant 专有二进制），`tools/fsx`、`tools/menuextract` 要用 | 从游戏目录或本机工具里复制一份放回去 |
+| `dist/*.zip`、介绍视频 | 发布包 / 宣传片，只在本机保留 | — |
 
 缺素材时界面能开，但**地图是空的**（`检查环境.bat` 会提示 `assets\map\` 缺失）。
 素材涉及游戏美术资源，不便随代码公开分发；自己解包生成，或在 Issues 里问一声。
