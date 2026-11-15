@@ -40,13 +40,4 @@ jobs:
         run: node --check app/web3/app.js
 
       - name: 启动服务并请求首页
-        run: |
-          $p = Start-Process python -ArgumentList 'app/server_v3.py','8791' -PassThru -WindowStyle Hidden
-          Start-Sleep -Seconds 4
-          try {
-            $code = (Invoke-WebRequest 'http://127.0.0.1:8791/' -UseBasicParsing -TimeoutSec 10).StatusCode
-            Write-Host "HTTP $code"
-            if ($code -ne 200) { throw "首页不是 200" }
-          } finally {
-            Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue
-          }
+        run: python tools/smoke_server.py 8791
