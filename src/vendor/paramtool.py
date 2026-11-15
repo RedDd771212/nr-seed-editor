@@ -59,16 +59,35 @@ INT_RANGES = {
 
 
 def find_def_dir():
+    """按优先级找 NR paramdef 目录：
+
+    1. 环境变量 NR_DEFS（直接给目录）
+    2. 随包携带的 <repo>/vendor/NRDefs  ← 发布包/别人 clone 下来主要走这条
+    3. 环境变量 SMITHBOX_DIR/Assets/PARAM/NR/Defs
+    4. 本机 Smithbox 安装目录（ERTOOLS_ROOT 或 E:/D:/C: 下的 Smithbox*）
+    """
     cands = []
+
+    env_defs = os.environ.get("NR_DEFS")
+    if env_defs:
+        cands.append(env_defs)
+
+    here = os.path.dirname(os.path.abspath(__file__))
+    for up in (here, os.path.dirname(here), os.path.dirname(os.path.dirname(here))):
+        cands.append(os.path.join(up, "vendor", "NRDefs"))
+
     env = os.environ.get("SMITHBOX_DIR")
     if env:
         cands.append(os.path.join(env, "Assets", "PARAM", "NR", "Defs"))
+
     root = os.environ.get("ERTOOLS_ROOT", r"E:\ERtools")
     cands += glob.glob(os.path.join(root, "Smithbox*", "Assets", "PARAM", "NR", "Defs"))
     cands = [c for c in cands if os.path.isdir(c)]
     if not cands:
-        raise SystemExit("找不到 Smithbox 的 NR paramdef 目录（可设 SMITHBOX_DIR）")
-    return max(cands, key=os.path.getmtime)
+        raise SystemExit(
+            "找不到 NR paramdef 目录。发布包应有 vendor\\NRDefs；"
+            "也可以设环境变量 NR_DEFS 或 SMITHBOX_DIR 指过去。")
+    return cands[0]
 
 
 DEF_DIR = find_def_dir()
