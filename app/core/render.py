@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """把地点画到手绘地图上 —— 与 tools/render_overlay.py 同一套标准。
 
-标准（主人验收过的版本）：
+标准（验收过的版本）：
   world = grid*256 + 128 + pos
   px = wx - OX, py = OZ - wz
   OX/OZ 用 7 个监牢圆心平均标定
@@ -26,7 +26,7 @@ PINS = ROOT / 'assets' / 'icon' / 'pin'
 OX, OZ = 10504.44, 10491.71
 PIN = 74
 BOSS_ICONS = {42015, 42016, 42027, 42034, 42035, 42019}
-SWAP_ATTACH = []   # m05210：313/116 的位置已由主人校准进 attach_overrides.json，这里不再二次换位
+SWAP_ATTACH = []   # m05210：313/116 的位置已校准进 attach_overrides.json，这里不再二次换位
 
 C_TPL = (232, 78, 78)
 _preview_cache: dict = {}
@@ -133,7 +133,7 @@ def render(template_spots, draft_spots, labels=True, bg=None, allowed=None, ring
             if ic:
                 canvas.alpha_composite(ic, (int(x - ic.width / 2), int(y - ic.height / 2)))
 
-    # 草稿层：建筑图标 + 白圈 + 右下角属性小图标（主人 m02119）
+    # 草稿层：建筑图标 + 白圈 + 右下角属性小图标（m02119）
     for x, y, icon, i in _place(drf):
         ic = _icon(icon, PIN)
         if rings:

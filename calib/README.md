@@ -1,8 +1,8 @@
-# attach 点校准工具（蓝鲸与主人的中间层）
+# attach 点校准工具（手动校准 + 自动核对）
 
 和编辑器**分开**的第二个小工具：把 bin 里所有 attach 点摊在 Limveld 手绘图上，
-主人拖动 / 删掉 / 标位置，保存成 `calib/corrections.json`；
-蓝鲸再用 `tools/check_calib.py` 逐条核对，**不直接采信**。
+手动拖动 / 删掉 / 标位置，保存成 `calib/corrections.json`；
+再用 `tools/check_calib.py` 逐条核对，**不直接采信**。
 
 ## 启动
 
@@ -25,7 +25,7 @@
 - 顶栏「含特殊地形」默认**关**：只看 `pad=0` 且 `attachId < 1000` 的 205 个普通点。
 - 颜色：蓝=大据点、绿=小据点、灰=地下（id≥1000）、橙=特殊地形（pad≠0）。
 
-## 蓝鲸这边的核对
+## 自动核对
 
 ```
 python tools/check_calib.py calib/corrections.json <regulation.bin>
@@ -40,4 +40,4 @@ python tools/check_calib.py calib/corrections.json <regulation.bin>
 5. 删掉的点是否被官方种子用过（用过 → 危险）
 6. 特殊地形点（pad≠0）删掉是安全的
 
-**危险项一条都不会自动采用**，会先报给主人。
+**危险项一条都不会自动采用**，会先报出来。

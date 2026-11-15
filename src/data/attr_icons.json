@@ -1,7 +1,7 @@
 {
   "schema": "nr-map-seed/attr-icons",
   "version": 1,
-  "source": "SmallBaseMapVariationParam 的 variationIconId_x（426xx 那套）。42604=毒、42608=冻伤 由主人确认（m04153 / m04368），其余按图标外观推定，可由主人逐张改。",
+  "source": "SmallBaseMapVariationParam 的 variationIconId_x（426xx 那套）。42604=毒、42608=冻伤 经人工确认（m04153 / m04368），其余按图标外观推定，可由逐张改。",
   "icons": {
     "42600": "魔力",
     "42601": "火焰",

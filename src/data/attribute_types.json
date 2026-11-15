@@ -1,9 +1,9 @@
 {
   "schema": "nr-map-seed/attribute-types",
   "version": 1,
-  "source": "SB_MainMenu_02_0 图集里 12 个 74×74 小图标（MENU_FL_40141..40173）；主人 m00403 口授（2026-11-09）",
+  "source": "SB_MainMenu_02_0 图集里 12 个 74×74 小图标（MENU_FL_40141..40173）；m00403 人工整理（2026-11-09）",
   "fieldDoc": {
-    "index": "图集 sprite 顺序号（0-11），主人报分类时用的编号",
+    "index": "图集 sprite 顺序号（0-11），分类时用的编号",
     "icon": "assets/icon/attr 下的图标文件名（不含 .png）",
     "name": "属性名；空串 = 用不到",
     "used": "是否在编辑器里作为属性选项使用"

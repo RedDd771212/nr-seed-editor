@@ -1,5 +1,5 @@
 {
-  "note": "这些 attach 点按主人 m05074 的思路不参与编辑（删除标记，不是改 bin）",
+  "note": "这些 attach 点按m05074 的思路不参与编辑（删除标记，不是改 bin）",
   "ids": [
     118,
     119,
@@ -283,7 +283,7 @@
     "Night Horde - / Event - / Night Boss / Starter Major Base / Starter Minor Base 全部删",
     "Field Boss - 且没有被任何官方种子用到 → 删",
     "700~899 的无名点 → 删",
-    "其余按主人手工拖到图外"
+    "其余按手工拖到图外"
   ],
   "byCategory": {
     "NightHorde": 48,

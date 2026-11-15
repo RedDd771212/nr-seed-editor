@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""合并 WorldMapPointIconParam 的英文名 + 主人的中文分类，产出 src\\data\\pin_icons.json。"""
+"""合并 WorldMapPointIconParam 的英文名 + 的中文分类，产出 src\\data\\pin_icons.json。"""
 import sys, os, json
 sys.path.insert(0, r'D:\项目\app\NR地图种子编辑器\src')
 from nrseed.paramdir import ParamDir
@@ -55,7 +55,7 @@ ZH = {
     42407: ('灵魂气流', '系统点', None, False, True, 'Spiritstream；同赐福'),
 }
 
-out = {'version': 1, 'source': 'WorldMapPointIconParam + 主人 m00388/m00403 口授', 'icons': {}}
+out = {'version': 1, 'source': 'WorldMapPointIconParam + m00388/m00403 人工整理', 'icons': {}}
 for cid in sorted({v['iconId'] for v in m.wm_icons.values()} | set(ZH)):
     wm = next((v for v in m.wm_icons.values() if v['iconId'] == cid), None)
     zh = ZH.get(cid)

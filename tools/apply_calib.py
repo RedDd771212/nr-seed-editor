@@ -1,4 +1,4 @@
-"""把主人校准好的坐标固化成 src/data/attach_overrides.json。"""
+"""把校准好的坐标固化成 src/data/attach_overrides.json。"""
 from __future__ import annotations
 
 import json
@@ -36,7 +36,7 @@ def main() -> None:
         }
 
     out = {
-        'source': 'calib/corrections.json（主人人工校准，m05210 采纳）',
+        'source': 'calib/corrections.json（人工校准，m05210 采纳）',
         'note': 'world 是画布上的世界坐标，只影响显示与摆点，不写回 bin',
         'points': points,
     }

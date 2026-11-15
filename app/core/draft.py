@@ -227,7 +227,7 @@ def payload(project, d: Draft) -> dict:
             area_row['playArea2'] = d.pa2
         if d.nb1 is not None:
             area_row['bossId1'] = d.nb1
-            # 主人 m05801：bossModifierx 与 bossId x 一一对应，换 boss 必须一起换
+            # m05801：bossModifierx 与 bossId x 一一对应，换 boss 必须一起换
             mod = project.boss_modifier().get(d.nb1)
             if mod is not None:
                 area_row['bossModifier1'] = mod

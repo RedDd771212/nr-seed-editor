@@ -28,7 +28,7 @@ def main() -> None:
     drop = p.deleted_attach()
 
     rows = []
-    for ap in p.attach_points():          # 已应用主人的校准坐标
+    for ap in p.attach_points():          # 已应用的校准坐标
         nm = (ap['attachName'] or '').strip()
         kind = re.split(r'\s*-\s*', nm)[0].strip()
         rows.append((ap['attachId'], nm, kind,

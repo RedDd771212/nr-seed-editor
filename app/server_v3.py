@@ -136,7 +136,7 @@ def _resolve_anchor(aid: int):
 def _spot_payload(row) -> dict:
     """spot 行 → 画图用（借 project.model 的 describe_spot 算图标/坐标）。
 
-    能认到建筑位时，**位置直接用建筑位的校准坐标**（主人 2026-11-15：大圈要跟着小圈走）；
+    能认到建筑位时，**位置直接用建筑位的校准坐标**（2026-11-15：大圈要跟着小圈走）；
     认不到才退回原始坐标 / 人工校准表。
     """
     p: Project = STATE['project']

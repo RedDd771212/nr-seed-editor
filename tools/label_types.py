@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""把 building_types.json / attribute_types.json 画成带编号+中文名的对照图，方便主人核验。
+"""把 building_types.json / attribute_types.json 画成带编号+中文名的对照图，方便核验。
 
 用法:
   python tools/label_types.py                      # 两套都画
@@ -107,12 +107,12 @@ def main():
         data = json.loads((ROOT / "src" / "data" / "building_types.json").read_text(encoding="utf-8"))
         render(data["types"], tags_for_building,
                ROOT / "assets" / "icon" / "_预览_建筑分类.png",
-               "建筑分类  0-25（主人 m00388 口授，蓝鲸按图集顺序编号）")
+               "建筑分类 0-25（m00388 人工整理，图集顺序编号）")
     if which in ("all", "attr"):
         data = json.loads((ROOT / "src" / "data" / "attribute_types.json").read_text(encoding="utf-8"))
         render(data["types"], tags_for_attr,
                ROOT / "assets" / "icon" / "attr" / "_预览_属性分类.png",
-               "建筑属性  0-11（主人 m00403 口授）")
+               "建筑属性  0-11（m00403 人工整理）")
 
 
 if __name__ == "__main__":

@@ -3,7 +3,7 @@
 
 只读。不改任何文件。
 
-链条（2026-11-09 主人亲授 + 实测校准）：
+链条（2026-11-09 实测得出 + 实测校准）：
 
     MapPatternSet(id)
         └─ patternCount（容量，严格前缀和）→ patternId 区间
@@ -27,7 +27,7 @@ TILE_UNITS = 256.0  # attach point / world map point 的格宽（实测 4×4 格
 TILE_CENTER = 128.0  # posX/posZ 以格中心为原点（m01075 实测：411/562 个点至少一项为负）
 
 # define 行本身没填 worldMapPointIconId 时，按行名兜底到最接近的 pin 图标。
-# ⚠ 小营地（Minor Base / Small Camp）本身没有 pin，绝不兜底成大营地图标（主人 m00832）。
+# ⚠ 小营地（Minor Base / Small Camp）本身没有 pin，绝不兜底成大营地图标（m00832）。
 NAME_ICON_FALLBACK = [
     ("castle", 42010), ("large encampment", 42009), ("main encampment", 42009),
     ("ruins", 42002), ("evergaol", 42004),
@@ -180,7 +180,7 @@ class SeedModel:
                     icon_id = iid
                     break
 
-        # 小营地 / 车队 / 夜之军团 / 夜王 本身没有 pin，绝不借用大营地图标（主人 m00832）
+        # 小营地 / 车队 / 夜之军团 / 夜王 本身没有 pin，绝不借用大营地图标（m00832）
         nm_all = " ".join(
             [row.get("_name", "")] + [self.define[d].get("_name", "") for d in parents]
         ).lower()
@@ -286,7 +286,7 @@ class SeedModel:
             issues.append({"level": "warn", "table": "SmallBaseAndSpotDefine",
                            "msg": f"smallBaseMapId {k} 找不到 define 行（被引用 {v} 次）"})
 
-        # 4) 建筑类别 vs attach 大小（主人铁律：不对应会出大问题）
+        # 4) 建筑类别 vs attach 大小（铁律：不对应会出大问题）
         issues += self.check_attach_size()
         return issues
 

@@ -12,7 +12,7 @@
     set 的身份（夜王 targetBoss / 地图类型 rareMap）不在 set 行里，
     而在它每条 LotResultMapPatternFlag 行上。
 
-    set 级池子（eventModifier*、night*BossModifier* 的 _Count 字段）：按主人 2026-11-15 的决定
+    set 级池子（eventModifier*、night*BossModifier* 的 _Count 字段）：按 2026-11-15 的决定
     **当「个数」用**（派生值，不手填）：
       - 事件池取值：按 pid 取「modifierSet==0 且 eventFlag 不是地图类型(7600..7605)」那一行的 modifier
       - 夜间池：按 pid 取 playarea 的 bossModifier1 / bossModifier2
@@ -566,7 +566,7 @@ class PatternModel:
         row = {k: v for k, v in src_set.row.items() if not k.startswith('_')}
         row['patternCount'] = 0
         # 池子（modifier 字段）：默认清 0（空 set 就是 0 个）；
-        # 主人在验证时要求「照抄官方」时传 copy_pools=True —— 整段池子连同计数一起抄过来
+        # 需要「照抄官方」池子时传 copy_pools=True —— 整段池子连同计数一起抄过来
         if not copy_pools:
             for i in range(1, 9):
                 row[f'eventModifier{i}'] = 0

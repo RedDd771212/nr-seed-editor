@@ -103,7 +103,7 @@ def main():
         n = len(grp)
         if n < 2:
             continue
-        # 主人 m01225：建筑在上、守着它的野外BOSS 在下 → BOSS 排到后位（后位 = 顺时针往下）
+        # m01225：建筑在上、守着它的野外BOSS 在下 → BOSS 排到后位（后位 = 顺时针往下）
         grp.sort(key=lambda p: 1 if p[2] in BOSS_ICONS else 0)
         r = 40 + 10 * (n - 2)
         for k, p in enumerate(grp):

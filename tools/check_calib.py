@@ -1,4 +1,4 @@
-"""核对 calib/corrections.json —— 主人手动改过的东西，蓝鲸不直接采信。
+"""核对 calib/corrections.json —— 人工改过的坐标不直接采信。
 
 用法：
     python tools/check_calib.py [corrections.json] [regulation.bin]
@@ -119,7 +119,7 @@ def main():
         for w in why:
             print(f"      - {w}")
     if counts[BAD]:
-        print("\n有危险项：这些蓝鲸不会采用，等主人确认。")
+        print("\n有危险项：这些不会自动采用，需要人工确认。")
 
 
 if __name__ == "__main__":

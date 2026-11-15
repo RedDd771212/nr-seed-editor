@@ -228,7 +228,7 @@ class Project:
     def attach_pad(self) -> dict:
         """AttachPoint 的 `pad[1]`（paramdef 里是 dummy8，解析器会丢掉）。
 
-        主人 m04741：**0 = 普通地图，非 0 = 特殊地形**（1..5 各一种）。
+        m04741：**0 = 普通地图，非 0 = 特殊地形**（1..5 各一种）。
         这些点不能当普通地图的据点用，所以要从「空闲点」里排掉。
         """
         path = self.param_dir / 'SmallBaseAndSpotAttachPoint.param'
@@ -240,7 +240,7 @@ class Project:
     def playarea_pad(self) -> dict:
         """PlayAreaCreateParam 的 `pad[1]`（dummy8，解析器会丢）。
 
-        主人 m05770：pad = 地图类型编号，**普通地图 = 0**；咱们的地图就是普通地图。
+        m05770：pad = 地图类型编号，**普通地图 = 0**；咱们的地图就是普通地图。
         行首布局：s32 _id(4) + u8 ×4（NT / reserve2 / areaNo / gridX）+ u8 gridZ + u8 pad
         → 实测 pad 在 doff + 7（gridX 在 +5、gridZ 在 +6）。
         """
@@ -250,7 +250,7 @@ class Project:
         return {rid: b[doff + 7] for rid, doff, _ in ents}
 
     def boss_modifier(self) -> dict:
-        """夜王 → bossModifier（主人 m05801：bossModifierx 与 bossId x 一一对应）。
+        """夜王 → bossModifier（m05801：bossModifierx 与 bossId x 一一对应）。
 
         从 LotResultPlayAreaParam 实测：36 个 bossId 各只有一个 modifier，无歧义。
         """
@@ -263,7 +263,7 @@ class Project:
         return out
 
     def deleted_attach(self) -> set:
-        """主人 m05074 标掉的点（删除标记，不改 bin）。"""
+        """m05074 标掉的点（删除标记，不改 bin）。"""
         p = Path(__file__).resolve().parents[2] / 'src' / 'data' / 'attach_deleted.json'
         if not p.exists():
             return set()
@@ -300,7 +300,7 @@ class Project:
         name = me.get('_name') or ''
         m = re.match(r'\[[^\]]+\]', name)
         prefix = m.group(0) if m else ''
-        pad = self.playarea_pad()          # 主人 m05770：pad=0 才是普通地图
+        pad = self.playarea_pad()          # m05770：pad=0 才是普通地图
         # m06792：特殊地形的一缩/二缩（1021 Rotted / 1023 Mountaintop / 1024 Crater / 1025-1026 Shrouded）
         prof = (self.map_profiles().get(map_id) or {}) if map_id else {}
         terrain = prof.get('terrain') or '[Standard]'
@@ -344,7 +344,7 @@ class Project:
         return out
 
     def attach_overrides(self) -> dict:
-        """主人人工校准过的坐标（m05210 采纳，只影响显示/摆点，不写回 bin）。"""
+        """人工校准过的坐标（m05210 采纳，只影响显示/摆点，不写回 bin）。"""
         p = Path(__file__).resolve().parents[2] / 'src' / 'data' / 'attach_overrides.json'
         if not p.exists():
             return {}
@@ -367,7 +367,7 @@ class Project:
     def attach_points(self, map_id: str | None = None) -> list:
         """AttachPoint 全表 → 画点用的列表（m04640：补上「图上没有的点」）。"""
         pad = self.attach_pad()
-        drop = self.deleted_attach()     # m05074：主人标掉的点不参与编辑
+        drop = self.deleted_attach()     # m05074：标掉的点不参与编辑
         overrides = self.attach_overrides()
         prof = (self.map_profiles().get(map_id) or {}) if map_id else {}
         pool = prof.get('attachPool')
@@ -381,7 +381,7 @@ class Project:
             if pad.get(aid, 0) != 0:      # 特殊地形（pad != 0）不算普通地图的点
                 continue
             if pool is not None:
-                if aid not in pool:       # 这张图上没有这个建筑位（主人校掉的）
+                if aid not in pool:       # 这张图上没有这个建筑位（校准删除的）
                     continue
             elif aid in drop:
                 continue
@@ -491,7 +491,7 @@ class Project:
         slot = self.cell_index().get((gx, gz), {})
 
         # m04411：同一格里，同尺寸的据点共用一套「能放的建筑」——
-        # 主人原话：能选要塞和教堂，就一定能选遗迹和营地。
+        # 规则：能选要塞和教堂，就一定能选遗迹和营地。
         # 所以不再按 (attachId, tile) 逐对限制，改成「按尺寸取这一格出现过的所有建筑」。
         pool = {'大': set(), '小': set()}
         for c in slot.values():
@@ -641,7 +641,7 @@ class Project:
                'smallBaseMapId': tile, 'mapIndex': 0,
                'variationId': variation_id or 0, 'modifier': 0}
         sp = self.model.describe_spot(row)
-        # m05210：主人校准过的点，显示用校准坐标（数据仍用原始行）
+        # m05210：校准过的点，显示用校准坐标（数据仍用原始行）
         ov = self.attach_overrides().get(attach_id)
         if ov:
             sp['world'] = list(ov)

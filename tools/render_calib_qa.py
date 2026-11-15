@@ -1,4 +1,4 @@
-"""把「保留 / 删除」画成一张对照图，方便主人一眼看完。"""
+"""把「保留 / 删除」画成一张对照图，方便一眼看完。"""
 from __future__ import annotations
 
 import json

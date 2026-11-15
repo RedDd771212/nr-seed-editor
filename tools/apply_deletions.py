@@ -1,6 +1,6 @@
-﻿"""按主人的思路，把该删的 attach 点标成 deleted。
+﻿"""按的思路，把该删的 attach 点标成 deleted。
 
-主人的做法：不要的点直接拖到地图外面。蓝鲸照着这个思路归纳成规则，
+人工校准的做法：不要的点直接拖到地图外面。按这个思路归纳成规则，
 再逐条核对（用过的点会被标出来），最后写进 calib/corrections.json，
 并额外导出 src/data/attach_deleted.json 给编辑器用。
 """
@@ -18,7 +18,7 @@ from app.core.project import Project  # noqa: E402
 
 BIN = str(ROOT / 'work' / 'reg' / 'base_sot.bin')
 
-# 主人拖到图外的那批，按「名字前缀」归纳（m05074）
+# 拖到图外的那批，按「名字前缀」归纳（m05074）
 DEL_PREFIX = (
     'Night Horde -',        # 夜之军团：不是建筑
     'Event -',              # 事件点：由 eventFlag 决定
@@ -41,7 +41,7 @@ def main() -> None:
     def name_of(aid: int) -> str:
         return (attach.get(aid, {}).get('_name') or '').strip()
 
-    # ① 主人亲手拖出去的
+    # ① 亲手拖出去的
     mine = {int(it['id']) for it in corr['items']
             if it.get('deleted') or not (-64 <= (it.get('world') or [0])[0] <= 0 or True)}
 
@@ -62,7 +62,7 @@ def main() -> None:
     fb_empty = {aid for aid in attach
                 if name_of(aid) == 'Field Boss -' and used.get(aid, 0) == 0}
 
-    # ④ 所有「没名字、也没被任何官方种子用过」的点（主人 m05138：要删）
+    # ④ 所有「没名字、也没被任何官方种子用过」的点（m05138：要删）
     junk_unnamed = {aid for aid in attach
                     if not name_of(aid) and used.get(aid, 0) == 0}
 
@@ -91,13 +91,13 @@ def main() -> None:
     out = ROOT / 'src' / 'data' / 'attach_deleted.json'
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps({
-        'note': '这些 attach 点按主人 m05074 的思路不参与编辑（删除标记，不是改 bin）',
+        'note': '这些 attach 点按m05074 的思路不参与编辑（删除标记，不是改 bin）',
         'ids': sorted(delete),
         'rules': [
             'Night Horde - / Event - / Night Boss / Starter Major Base / Starter Minor Base 全部删',
             'Field Boss - 且没有被任何官方种子用到 → 删',
             '700~899 的无名点 → 删',
-            '其余按主人手工拖到图外',
+            '其余按手工拖到图外',
         ],
         'byCategory': {
             'NightHorde': sum(1 for a in delete if name_of(a).startswith('Night Horde -')),
@@ -110,7 +110,7 @@ def main() -> None:
         'usedByOfficial': sorted(a for a in delete if used.get(a, 0) > 0),
     }, ensure_ascii=False, indent=2), encoding='utf-8')
 
-    print(f'主人手标 {len(mine)}')
+    print(f'手标 {len(mine)}')
     print(f'按名字前缀 {len(by_prefix)}')
     print(f'没被用过的野外BOSS槽 {len(fb_empty)}')
     print(f'700/800 无名点 {len(junk_unnamed)}')

@@ -220,7 +220,7 @@ function drawOverlay() {
   }
   hctx.restore();
 
-  // 1缩 / 2缩 的地图标记（主人 m05770）：悬停临时显示，选完固定
+  // 1缩 / 2缩 的地图标记（m05770）：悬停临时显示，选完固定
   drawAreaMarkers();
 
   // 悬停
@@ -877,7 +877,7 @@ function renderArea() {
       `<label class="arow"><span>${label}</span>
          <select data-k="${k}">${html}</select></label>`).join('');
 
-  // 自定义下拉（1缩/2缩）：悬停某一项 → 地图临时出标记；点一下 → 固定（主人 m05770）
+  // 自定义下拉（1缩/2缩）：悬停某一项 → 地图临时出标记；点一下 → 固定（m05770）
   $('areaSel').querySelectorAll('.adrop').forEach(dp => {
     const k = dp.dataset.k;
     const btn = dp.querySelector('.abtn');
@@ -911,7 +911,7 @@ function renderArea() {
       const res = await api('/api/playarea', body);
       applyState(res);
     };
-    // 1缩/2缩：鼠标停在下拉上时，把当前项在地图上临时标出来（主人 m05770）
+    // 1缩/2缩：鼠标停在下拉上时，把当前项在地图上临时标出来（m05770）
     if (sel.dataset.k === 'pa1' || sel.dataset.k === 'pa2') {
       const k = sel.dataset.k;
       sel.onfocus = sel.onmouseenter = () => { S.areaHover = { key: k }; drawOverlay(); };
@@ -1082,7 +1082,7 @@ $('btnOpen').onclick = async () => {
   $('btnDraft').disabled = false;
 };
 
-/* 文件夹里有多个 bin → 列出来让主人点一个 */
+/* 文件夹里有多个 bin → 列出来让人选一个 */
 function renderBinPicker(bins) {
   $('infoTag').textContent = '选一个 bin';
   $('infoBody').innerHTML = bins.map(p => {

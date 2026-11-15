@@ -317,7 +317,7 @@ def _map_png() -> bytes:
     if p and STATE['draft']:
         draft = [p.spot_view(s['attachId'], s['tile'], s.get('variationId') or 0) for s in STATE['draft'].spots]
     bg = ASSETS / 'map' / _maps().get(STATE['map'], {}).get('bg', 'limveld.png')
-    # 特殊地形：主人校掉的监牢别画（m06679）
+    # 特殊地形：校准删除的监牢不画（m06679）
     allowed = {ap['attachId'] for ap in p.attach_points(STATE['map'])}
     return render.png_bytes(tpl, draft, rev=str(STATE['rev']), bg=bg, allowed=allowed)
 

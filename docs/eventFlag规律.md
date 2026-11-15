@@ -1,6 +1,6 @@
 # eventFlag / modifier / modifierSet 规律（自查笔记）
 
-> 主人 m05915 给的方向：`LotResultMapPatternFlag.eventFlag` 与 `LotBaseMapPatternFlag.eventFlag` 对应；同一 patternId 里有这个 flag 就等于调用了它；modifier / modifierSet 也要填对。
+> m05915 给的方向：`LotResultMapPatternFlag.eventFlag` 与 `LotBaseMapPatternFlag.eventFlag` 对应；同一 patternId 里有这个 flag 就等于调用了它；modifier / modifierSet 也要填对。
 > 下面是把 regulation.bin（`D:\nrtest\base.bin`）里两表全量比对后的结果。
 
 ## 一、两表的职责

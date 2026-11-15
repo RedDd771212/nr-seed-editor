@@ -1,5 +1,5 @@
 {
-  "source": "calib/corrections.json（主人人工校准，m05210 采纳）",
+  "source": "calib/corrections.json（人工校准，m05210 采纳）",
   "note": "world 是画布上的世界坐标，只影响显示与摆点，不写回 bin",
   "points": {
     "601": {
