@@ -1,5 +1,10 @@
 # NR 地图种子编辑器 v3
 
+[![CI](https://github.com/RedDd771212/nr-seed-editor/actions/workflows/ci.yml/badge.svg)](https://github.com/RedDd771212/nr-seed-editor/actions/workflows/ci.yml)
+![license](https://img.shields.io/badge/license-MIT-blue)
+![python](https://img.shields.io/badge/python-3.10%2B-blue)
+![platform](https://img.shields.io/badge/platform-Windows-lightgrey)
+
 黑夜君临（Nightreign）的 **地图种子编辑器**：直接读写 `regulation.bin` 里的地图种子 param，
 可以新建 / 修改 `MapPatternSet`，在 set 里增删种子，改地点、缩圈、夜晚 BOSS。
 
@@ -7,6 +12,7 @@
 > 不碰 msb / emevd / onav。
 
 介绍视频和完整发布包只在本地，不随仓库公开；素材（地图底图 / 图标）说明见[第八节](#八仓库说明github-版)。
+更新日志见 [CHANGELOG.md](CHANGELOG.md)。
 
 ---
 

@@ -1,0 +1,76 @@
+name: 🐞 Bug 报告
+description: 工具报错、行为不对、写回后进游戏不对
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        先确认两件事，能省很多来回：
+        1. `检查环境.bat` 全绿（Python / Pillow / .NET、`vendor/`、`assets/` 都在）
+        2. 换一份**没改过**的 `regulation.bin` 也复现 —— 排掉旧改动的影响
+
+  - type: input
+    id: env
+    attributes:
+      label: 运行环境
+      placeholder: Windows 11 23H2 / Python 3.13 / Pillow 12.3 / 用的哪份 bin（官方 or 自改）
+    validations:
+      required: true
+
+  - type: dropdown
+    id: stage
+    attributes:
+      label: 出问题的环节
+      options:
+        - 启动 / 打开 bin
+        - 左栏 set 树 / 筛选
+        - 地图显示（圈、图标、底图）
+        - 加地点 / 删地点 / 拖动排序
+        - 换建筑 / 属性变体
+        - 缩圈 / 夜晚 BOSS
+        - 撤销 / 新建 set / 插入种子
+        - 保存写回（对账 / 备份）
+        - 进游戏后表现不对
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 双击 启动.bat
+        2. 顶栏填 ...\regulation.bin → 打开
+        3. 选 set 1096 → pid 1201
+        4. 点地图上 ... 位置
+        5. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: behave
+    attributes:
+      label: 期望 vs 实际
+      placeholder: 期望加进去一个地点；实际底部选择条没出来 / 报错 ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: log
+    attributes:
+      label: 日志 / 截图 / 导出的 JSON
+      description: |
+        服务端控制台输出、页面右下角 toast 文案、`/api3/export` 导出的 json 都很有用。
+        ⚠ 不要上传 `regulation.bin` 本体或任何游戏资源文件。
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认
+      options:
+        - label: 我上传的内容里没有 `regulation.bin` 或游戏资源文件
+          required: true

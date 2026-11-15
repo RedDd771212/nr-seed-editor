@@ -1,0 +1,49 @@
+name: ✨ 功能建议
+description: 想要的新功能 / 用起来不顺手的地方
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        说清「想达成什么」比「要一个什么按钮」更有用 —— 实现方式可能比想的更简单。
+        提之前可以先看一眼 `docs/待修清单.md` 和 README 的「已知限制」，可能已经在计划里了。
+
+  - type: textarea
+    id: want
+    attributes:
+      label: 想解决什么
+      placeholder: 每次调缩圈都要先滚很久找下拉，想更快 ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: now
+    attributes:
+      label: 现在怎么绕过去的
+      placeholder: 目前是手动记下 id，再手填 ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: 设想的做法（可选）
+      placeholder: 地图上直接右键标记 1缩 / 2缩 ...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: 大概属于哪块
+      options:
+        - 界面 / 交互
+        - 地点编辑
+        - 缩圈 / 夜王
+        - 保存 / 安全机制
+        - 地形底图 / 素材
+        - 文档 / 打包 / 发布
+        - 其他
+    validations:
+      required: false

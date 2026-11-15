@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📦 地图底图 / 图标没有？
+    url: https://github.com/RedDd771212/nr-seed-editor#八仓库说明github-版
+    about: 仓库不含游戏解包素材，先看 README 第八节怎么自己生成
+  - name: 📖 使用说明 / 已知限制
+    url: https://github.com/RedDd771212/nr-seed-editor#readme
+    about: 安装、界面说明、原理与限制都在 README

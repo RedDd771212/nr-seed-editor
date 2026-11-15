@@ -1,0 +1,47 @@
+name: CI
+
+# 每次推 main / 提 PR 就跑一遍：语法、数据表、服务冒烟
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    name: 语法 + 数据 + 冒烟
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安装依赖（只有 Pillow 是运行时需要的）
+        run: python -m pip install --disable-pip-version-check --quiet pillow
+
+      - name: Python 语法检查（app / src / calib / tools）
+        run: python -m compileall -q app src calib tools
+
+      - name: 数据表校验（src/data/*.json）
+        run: python tools/check_data.py
+
+      - name: 导入冒烟（不打开 bin，只验依赖能否解析）
+        run: |
+          python -c "import sys; sys.path.insert(0, 'src'); from nrseed.paramdir import find_def_dir; print('paramdef ->', find_def_dir())"
+
+      - name: 前端 JS 语法
+        run: node --check app/web3/app.js
+
+      - name: 启动服务并请求首页
+        run: |
+          $p = Start-Process python -ArgumentList 'app/server_v3.py','8791' -PassThru -WindowStyle Hidden
+          Start-Sleep -Seconds 4
+          try {
+            $code = (Invoke-WebRequest 'http://127.0.0.1:8791/' -UseBasicParsing -TimeoutSec 10).StatusCode
+            Write-Host "HTTP $code"
+            if ($code -ne 200) { throw "首页不是 200" }
+          } finally {
+            Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue
+          }
