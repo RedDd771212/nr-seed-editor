@@ -5,6 +5,12 @@
 
 ## [未发布]
 
+### 修复
+
+- `src/vendor/paramtool.py` 找 NR paramdef 时只认本机 Smithbox 目录，**不认随包的 `vendor/NRDefs`** ——
+  换台机器 / 别人 clone 下来会直接报「找不到 NR paramdef 目录」。现在优先用 `vendor/NRDefs`，
+  其次 `NR_DEFS` / `SMITHBOX_DIR` 环境变量，最后才扫本机 Smithbox。
+
 ### 计划中
 
 - 主城楼顶 / 楼底（attach 756 / 757）的完整规则
