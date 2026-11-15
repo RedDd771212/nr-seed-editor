@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>NR 地图种子编辑器 v3</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <span class="logo">NR 种子</span>
+  <input id="binPath" placeholder="regulation.bin 路径（或它所在文件夹）">
+  <button id="btnOpen">打开</button>
+  <button id="btnSave" class="primary" disabled>保存</button>
+  <span id="ctx" class="muted"></span>
+</header>
+
+<main>
+  <aside id="left">
+    <div class="sectop">
+      <select id="bossFilter" title="按夜王筛选"><option value="">全部夜王</option></select>
+      <button id="btnNewSet" title="按夜王+地图类型新建一个 set">＋ 新建 set</button>
+    </div>
+    <div id="tree" class="tree"><div class="muted">先打开 bin</div></div>
+    <div class="leftfoot">
+      <button id="btnUndo" disabled title="回滚上一次操作">↶ 撤销一步</button>
+      <span id="histInfo" class="muted"></span>
+    </div>
+  </aside>
+
+  <section id="center">
+    <div id="mapWrap">
+      <div id="mapBox"><canvas id="map" width="1536" height="1536"></canvas><canvas id="hl" width="1536" height="1536"></canvas></div>
+    </div>
+    <div id="hint" class="muted">点左边选 set / 种子；点地图上的圈可以给当前种子加地点</div>
+    <div id="picker" hidden></div>
+  </section>
+
+  <aside id="right"><div id="inspector" class="muted">选一个 set</div></aside>
+</main>
+
+<div id="toast"></div>
+<script src="/app.js"></script>
+</body>
+</html>

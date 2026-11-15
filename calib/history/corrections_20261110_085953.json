@@ -1,0 +1,776 @@
+{
+  "bin": "D:\\nrtest\\base.bin",
+  "savedAt": "2026-11-10 08:59:53",
+  "items": [
+    {
+      "id": 634,
+      "name": "Night Horde - ",
+      "orig": [
+        11190.990001678467,
+        9761.360000610352
+      ],
+      "world": [
+        11190.248975834293,
+        9770.550046029919
+      ],
+      "moved": 9.22,
+      "deleted": false
+    },
+    {
+      "id": 601,
+      "name": "Evergaol - Northwest Edge",
+      "orig": [
+        10754.599998474121,
+        10009.029998779297
+      ],
+      "world": [
+        10762.502140391254,
+        10003.866501726121
+      ],
+      "moved": 9.44,
+      "deleted": false
+    },
+    {
+      "id": 754,
+      "name": "Field Boss - ",
+      "orig": [
+        10896.54999923706,
+        10171.360000610352
+      ],
+      "world": [
+        10912.743797468354,
+        10198.296881472957
+      ],
+      "moved": 31.43,
+      "deleted": false
+    },
+    {
+      "id": 758,
+      "name": "Field Boss - ",
+      "orig": [
+        11011.190002441406,
+        10131.14999961853
+      ],
+      "world": [
+        11013.494085155351,
+        10116.989631760644
+      ],
+      "moved": 14.347,
+      "deleted": false
+    },
+    {
+      "id": 625,
+      "name": "Night Horde - ",
+      "orig": [
+        10937.259998321533,
+        10128.370000839233
+      ],
+      "world": [
+        11225.59995397008,
+        10428.07823935558
+      ],
+      "moved": 415.891,
+      "deleted": true
+    },
+    {
+      "id": 701,
+      "name": "",
+      "orig": [
+        10960.949996948242,
+        10077.779998779297
+      ],
+      "world": [
+        11280.393970080553,
+        10447.521277330265
+      ],
+      "moved": 488.624,
+      "deleted": true
+    },
+    {
+      "id": 301,
+      "name": "Minor Base - Stormhill South of Gate",
+      "orig": [
+        10814,
+        9644
+      ],
+      "world": [
+        10808.45841196778,
+        9652.124269275027
+      ],
+      "moved": 9.834,
+      "deleted": false
+    },
+    {
+      "id": 351,
+      "name": "Starter Minor Base - Stormhill South of Gate",
+      "orig": [
+        10814,
+        9644
+      ],
+      "world": [
+        11964.435397008056,
+        9980.888365937859
+      ],
+      "moved": 1198.747,
+      "deleted": true
+    },
+    {
+      "id": 618,
+      "name": "Night Horde - ",
+      "orig": [
+        10772.949996948242,
+        9708.150001525879
+      ],
+      "world": [
+        11930.851967779057,
+        10023.309539700804
+      ],
+      "moved": 1200.026,
+      "deleted": true
+    },
+    {
+      "id": 604,
+      "name": "Evergaol - North Ravine",
+      "orig": [
+        11235.790000915527,
+        10194.08999633789
+      ],
+      "world": [
+        11246.810540851555,
+        10187.69158803222
+      ],
+      "moved": 12.743,
+      "deleted": false
+    },
+    {
+      "id": 107,
+      "name": "Major Base - Northeast Stormhill",
+      "orig": [
+        11112,
+        10223
+      ],
+      "world": [
+        11130.152313003453,
+        10217.73991944764
+      ],
+      "moved": 18.899,
+      "deleted": false
+    },
+    {
+      "id": 756,
+      "name": "Castle - Rooftop Boss",
+      "orig": [
+        11173.569999694824,
+        9662.689998626709
+      ],
+      "world": [
+        11183.178780207136,
+        9696.312991944764
+      ],
+      "moved": 34.969,
+      "deleted": false
+    },
+    {
+      "id": 757,
+      "name": "Castle - Basement Boss",
+      "orig": [
+        11173.569999694824,
+        9662.689998626709
+      ],
+      "world": [
+        11183.178780207136,
+        9630.913682393555
+      ],
+      "moved": 33.197,
+      "deleted": false
+    },
+    {
+      "id": 636,
+      "name": "Night Horde - ",
+      "orig": [
+        11025.309997558594,
+        10221.699996948242
+      ],
+      "world": [
+        11322.815143843498,
+        10435.148434982739
+      ],
+      "moved": 366.155,
+      "deleted": true
+    },
+    {
+      "id": 302,
+      "name": "Minor Base - West of Warmaster's Shack",
+      "orig": [
+        10832,
+        9954.459999084473
+      ],
+      "world": [
+        10843.809390103568,
+        9961.445327963174
+      ],
+      "moved": 13.721,
+      "deleted": false
+    },
+    {
+      "id": 352,
+      "name": "Starter Minor Base - West of Warmaster's Shack",
+      "orig": [
+        10832,
+        9954.459999084473
+      ],
+      "world": [
+        11405.889942462602,
+        10401.565005753739
+      ],
+      "moved": 727.497,
+      "deleted": true
+    },
+    {
+      "id": 752,
+      "name": "Field Boss - ",
+      "orig": [
+        10767.309997558594,
+        9938.199996948242
+      ],
+      "world": [
+        11494.267387802072,
+        10413.937848101265
+      ],
+      "moved": 868.789,
+      "deleted": true
+    },
+    {
+      "id": 502,
+      "name": "Night Boss - West Stormhill Graveyard",
+      "orig": [
+        10826,
+        9877
+      ],
+      "world": [
+        11579.109735327964,
+        10413.937848101265
+      ],
+      "moved": 924.92,
+      "deleted": true
+    },
+    {
+      "id": 622,
+      "name": "Night Horde - ",
+      "orig": [
+        10777,
+        9905.130001068115
+      ],
+      "world": [
+        11649.81169159954,
+        10429.84578826237
+      ],
+      "moved": 1018.394,
+      "deleted": true
+    },
+    {
+      "id": 521,
+      "name": "Event - Gnoster, West Stormhill Graveyard",
+      "orig": [
+        10826,
+        9877
+      ],
+      "world": [
+        11706.373256616802,
+        10408.635201380897
+      ],
+      "moved": 1028.442,
+      "deleted": true
+    },
+    {
+      "id": 541,
+      "name": "Event - Morgott, West Stormhill Graveyard",
+      "orig": [
+        10826,
+        9877
+      ],
+      "world": [
+        11762.934821634062,
+        10399.797456846949
+      ],
+      "moved": 1072.923,
+      "deleted": true
+    },
+    {
+      "id": 561,
+      "name": "Event - Maris, West Stormhill Graveyard",
+      "orig": [
+        10826,
+        9877
+      ],
+      "world": [
+        11856.614913693902,
+        10385.657065592633
+      ],
+      "moved": 1149.304,
+      "deleted": true
+    },
+    {
+      "id": 581,
+      "name": "Event - Libra, West Stormhill Graveyard",
+      "orig": [
+        10826,
+        9877
+      ],
+      "world": [
+        11922.01422324511,
+        10360.911380897582
+      ],
+      "moved": 1198.089,
+      "deleted": true
+    },
+    {
+      "id": 801,
+      "name": "",
+      "orig": [
+        10826,
+        9877
+      ],
+      "world": [
+        11939.689712313004,
+        10277.83658227848
+      ],
+      "moved": 1183.628,
+      "deleted": true
+    },
+    {
+      "id": 621,
+      "name": "Night Horde - ",
+      "orig": [
+        10815.930000305176,
+        9811.270000457764
+      ],
+      "world": [
+        11929.084418872268,
+        10189.45913693901
+      ],
+      "moved": 1175.644,
+      "deleted": true
+    },
+    {
+      "id": 751,
+      "name": "Field Boss - ",
+      "orig": [
+        10833.770000457764,
+        9778.470001220703
+      ],
+      "world": [
+        11930.851967779057,
+        10108.151887226697
+      ],
+      "moved": 1145.547,
+      "deleted": true
+    },
+    {
+      "id": 623,
+      "name": "Night Horde - ",
+      "orig": [
+        10914.330001831055,
+        9892.930000305176
+      ],
+      "world": [
+        11960.900299194476,
+        9919.02415420023
+      ],
+      "moved": 1046.896,
+      "deleted": true
+    },
+    {
+      "id": 753,
+      "name": "Field Boss - ",
+      "orig": [
+        10974.25,
+        9921.800003051758
+      ],
+      "world": [
+        10995.818596087458,
+        9908.418860759493
+      ],
+      "moved": 25.382,
+      "deleted": false
+    },
+    {
+      "id": 306,
+      "name": "Minor Base - Above Stormhill Tunnel Entrance",
+      "orig": [
+        11050,
+        9888
+      ],
+      "world": [
+        11061.217905638665,
+        9873.067882623705
+      ],
+      "moved": 18.676,
+      "deleted": false
+    },
+    {
+      "id": 356,
+      "name": "Starter Minor Base - Above Stormhill Tunnel Entrance",
+      "orig": [
+        11050,
+        9888
+      ],
+      "world": [
+        11967.970494821635,
+        9857.1599424626
+      ],
+      "moved": 918.488,
+      "deleted": true
+    },
+    {
+      "id": 120,
+      "name": "Major Base - Stormhill North of Gate",
+      "orig": [
+        10933,
+        9812
+      ],
+      "world": [
+        10942.792128883775,
+        9820.041415420023
+      ],
+      "moved": 12.671,
+      "deleted": false
+    },
+    {
+      "id": 123,
+      "name": "Starter Major Base - Stormhill North of Gate",
+      "orig": [
+        10933,
+        9812
+      ],
+      "world": [
+        11953.83010356732,
+        9786.457986191024
+      ],
+      "moved": 1021.15,
+      "deleted": true
+    },
+    {
+      "id": 124,
+      "name": "Starter Major Base - Stormhill North of Gate Alt",
+      "orig": [
+        10933,
+        9812
+      ],
+      "world": [
+        11953.83010356732,
+        9728.128872266972
+      ],
+      "moved": 1024.27,
+      "deleted": true
+    },
+    {
+      "id": 506,
+      "name": "Night Boss - Northwest of Castle",
+      "orig": [
+        11052,
+        9794
+      ],
+      "world": [
+        11939.689712313004,
+        9648.589171461448
+      ],
+      "moved": 899.521,
+      "deleted": true
+    },
+    {
+      "id": 525,
+      "name": "Event - Gnoster, Northwest of Castle",
+      "orig": [
+        11052,
+        9794
+      ],
+      "world": [
+        11957.365201380899,
+        9595.562704257767
+      ],
+      "moved": 926.857,
+      "deleted": true
+    },
+    {
+      "id": 545,
+      "name": "Event - Morgott, Northwest of Castle",
+      "orig": [
+        11052,
+        9794
+      ],
+      "world": [
+        11959.132750287688,
+        9470.066731875719
+      ],
+      "moved": 963.235,
+      "deleted": true
+    },
+    {
+      "id": 565,
+      "name": "Event - Maris, Northwest of Castle",
+      "orig": [
+        11052,
+        9794
+      ],
+      "world": [
+        11967.970494821635,
+        9528.395845799769
+      ],
+      "moved": 953.702,
+      "deleted": true
+    },
+    {
+      "id": 585,
+      "name": "Event - Libra, Northwest of Castle",
+      "orig": [
+        11052,
+        9794
+      ],
+      "world": [
+        11964.435397008056,
+        9417.040264672036
+      ],
+      "moved": 987.237,
+      "deleted": true
+    },
+    {
+      "id": 805,
+      "name": "",
+      "orig": [
+        11052,
+        9794
+      ],
+      "world": [
+        11957.365201380899,
+        9349.873406214037
+      ],
+      "moved": 1008.432,
+      "deleted": true
+    },
+    {
+      "id": 619,
+      "name": "Night Horde - ",
+      "orig": [
+        10901.340000152588,
+        9646.810001373291
+      ],
+      "world": [
+        11959.132750287688,
+        9282.70654775604
+      ],
+      "moved": 1118.703,
+      "deleted": true
+    },
+    {
+      "id": 620,
+      "name": "Night Horde - ",
+      "orig": [
+        10857.579999923706,
+        9562.130001068115
+      ],
+      "world": [
+        11936.154614499424,
+        9226.144982738779
+      ],
+      "moved": 1129.694,
+      "deleted": true
+    },
+    {
+      "id": 300,
+      "name": "Minor Base - Far Southwest",
+      "orig": [
+        10806,
+        9406
+      ],
+      "world": [
+        10826.133901035673,
+        9402.89987341772
+      ],
+      "moved": 20.371,
+      "deleted": false
+    },
+    {
+      "id": 350,
+      "name": "Starter Minor Base - Far Southwest",
+      "orig": [
+        10806,
+        9406
+      ],
+      "world": [
+        11930.851967779057,
+        9134.23243958573
+      ],
+      "moved": 1157.216,
+      "deleted": true
+    },
+    {
+      "id": 616,
+      "name": "Night Horde - ",
+      "orig": [
+        10835.70000076294,
+        9326.379999160767
+      ],
+      "world": [
+        11881.360598388954,
+        9091.811265822784
+      ],
+      "moved": 1071.648,
+      "deleted": true
+    },
+    {
+      "id": 500,
+      "name": "Night Boss - Southwest Corner",
+      "orig": [
+        10906,
+        9340
+      ],
+      "world": [
+        11778.842761795167,
+        9118.324499424625
+      ],
+      "moved": 900.552,
+      "deleted": true
+    },
+    {
+      "id": 520,
+      "name": "Event - Gnoster, Southwest Corner",
+      "orig": [
+        10906,
+        9340
+      ],
+      "world": [
+        11764.702370540852,
+        9086.508619102417
+      ],
+      "moved": 895.337,
+      "deleted": true
+    },
+    {
+      "id": 540,
+      "name": "Event - Morgott, Southwest Corner",
+      "orig": [
+        10906,
+        9340
+      ],
+      "world": [
+        11847.777169159954,
+        9189.026455696201
+      ],
+      "moved": 953.801,
+      "deleted": true
+    },
+    {
+      "id": 560,
+      "name": "Event - Maris, Southwest Corner",
+      "orig": [
+        10906,
+        9340
+      ],
+      "world": [
+        11835.404326812428,
+        9300.382036823934
+      ],
+      "moved": 930.248,
+      "deleted": true
+    },
+    {
+      "id": 580,
+      "name": "Event - Libra, Southwest Corner",
+      "orig": [
+        10906,
+        9340
+      ],
+      "world": [
+        11876.057951668585,
+        9388.759482163405
+      ],
+      "moved": 971.283,
+      "deleted": true
+    },
+    {
+      "id": 800,
+      "name": "",
+      "orig": [
+        10906,
+        9340
+      ],
+      "world": [
+        11890.1983429229,
+        9438.250851553508
+      ],
+      "moved": 989.09,
+      "deleted": true
+    },
+    {
+      "id": 700,
+      "name": "",
+      "orig": [
+        10937.509998321533,
+        9419.779998779297
+      ],
+      "world": [
+        11773.540115074798,
+        9224.377433831989
+      ],
+      "moved": 858.562,
+      "deleted": true
+    },
+    {
+      "id": 710,
+      "name": "Event - Scale-Bearing Merchant, Southwest Corner",
+      "orig": [
+        10936.584999084473,
+        9415.430000305176
+      ],
+      "world": [
+        11870.755304948218,
+        9519.558101265822
+      ],
+      "moved": 939.956,
+      "deleted": true
+    },
+    {
+      "id": 101,
+      "name": "Major Base - Groveside",
+      "orig": [
+        10925,
+        9493
+      ],
+      "world": [
+        10933.954384349829,
+        9491.277318757191
+      ],
+      "moved": 9.119,
+      "deleted": false
+    },
+    {
+      "id": 121,
+      "name": "Starter Major Base - Groveside",
+      "orig": [
+        10925,
+        9493
+      ],
+      "world": [
+        11911.408929804373,
+        9604.400448791714
+      ],
+      "moved": 992.68,
+      "deleted": true
+    },
+    {
+      "id": 617,
+      "name": "Night Horde - ",
+      "orig": [
+        10951.959999084473,
+        9228.580001831055
+      ],
+      "world": [
+        11874.290402761795,
+        9629.146133486765
+      ],
+      "moved": 1005.558,
+      "deleted": true
+    }
+  ]
+}

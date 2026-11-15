@@ -1,0 +1,16 @@
+{
+  "_comment": "人工校准表：游戏里与参数不符、需要在显示层修正的点。只改显示，不动任何 param 字节。",
+  "_rules": [
+    "swap_pairs：按行 _id 两两互换显示坐标（图标仍跟行走）。",
+    "swap_attach：按 attachId 两两互换显示坐标，对所有 patternId 生效——同一对槽位在每个种子里都会复现同样的错位。",
+    "每条都要写 reason + 主人确认的消息号，方便以后复核。"
+  ],
+  "0": {
+    "swap_pairs": [[6, 13]],
+    "reason": "X45/Z38 内大营地(行6,attach 116,posZ+97)与第三教堂(行13,attach 313,posZ-9)相对上下反了；游戏里教堂在北。主人 m01121 指示先把显示调换。"
+  },
+  "global": {
+    "swap_attach": [[116, 313]],
+    "reason": "attach 116(Major Base - Northeast Mistwood) 与 attach 313(Minor Base - Third Church) 同在 X45/Z38，参数给的 posZ 是 +97 / -9（116 在北），游戏里却是 313 在北。两者在 321/521 个种子里成对出现（m01168），故按 attachId 全局换位。真正落点应由 attachPointEntityId 决定，等后续解 msb 再替换这条补丁。"
+  }
+}

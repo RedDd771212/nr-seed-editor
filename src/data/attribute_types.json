@@ -1,0 +1,25 @@
+{
+  "schema": "nr-map-seed/attribute-types",
+  "version": 1,
+  "source": "SB_MainMenu_02_0 图集里 12 个 74×74 小图标（MENU_FL_40141..40173）；主人 m00403 口授（2026-11-09）",
+  "fieldDoc": {
+    "index": "图集 sprite 顺序号（0-11），主人报分类时用的编号",
+    "icon": "assets/icon/attr 下的图标文件名（不含 .png）",
+    "name": "属性名；空串 = 用不到",
+    "used": "是否在编辑器里作为属性选项使用"
+  },
+  "types": [
+    { "index": 0,  "icon": "MENU_FL_40141", "name": "",       "used": false },
+    { "index": 1,  "icon": "MENU_FL_40142", "name": "咒死属性", "used": true },
+    { "index": 2,  "icon": "MENU_FL_40143", "name": "",       "used": false },
+    { "index": 3,  "icon": "MENU_FL_40144", "name": "",       "used": false },
+    { "index": 4,  "icon": "MENU_FL_40145", "name": "神圣",   "used": true },
+    { "index": 5,  "icon": "MENU_FL_40146", "name": "魔力",   "used": true },
+    { "index": 6,  "icon": "MENU_FL_40147", "name": "冻伤",   "used": true },
+    { "index": 7,  "icon": "MENU_FL_40148", "name": "火焰",   "used": true },
+    { "index": 8,  "icon": "MENU_FL_40150", "name": "雷电",   "used": true },
+    { "index": 9,  "icon": "MENU_FL_40151", "name": "",       "used": false },
+    { "index": 10, "icon": "MENU_FL_40172", "name": "毒",     "used": true },
+    { "index": 11, "icon": "MENU_FL_40173", "name": "出血",   "used": true }
+  ]
+}

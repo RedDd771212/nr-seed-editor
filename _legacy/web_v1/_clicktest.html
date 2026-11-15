@@ -1,0 +1,26 @@
+﻿<!doctype html>
+<meta charset="utf-8">
+<title>click test</title>
+<style>body{background:#111;color:#0f0;font:14px monospace;margin:0}iframe{width:1500px;height:900px;border:0;display:block}pre{position:fixed;right:8px;top:8px;background:#000c;padding:8px;max-width:520px;white-space:pre-wrap}</style>
+<iframe id="f"></iframe>
+<pre id="log">loading…</pre>
+<script>
+const log = (s) => { document.getElementById('log').textContent += '\n' + s; };
+const f = document.getElementById('f');
+f.src = '/' + location.search;
+f.onload = () => {
+  setTimeout(() => {
+    const d = f.contentDocument, w = f.contentWindow;
+    try {
+      const picks = d.querySelectorAll('.pick');
+      log('picks=' + picks.length);
+      if (picks.length > 1) picks[1].click();
+      setTimeout(() => {
+        log('panel=' + (d.getElementById('infoBody').textContent || '').replace(/\s+/g, ' ').slice(0, 160));
+        log('on=' + [...d.querySelectorAll('.pick.on')].map(e => e.dataset.i).join(','));
+      }, 800);
+    } catch (e) { log('ERR ' + e.message); }
+  }, 6000);
+};
+</script>
+

@@ -1,0 +1,40 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>click test</title>
+<style>
+  body { margin: 0; background: #111; color: #9f9; font: 13px/1.4 monospace; }
+  #log { position: fixed; top: 0; right: 0; width: 420px; padding: 8px; background: #000c; z-index: 9; white-space: pre-wrap; }
+  #f { position: absolute; left: 0; top: 0; width: 1100px; height: 930px; border: 0; }
+</style>
+<div id="log">loading…</div>
+<iframe id="f"></iframe>
+<script>
+const q = new URLSearchParams(location.search);
+const px = +(q.get('px') || 0), py = +(q.get('py') || 0);
+const f = document.getElementById('f');
+f.src = '/' + location.search;
+const log = (...a) => document.getElementById('log').textContent += '\n' + a.join(' ');
+
+f.onload = () => setTimeout(() => {
+  try {
+    const d = f.contentDocument;
+    const cv = d.getElementById('map');
+    const r = cv.getBoundingClientRect();
+    const cx = r.left + px * r.width / cv.width;
+    const cy = r.top + py * r.height / cv.height;
+    log('canvas', Math.round(r.width), 'click at', Math.round(cx), Math.round(cy));
+    cv.dispatchEvent(new MouseEvent('click', {
+      bubbles: true, clientX: cx, clientY: cy,
+    }));
+    setTimeout(() => {
+      const panel = d.getElementById('infoBody')?.innerText || '';
+      const picks = d.querySelectorAll('#picker .pick').length;
+      const label = d.getElementById('pickLabel')?.textContent || '';
+      log('picks=' + picks, 'label=' + label);
+      log('panel=' + panel.replace(/\s+/g, ' ').slice(0, 160));
+      const chips = d.querySelectorAll('#chips .chip').length;
+      log('chips=' + chips);
+    }, 1200);
+  } catch (e) { log('ERR ' + e); }
+}, 2500);
+</script>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>NR 地图种子编辑器</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <span class="logo">NR 种子</span>
+  <input id="binPath" placeholder="bin 文件或它所在的文件夹">
+  <button id="btnOpen">打开</button>
+  <select id="mapSel" title="地图（只换底图，坐标不变）"></select>
+  <select id="bossSel"><option>— 先打开 bin —</option></select>
+  <button id="btnDraft">新建草稿</button>
+  <span class="spacer"></span>
+  <span id="outLabel" class="muted">写回同一个 bin</span>
+  <button id="btnWrite" class="primary" disabled>写回</button>
+</header>
+
+<main>
+  <section id="mapWrap">
+    <div id="mapBox">
+      <canvas id="map" width="1536" height="1536"></canvas>
+      <canvas id="hl" width="1536" height="1536"></canvas>
+    </div>
+    <div id="mapHint">点地图上的位置 → 下面选建筑 · 点建筑图标 → 看右边信息</div>
+  </section>
+
+  <aside>
+    <div class="card" id="cardInfo">
+      <h3>选中 <span id="infoTag" class="muted"></span></h3>
+      <div id="infoBody" class="muted">点一下地图</div>
+    </div>
+
+    <div class="card" id="cardIssues">
+      <h3>校验</h3>
+      <ul id="issueList"><li class="muted">—</li></ul>
+    </div>
+
+    <div class="card" id="cardArea" hidden>
+      <h3>缩圈 / 夜晚 BOSS</h3>
+      <div id="areaCur" class="muted">—</div>
+      <div id="areaSel"></div>
+    </div>
+
+    <div class="card" id="cardEvents" hidden>
+      <h3>事件 / flag</h3>
+      <div id="eventList"></div>
+    </div>
+
+    <div class="card" id="cardTests" hidden>
+      <h3>eventFlag 测试记录 <span class="muted" id="testCount"></span></h3>
+      <div id="testList" class="muted">—</div>
+    </div>
+
+    <div class="card" id="cardResult" hidden>
+      <h3>写回结果</h3>
+      <div id="resultBody"></div>
+    </div>
+  </aside>
+</main>
+
+<footer id="dock">
+  <div class="dockRow" id="chipRow" hidden>
+    <span class="dockLabel">草稿</span>
+    <div id="chips"></div>
+    <span id="draftMeta" class="muted"></span>
+    <div id="dockBtns">
+      <button id="btnUndo" title="撤销上一步（Ctrl+Z）">↶ 撤销</button>
+      <button id="btnExport" title="把这次改动导出成 JSON（可复现）">⤓ 导出 JSON</button>
+    </div>
+  </div>
+  <div class="dockRow" id="pickRow" hidden>
+    <span class="dockLabel" id="pickLabel">这一格</span>
+    <div id="picker"></div>
+  </div>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>
+

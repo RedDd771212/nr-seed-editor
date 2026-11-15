@@ -1,0 +1,34 @@
+# ---------- 运行时中间产物（解包 / 快照 / 截图，随时可清） ----------
+work/
+
+# ---------- 发布包与视频（走 Releases，不进仓库） ----------
+dist/
+*.zip
+*.mp4
+
+# ---------- 游戏解包素材：体积大且涉及版权，不进仓库 ----------
+# 说明见 README「素材说明」一节：自己从游戏里解出来再生成
+assets/map/*.png
+assets/icon/
+# 生成出来的中间图
+assets/*.png
+!assets/.gitkeep
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ---------- 编辑器 / 系统 ----------
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# ---------- 本地临时 ----------
+*.log
+*.tmp
+_bgm_loud_backup.mp4

@@ -1,0 +1,161 @@
+{
+  "bin": "D:\\nrtest\\base.bin",
+  "map": "mountaintop",
+  "savedAt": "2026-11-12 13:59:12",
+  "items": [
+    {
+      "id": 120,
+      "name": "Major Base - Stormhill North of Gate",
+      "orig": [
+        10942.792,
+        9820.041
+      ],
+      "world": [
+        10942.792,
+        9820.041
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 753,
+      "name": "Field Boss - ",
+      "orig": [
+        10995.819,
+        9908.419
+      ],
+      "world": [
+        10995.819,
+        9908.419
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 306,
+      "name": "Minor Base - Above Stormhill Tunnel Entrance",
+      "orig": [
+        11061.218,
+        9873.068
+      ],
+      "world": [
+        11061.218,
+        9873.068
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 106,
+      "name": "Major Base - Alexander Spot",
+      "orig": [
+        11154.898,
+        10021.542
+      ],
+      "world": [
+        11154.898,
+        10021.542
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 107,
+      "name": "Major Base - Northeast Stormhill",
+      "orig": [
+        11130.152,
+        10217.74
+      ],
+      "world": [
+        11130.152,
+        10217.74
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 604,
+      "name": "Evergaol - North Ravine",
+      "orig": [
+        11243.275,
+        10191.227
+      ],
+      "world": [
+        11243.275,
+        10191.227
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 754,
+      "name": "Field Boss - ",
+      "orig": [
+        10912.744,
+        10198.297
+      ],
+      "world": [
+        10912.744,
+        10198.297
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 758,
+      "name": "Field Boss - ",
+      "orig": [
+        11013.494,
+        10116.99
+      ],
+      "world": [
+        11013.494,
+        10116.99
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 103,
+      "name": "Major Base - Northwest Stormhill",
+      "orig": [
+        10850,
+        10067
+      ],
+      "world": [
+        10850,
+        10067
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 302,
+      "name": "Minor Base - West of Warmaster's Shack",
+      "orig": [
+        10843.809,
+        9961.445
+      ],
+      "world": [
+        10843.809,
+        9961.445
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 601,
+      "name": "Evergaol - Northwest Edge",
+      "orig": [
+        10762.502,
+        10003.867
+      ],
+      "world": [
+        10762.502,
+        10003.867
+      ],
+      "moved": 0,
+      "deleted": true
+    }
+  ]
+}

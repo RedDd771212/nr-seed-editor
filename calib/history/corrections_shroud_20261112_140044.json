@@ -1,0 +1,161 @@
+{
+  "bin": "D:\\nrtest\\base.bin",
+  "map": "shroud",
+  "savedAt": "2026-11-12 14:00:44",
+  "items": [
+    {
+      "id": 190,
+      "name": "Castle - Castle",
+      "orig": [
+        11225.699996948242,
+        9662.659999847412
+      ],
+      "world": [
+        11225.699996948242,
+        9662.659999847412
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 756,
+      "name": "Castle - Rooftop Boss",
+      "orig": [
+        11183.179,
+        9696.313
+      ],
+      "world": [
+        11183.179,
+        9696.313
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 757,
+      "name": "Castle - Basement Boss",
+      "orig": [
+        11183.179,
+        9630.914
+      ],
+      "world": [
+        11183.179,
+        9630.914
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 300,
+      "name": "Minor Base - Far Southwest",
+      "orig": [
+        10826.134,
+        9402.9
+      ],
+      "world": [
+        10826.134,
+        9402.9
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 101,
+      "name": "Major Base - Groveside",
+      "orig": [
+        10933.954,
+        9491.277
+      ],
+      "world": [
+        10933.954,
+        9491.277
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 100,
+      "name": "Major Base - Gatefront",
+      "orig": [
+        10988,
+        9650
+      ],
+      "world": [
+        10988,
+        9650
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 301,
+      "name": "Minor Base - Stormhill South of Gate",
+      "orig": [
+        10808.458,
+        9652.124
+      ],
+      "world": [
+        10808.458,
+        9652.124
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 305,
+      "name": "Minor Base - Lake",
+      "orig": [
+        11197.319,
+        9411.738
+      ],
+      "world": [
+        11197.319,
+        9411.738
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 755,
+      "name": "Field Boss - ",
+      "orig": [
+        11195.552,
+        9365.781
+      ],
+      "world": [
+        11195.552,
+        9365.781
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 750,
+      "name": "Field Boss - ",
+      "orig": [
+        10973.279998779297,
+        9232.569999694824
+      ],
+      "world": [
+        10973.279998779297,
+        9232.569999694824
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 104,
+      "name": "Major Base - South Lake",
+      "orig": [
+        11107,
+        9295
+      ],
+      "world": [
+        11107,
+        9295
+      ],
+      "moved": 0,
+      "deleted": true
+    }
+  ]
+}

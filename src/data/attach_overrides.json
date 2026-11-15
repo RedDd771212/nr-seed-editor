@@ -1,0 +1,391 @@
+{
+  "source": "calib/corrections.json（主人人工校准，m05210 采纳）",
+  "note": "world 是画布上的世界坐标，只影响显示与摆点，不写回 bin",
+  "points": {
+    "601": {
+      "world": [
+        10762.502,
+        10003.867
+      ],
+      "orig": [
+        10754.6,
+        10009.03
+      ],
+      "name": "Evergaol - Northwest Edge"
+    },
+    "754": {
+      "world": [
+        10912.744,
+        10198.297
+      ],
+      "orig": [
+        10896.55,
+        10171.36
+      ],
+      "name": "Field Boss -"
+    },
+    "758": {
+      "world": [
+        11013.494,
+        10116.99
+      ],
+      "orig": [
+        11011.19,
+        10131.15
+      ],
+      "name": "Field Boss -"
+    },
+    "301": {
+      "world": [
+        10808.458,
+        9652.124
+      ],
+      "orig": [
+        10814.0,
+        9644.0
+      ],
+      "name": "Minor Base - Stormhill South of Gate"
+    },
+    "604": {
+      "world": [
+        11243.275,
+        10191.227
+      ],
+      "orig": [
+        11235.79,
+        10194.09
+      ],
+      "name": "Evergaol - North Ravine"
+    },
+    "107": {
+      "world": [
+        11130.152,
+        10217.74
+      ],
+      "orig": [
+        11112.0,
+        10223.0
+      ],
+      "name": "Major Base - Northeast Stormhill"
+    },
+    "756": {
+      "world": [
+        11183.179,
+        9696.313
+      ],
+      "orig": [
+        11173.57,
+        9662.69
+      ],
+      "name": "Castle - Rooftop Boss"
+    },
+    "757": {
+      "world": [
+        11183.179,
+        9630.914
+      ],
+      "orig": [
+        11173.57,
+        9662.69
+      ],
+      "name": "Castle - Basement Boss"
+    },
+    "302": {
+      "world": [
+        10843.809,
+        9961.445
+      ],
+      "orig": [
+        10832.0,
+        9954.46
+      ],
+      "name": "Minor Base - West of Warmaster's Shack"
+    },
+    "753": {
+      "world": [
+        10995.819,
+        9908.419
+      ],
+      "orig": [
+        10974.25,
+        9921.8
+      ],
+      "name": "Field Boss -"
+    },
+    "306": {
+      "world": [
+        11061.218,
+        9873.068
+      ],
+      "orig": [
+        11050.0,
+        9888.0
+      ],
+      "name": "Minor Base - Above Stormhill Tunnel Entrance"
+    },
+    "120": {
+      "world": [
+        10942.792,
+        9820.041
+      ],
+      "orig": [
+        10933.0,
+        9812.0
+      ],
+      "name": "Major Base - Stormhill North of Gate"
+    },
+    "300": {
+      "world": [
+        10826.134,
+        9402.9
+      ],
+      "orig": [
+        10806.0,
+        9406.0
+      ],
+      "name": "Minor Base - Far Southwest"
+    },
+    "101": {
+      "world": [
+        10933.954,
+        9491.277
+      ],
+      "orig": [
+        10925.0,
+        9493.0
+      ],
+      "name": "Major Base - Groveside"
+    },
+    "310": {
+      "world": [
+        11328.118,
+        10162.946
+      ],
+      "orig": [
+        11320.0,
+        10156.0
+      ],
+      "name": "Minor Base - Northeast of Saintsbridge"
+    },
+    "117": {
+      "world": [
+        11612.693,
+        10170.016
+      ],
+      "orig": [
+        11592.0,
+        10166.0
+      ],
+      "name": "Major Base - Summonwater"
+    },
+    "116": {
+      "world": [
+        11709.908,
+        9848.322
+      ],
+      "orig": [
+        11692.0,
+        9953.0
+      ],
+      "name": "Major Base - Northeast Mistwood"
+    },
+    "313": {
+      "world": [
+        11720.514,
+        9945.537
+      ],
+      "orig": [
+        11687.0,
+        9847.0
+      ],
+      "name": "Minor Base - Third Church"
+    },
+    "113": {
+      "world": [
+        11644.509,
+        9388.759
+      ],
+      "orig": [
+        11643.0,
+        9364.0
+      ],
+      "name": "Major Base - South Mistwood"
+    },
+    "114": {
+      "world": [
+        11678.092,
+        9528.396
+      ],
+      "orig": [
+        11652.0,
+        9532.0
+      ],
+      "name": "Major Base - Minor Erdtree"
+    },
+    "312": {
+      "world": [
+        11741.724,
+        9607.936
+      ],
+      "orig": [
+        11734.0,
+        9604.0
+      ],
+      "name": "Minor Base - Minor Erdtree"
+    },
+    "607": {
+      "world": [
+        11718.746,
+        9742.269
+      ],
+      "orig": [
+        11709.87,
+        9746.38
+      ],
+      "name": "Evergaol - East Edge"
+    },
+    "763": {
+      "world": [
+        11678.092,
+        9713.988
+      ],
+      "orig": [
+        11670.18,
+        9717.69
+      ],
+      "name": "Field Boss -"
+    },
+    "111": {
+      "world": [
+        11529.618,
+        9788.226
+      ],
+      "orig": [
+        11518.0,
+        9786.0
+      ],
+      "name": "Major Base - Northwest Mistwood"
+    },
+    "606": {
+      "world": [
+        11473.057,
+        9933.165
+      ],
+      "orig": [
+        11465.22,
+        9938.15
+      ],
+      "name": "Evergaol - East of Ravine"
+    },
+    "759": {
+      "world": [
+        11232.67,
+        9940.235
+      ],
+      "orig": [
+        11220.86,
+        9944.75
+      ],
+      "name": "Field Boss -"
+    },
+    "603": {
+      "world": [
+        11190.249,
+        9903.116
+      ],
+      "orig": [
+        11180.37,
+        9909.18
+      ],
+      "name": "Evergaol - West of Ravine"
+    },
+    "106": {
+      "world": [
+        11154.898,
+        10021.542
+      ],
+      "orig": [
+        11136.0,
+        10035.0
+      ],
+      "name": "Major Base - Alexander Spot"
+    },
+    "602": {
+      "world": [
+        11034.705,
+        9530.163
+      ],
+      "orig": [
+        11028.65,
+        9525.65
+      ],
+      "name": "Evergaol - Northwest of Lake"
+    },
+    "307": {
+      "world": [
+        11384.679,
+        9254.426
+      ],
+      "orig": [
+        11437.0,
+        9442.0
+      ],
+      "name": "Minor Base - Southeast of Lake"
+    },
+    "108": {
+      "world": [
+        11443.008,
+        9422.343
+      ],
+      "orig": [
+        11370.0,
+        9272.0
+      ],
+      "name": "Major Base - Waypoint Ruins"
+    },
+    "308": {
+      "world": [
+        11345.793,
+        9516.023
+      ],
+      "orig": [
+        11340.0,
+        9524.0
+      ],
+      "name": "Minor Base - East of Cavalry Bridge"
+    },
+    "605": {
+      "world": [
+        11458.916,
+        9312.755
+      ],
+      "orig": [
+        11449.3,
+        9317.45
+      ],
+      "name": "Evergaol - South Cliff"
+    },
+    "305": {
+      "world": [
+        11197.319,
+        9411.738
+      ],
+      "orig": [
+        11193.0,
+        9429.0
+      ],
+      "name": "Minor Base - Lake"
+    },
+    "755": {
+      "world": [
+        11195.552,
+        9365.781
+      ],
+      "orig": [
+        11193.0,
+        9429.0
+      ],
+      "name": "Field Boss -"
+    }
+  }
+}

@@ -1,0 +1,4346 @@
+{
+  "bin": "D:\\nrtest\\base.bin",
+  "savedAt": "2026-11-10 09:12:44",
+  "items": [
+    {
+      "id": 634,
+      "name": "Night Horde - ",
+      "orig": [
+        11190.990001678467,
+        9761.360000610352
+      ],
+      "world": [
+        9864.44,
+        10431.71
+      ],
+      "moved": 1486.305,
+      "deleted": true
+    },
+    {
+      "id": 601,
+      "name": "Evergaol - Northwest Edge",
+      "orig": [
+        10754.599998474121,
+        10009.029998779297
+      ],
+      "world": [
+        10762.502140391254,
+        10003.866501726121
+      ],
+      "moved": 9.44,
+      "deleted": false
+    },
+    {
+      "id": 754,
+      "name": "Field Boss - ",
+      "orig": [
+        10896.54999923706,
+        10171.360000610352
+      ],
+      "world": [
+        10912.743797468354,
+        10198.296881472957
+      ],
+      "moved": 31.43,
+      "deleted": false
+    },
+    {
+      "id": 758,
+      "name": "Field Boss - ",
+      "orig": [
+        11011.190002441406,
+        10131.14999961853
+      ],
+      "world": [
+        11013.494085155351,
+        10116.989631760644
+      ],
+      "moved": 14.347,
+      "deleted": false
+    },
+    {
+      "id": 625,
+      "name": "Night Horde - ",
+      "orig": [
+        10937.259998321533,
+        10128.370000839233
+      ],
+      "world": [
+        9824.44,
+        10431.71
+      ],
+      "moved": 1153.423,
+      "deleted": true
+    },
+    {
+      "id": 701,
+      "name": "",
+      "orig": [
+        10960.949996948242,
+        10077.779998779297
+      ],
+      "world": [
+        9784.44,
+        10431.71
+      ],
+      "moved": 1228.594,
+      "deleted": true
+    },
+    {
+      "id": 301,
+      "name": "Minor Base - Stormhill South of Gate",
+      "orig": [
+        10814,
+        9644
+      ],
+      "world": [
+        10808.45841196778,
+        9652.124269275027
+      ],
+      "moved": 9.834,
+      "deleted": false
+    },
+    {
+      "id": 351,
+      "name": "Starter Minor Base - Stormhill South of Gate",
+      "orig": [
+        10814,
+        9644
+      ],
+      "world": [
+        9744.44,
+        10431.71
+      ],
+      "moved": 1328.324,
+      "deleted": true
+    },
+    {
+      "id": 618,
+      "name": "Night Horde - ",
+      "orig": [
+        10772.949996948242,
+        9708.150001525879
+      ],
+      "world": [
+        9704.44,
+        10431.71
+      ],
+      "moved": 1290.447,
+      "deleted": true
+    },
+    {
+      "id": 604,
+      "name": "Evergaol - North Ravine",
+      "orig": [
+        11235.790000915527,
+        10194.08999633789
+      ],
+      "world": [
+        11243.275443037975,
+        10191.226685845799
+      ],
+      "moved": 8.014,
+      "deleted": false
+    },
+    {
+      "id": 107,
+      "name": "Major Base - Northeast Stormhill",
+      "orig": [
+        11112,
+        10223
+      ],
+      "world": [
+        11130.152313003453,
+        10217.73991944764
+      ],
+      "moved": 18.899,
+      "deleted": false
+    },
+    {
+      "id": 756,
+      "name": "Castle - Rooftop Boss",
+      "orig": [
+        11173.569999694824,
+        9662.689998626709
+      ],
+      "world": [
+        11183.178780207136,
+        9696.312991944764
+      ],
+      "moved": 34.969,
+      "deleted": false
+    },
+    {
+      "id": 757,
+      "name": "Castle - Basement Boss",
+      "orig": [
+        11173.569999694824,
+        9662.689998626709
+      ],
+      "world": [
+        11183.178780207136,
+        9630.913682393555
+      ],
+      "moved": 33.197,
+      "deleted": false
+    },
+    {
+      "id": 636,
+      "name": "Night Horde - ",
+      "orig": [
+        11025.309997558594,
+        10221.699996948242
+      ],
+      "world": [
+        9664.44,
+        10431.71
+      ],
+      "moved": 1376.979,
+      "deleted": true
+    },
+    {
+      "id": 302,
+      "name": "Minor Base - West of Warmaster's Shack",
+      "orig": [
+        10832,
+        9954.459999084473
+      ],
+      "world": [
+        10843.809390103568,
+        9961.445327963174
+      ],
+      "moved": 13.721,
+      "deleted": false
+    },
+    {
+      "id": 352,
+      "name": "Starter Minor Base - West of Warmaster's Shack",
+      "orig": [
+        10832,
+        9954.459999084473
+      ],
+      "world": [
+        9624.44,
+        10431.71
+      ],
+      "moved": 1298.449,
+      "deleted": true
+    },
+    {
+      "id": 752,
+      "name": "Field Boss - ",
+      "orig": [
+        10767.309997558594,
+        9938.199996948242
+      ],
+      "world": [
+        9584.44,
+        10431.71
+      ],
+      "moved": 1281.692,
+      "deleted": true
+    },
+    {
+      "id": 502,
+      "name": "Night Boss - West Stormhill Graveyard",
+      "orig": [
+        10826,
+        9877
+      ],
+      "world": [
+        9864.44,
+        10391.71
+      ],
+      "moved": 1090.653,
+      "deleted": true
+    },
+    {
+      "id": 622,
+      "name": "Night Horde - ",
+      "orig": [
+        10777,
+        9905.130001068115
+      ],
+      "world": [
+        9824.44,
+        10391.71
+      ],
+      "moved": 1069.64,
+      "deleted": true
+    },
+    {
+      "id": 521,
+      "name": "Event - Gnoster, West Stormhill Graveyard",
+      "orig": [
+        10826,
+        9877
+      ],
+      "world": [
+        9784.44,
+        10391.71
+      ],
+      "moved": 1161.798,
+      "deleted": true
+    },
+    {
+      "id": 541,
+      "name": "Event - Morgott, West Stormhill Graveyard",
+      "orig": [
+        10826,
+        9877
+      ],
+      "world": [
+        9744.44,
+        10391.71
+      ],
+      "moved": 1197.789,
+      "deleted": true
+    },
+    {
+      "id": 561,
+      "name": "Event - Maris, West Stormhill Graveyard",
+      "orig": [
+        10826,
+        9877
+      ],
+      "world": [
+        9704.44,
+        10391.71
+      ],
+      "moved": 1234.027,
+      "deleted": true
+    },
+    {
+      "id": 581,
+      "name": "Event - Libra, West Stormhill Graveyard",
+      "orig": [
+        10826,
+        9877
+      ],
+      "world": [
+        9664.44,
+        10391.71
+      ],
+      "moved": 1270.491,
+      "deleted": true
+    },
+    {
+      "id": 801,
+      "name": "",
+      "orig": [
+        10826,
+        9877
+      ],
+      "world": [
+        9624.44,
+        10391.71
+      ],
+      "moved": 1307.162,
+      "deleted": true
+    },
+    {
+      "id": 621,
+      "name": "Night Horde - ",
+      "orig": [
+        10815.930000305176,
+        9811.270000457764
+      ],
+      "world": [
+        9584.44,
+        10391.71
+      ],
+      "moved": 1361.425,
+      "deleted": true
+    },
+    {
+      "id": 751,
+      "name": "Field Boss - ",
+      "orig": [
+        10833.770000457764,
+        9778.470001220703
+      ],
+      "world": [
+        9864.44,
+        10351.71
+      ],
+      "moved": 1126.146,
+      "deleted": true
+    },
+    {
+      "id": 623,
+      "name": "Night Horde - ",
+      "orig": [
+        10914.330001831055,
+        9892.930000305176
+      ],
+      "world": [
+        9824.44,
+        10351.71
+      ],
+      "moved": 1182.514,
+      "deleted": true
+    },
+    {
+      "id": 753,
+      "name": "Field Boss - ",
+      "orig": [
+        10974.25,
+        9921.800003051758
+      ],
+      "world": [
+        10995.818596087458,
+        9908.418860759493
+      ],
+      "moved": 25.382,
+      "deleted": false
+    },
+    {
+      "id": 306,
+      "name": "Minor Base - Above Stormhill Tunnel Entrance",
+      "orig": [
+        11050,
+        9888
+      ],
+      "world": [
+        11061.217905638665,
+        9873.067882623705
+      ],
+      "moved": 18.676,
+      "deleted": false
+    },
+    {
+      "id": 356,
+      "name": "Starter Minor Base - Above Stormhill Tunnel Entrance",
+      "orig": [
+        11050,
+        9888
+      ],
+      "world": [
+        9784.44,
+        10351.71
+      ],
+      "moved": 1347.839,
+      "deleted": true
+    },
+    {
+      "id": 120,
+      "name": "Major Base - Stormhill North of Gate",
+      "orig": [
+        10933,
+        9812
+      ],
+      "world": [
+        10942.792128883775,
+        9820.041415420023
+      ],
+      "moved": 12.671,
+      "deleted": false
+    },
+    {
+      "id": 123,
+      "name": "Starter Major Base - Stormhill North of Gate",
+      "orig": [
+        10933,
+        9812
+      ],
+      "world": [
+        9744.44,
+        10351.71
+      ],
+      "moved": 1305.359,
+      "deleted": true
+    },
+    {
+      "id": 124,
+      "name": "Starter Major Base - Stormhill North of Gate Alt",
+      "orig": [
+        10933,
+        9812
+      ],
+      "world": [
+        9704.44,
+        10351.71
+      ],
+      "moved": 1341.882,
+      "deleted": true
+    },
+    {
+      "id": 506,
+      "name": "Night Boss - Northwest of Castle",
+      "orig": [
+        11052,
+        9794
+      ],
+      "world": [
+        9664.44,
+        10351.71
+      ],
+      "moved": 1495.447,
+      "deleted": true
+    },
+    {
+      "id": 525,
+      "name": "Event - Gnoster, Northwest of Castle",
+      "orig": [
+        11052,
+        9794
+      ],
+      "world": [
+        9624.44,
+        10351.71
+      ],
+      "moved": 1532.634,
+      "deleted": true
+    },
+    {
+      "id": 545,
+      "name": "Event - Morgott, Northwest of Castle",
+      "orig": [
+        11052,
+        9794
+      ],
+      "world": [
+        9584.44,
+        10351.71
+      ],
+      "moved": 1569.959,
+      "deleted": true
+    },
+    {
+      "id": 565,
+      "name": "Event - Maris, Northwest of Castle",
+      "orig": [
+        11052,
+        9794
+      ],
+      "world": [
+        9864.44,
+        10311.71
+      ],
+      "moved": 1295.501,
+      "deleted": true
+    },
+    {
+      "id": 585,
+      "name": "Event - Libra, Northwest of Castle",
+      "orig": [
+        11052,
+        9794
+      ],
+      "world": [
+        9824.44,
+        10311.71
+      ],
+      "moved": 1332.264,
+      "deleted": true
+    },
+    {
+      "id": 805,
+      "name": "",
+      "orig": [
+        11052,
+        9794
+      ],
+      "world": [
+        9784.44,
+        10311.71
+      ],
+      "moved": 1369.209,
+      "deleted": true
+    },
+    {
+      "id": 619,
+      "name": "Night Horde - ",
+      "orig": [
+        10901.340000152588,
+        9646.810001373291
+      ],
+      "world": [
+        9744.44,
+        10311.71
+      ],
+      "moved": 1334.357,
+      "deleted": true
+    },
+    {
+      "id": 620,
+      "name": "Night Horde - ",
+      "orig": [
+        10857.579999923706,
+        9562.130001068115
+      ],
+      "world": [
+        9704.44,
+        10311.71
+      ],
+      "moved": 1375.355,
+      "deleted": true
+    },
+    {
+      "id": 300,
+      "name": "Minor Base - Far Southwest",
+      "orig": [
+        10806,
+        9406
+      ],
+      "world": [
+        10826.133901035673,
+        9402.89987341772
+      ],
+      "moved": 20.371,
+      "deleted": false
+    },
+    {
+      "id": 350,
+      "name": "Starter Minor Base - Far Southwest",
+      "orig": [
+        10806,
+        9406
+      ],
+      "world": [
+        9664.44,
+        10311.71
+      ],
+      "moved": 1457.213,
+      "deleted": true
+    },
+    {
+      "id": 616,
+      "name": "Night Horde - ",
+      "orig": [
+        10835.70000076294,
+        9326.379999160767
+      ],
+      "world": [
+        9624.44,
+        10311.71
+      ],
+      "moved": 1561.418,
+      "deleted": true
+    },
+    {
+      "id": 500,
+      "name": "Night Boss - Southwest Corner",
+      "orig": [
+        10906,
+        9340
+      ],
+      "world": [
+        9584.44,
+        10311.71
+      ],
+      "moved": 1640.348,
+      "deleted": true
+    },
+    {
+      "id": 520,
+      "name": "Event - Gnoster, Southwest Corner",
+      "orig": [
+        10906,
+        9340
+      ],
+      "world": [
+        9864.44,
+        10271.71
+      ],
+      "moved": 1397.473,
+      "deleted": true
+    },
+    {
+      "id": 540,
+      "name": "Event - Morgott, Southwest Corner",
+      "orig": [
+        10906,
+        9340
+      ],
+      "world": [
+        9824.44,
+        10271.71
+      ],
+      "moved": 1427.535,
+      "deleted": true
+    },
+    {
+      "id": 560,
+      "name": "Event - Maris, Southwest Corner",
+      "orig": [
+        10906,
+        9340
+      ],
+      "world": [
+        9784.44,
+        10271.71
+      ],
+      "moved": 1458.074,
+      "deleted": true
+    },
+    {
+      "id": 580,
+      "name": "Event - Libra, Southwest Corner",
+      "orig": [
+        10906,
+        9340
+      ],
+      "world": [
+        9744.44,
+        10271.71
+      ],
+      "moved": 1489.062,
+      "deleted": true
+    },
+    {
+      "id": 800,
+      "name": "",
+      "orig": [
+        10906,
+        9340
+      ],
+      "world": [
+        9704.44,
+        10271.71
+      ],
+      "moved": 1520.47,
+      "deleted": true
+    },
+    {
+      "id": 700,
+      "name": "",
+      "orig": [
+        10937.509998321533,
+        9419.779998779297
+      ],
+      "world": [
+        9664.44,
+        10271.71
+      ],
+      "moved": 1531.826,
+      "deleted": true
+    },
+    {
+      "id": 710,
+      "name": "Event - Scale-Bearing Merchant, Southwest Corner",
+      "orig": [
+        10936.584999084473,
+        9415.430000305176
+      ],
+      "world": [
+        9624.44,
+        10271.71
+      ],
+      "moved": 1566.825,
+      "deleted": true
+    },
+    {
+      "id": 101,
+      "name": "Major Base - Groveside",
+      "orig": [
+        10925,
+        9493
+      ],
+      "world": [
+        10933.954384349829,
+        9491.277318757191
+      ],
+      "moved": 9.119,
+      "deleted": false
+    },
+    {
+      "id": 121,
+      "name": "Starter Major Base - Groveside",
+      "orig": [
+        10925,
+        9493
+      ],
+      "world": [
+        9584.44,
+        10271.71
+      ],
+      "moved": 1550.319,
+      "deleted": true
+    },
+    {
+      "id": 617,
+      "name": "Night Horde - ",
+      "orig": [
+        10951.959999084473,
+        9228.580001831055
+      ],
+      "world": [
+        9864.44,
+        10231.71
+      ],
+      "moved": 1479.517,
+      "deleted": true
+    },
+    {
+      "id": 122,
+      "name": "Starter Major Base - Gatefront",
+      "orig": [
+        10988,
+        9650
+      ],
+      "world": [
+        9824.44,
+        10231.71
+      ],
+      "moved": 1300.868,
+      "deleted": true
+    },
+    {
+      "id": 125,
+      "name": "Starter Major Base - Waypoint Ruins",
+      "orig": [
+        11437,
+        9442
+      ],
+      "world": [
+        9784.44,
+        10231.71
+      ],
+      "moved": 1831.556,
+      "deleted": true
+    },
+    {
+      "id": 126,
+      "name": "Starter Major Base - Waypoint Ruins Alt",
+      "orig": [
+        11437,
+        9442
+      ],
+      "world": [
+        9744.44,
+        10231.71
+      ],
+      "moved": 1867.726,
+      "deleted": true
+    },
+    {
+      "id": 127,
+      "name": "Starter Major Base - Summonwater Approach",
+      "orig": [
+        11465,
+        10048
+      ],
+      "world": [
+        9704.44,
+        10231.71
+      ],
+      "moved": 1770.119,
+      "deleted": true
+    },
+    {
+      "id": 128,
+      "name": "Starter Major Base - Minor Erdtree",
+      "orig": [
+        11652,
+        9532
+      ],
+      "world": [
+        9664.44,
+        10231.71
+      ],
+      "moved": 2107.128,
+      "deleted": true
+    },
+    {
+      "id": 129,
+      "name": "Starter Major Base - Northwest Mistwood",
+      "orig": [
+        11518,
+        9786
+      ],
+      "world": [
+        9624.44,
+        10231.71
+      ],
+      "moved": 1945.309,
+      "deleted": true
+    },
+    {
+      "id": 357,
+      "name": "Starter Minor Base - Southeast of Lake",
+      "orig": [
+        11370,
+        9272
+      ],
+      "world": [
+        9584.44,
+        10231.71
+      ],
+      "moved": 2027.133,
+      "deleted": true
+    },
+    {
+      "id": 358,
+      "name": "Starter Minor Base - East of Cavalry Bridge",
+      "orig": [
+        11340,
+        9524
+      ],
+      "world": [
+        9864.44,
+        10191.71
+      ],
+      "moved": 1619.603,
+      "deleted": true
+    },
+    {
+      "id": 360,
+      "name": "Starter Minor Base - Northeast of Saintsbridge",
+      "orig": [
+        11320,
+        10156
+      ],
+      "world": [
+        9824.44,
+        10191.71
+      ],
+      "moved": 1495.986,
+      "deleted": true
+    },
+    {
+      "id": 362,
+      "name": "Starter Minor Base - Minor Erdtree",
+      "orig": [
+        11734,
+        9604
+      ],
+      "world": [
+        9784.44,
+        10191.71
+      ],
+      "moved": 2036.219,
+      "deleted": true
+    },
+    {
+      "id": 364,
+      "name": "Starter Minor Base - Below Summonwater Hawk",
+      "orig": [
+        11562,
+        9937
+      ],
+      "world": [
+        9744.44,
+        10191.71
+      ],
+      "moved": 1835.321,
+      "deleted": true
+    },
+    {
+      "id": 503,
+      "name": "Night Boss - South Lake",
+      "orig": [
+        11224,
+        9315
+      ],
+      "world": [
+        9704.44,
+        10191.71
+      ],
+      "moved": 1754.333,
+      "deleted": true
+    },
+    {
+      "id": 504,
+      "name": "Night Boss - Northwest Lake",
+      "orig": [
+        11061,
+        9432
+      ],
+      "world": [
+        9664.44,
+        10191.71
+      ],
+      "moved": 1589.824,
+      "deleted": true
+    },
+    {
+      "id": 505,
+      "name": "Night Boss - South of Castle",
+      "orig": [
+        11153,
+        9542
+      ],
+      "world": [
+        9624.44,
+        10191.71
+      ],
+      "moved": 1660.909,
+      "deleted": true
+    },
+    {
+      "id": 507,
+      "name": "Night Boss - Northeast of Lake",
+      "orig": [
+        11339,
+        9664
+      ],
+      "world": [
+        9584.44,
+        10191.71
+      ],
+      "moved": 1832.2,
+      "deleted": true
+    },
+    {
+      "id": 509,
+      "name": "Night Boss - East of Saintsbridge",
+      "orig": [
+        11358,
+        10090
+      ],
+      "world": [
+        9864.44,
+        10151.71
+      ],
+      "moved": 1494.834,
+      "deleted": true
+    },
+    {
+      "id": 510,
+      "name": "Night Boss - Noklateo Entrance",
+      "orig": [
+        11172.380001068115,
+        9641.319999694824
+      ],
+      "world": [
+        9824.44,
+        10151.71
+      ],
+      "moved": 1441.333,
+      "deleted": true
+    },
+    {
+      "id": 511,
+      "name": "Night Boss - Northeast Corner",
+      "orig": [
+        11730,
+        10130
+      ],
+      "world": [
+        9784.44,
+        10151.71
+      ],
+      "moved": 1945.681,
+      "deleted": true
+    },
+    {
+      "id": 512,
+      "name": "Night Boss - Southwest Mistwood",
+      "orig": [
+        11560,
+        9440
+      ],
+      "world": [
+        9744.44,
+        10151.71
+      ],
+      "moved": 1950.074,
+      "deleted": true
+    },
+    {
+      "id": 513,
+      "name": "Night Boss - Northwest Mistwood Pond",
+      "orig": [
+        11557.529998779297,
+        9696.330001831055
+      ],
+      "world": [
+        9704.44,
+        10151.71
+      ],
+      "moved": 1908.223,
+      "deleted": true
+    },
+    {
+      "id": 514,
+      "name": "Night Boss - Southeast Rotted Woods",
+      "orig": [
+        11440.900001525879,
+        9435.349998474121
+      ],
+      "world": [
+        9664.44,
+        10151.71
+      ],
+      "moved": 1915.459,
+      "deleted": true
+    },
+    {
+      "id": 515,
+      "name": "Night Boss - Northwest Rotted Woods",
+      "orig": [
+        11617.469999313354,
+        9653.869998931885
+      ],
+      "world": [
+        9624.44,
+        10151.71
+      ],
+      "moved": 2054.267,
+      "deleted": true
+    },
+    {
+      "id": 516,
+      "name": "Night Boss - Southeast Mountaintop",
+      "orig": [
+        11109.459999084473,
+        9891.819999694824
+      ],
+      "world": [
+        9584.44,
+        10151.71
+      ],
+      "moved": 1547.006,
+      "deleted": true
+    },
+    {
+      "id": 517,
+      "name": "Night Boss - North of Crater",
+      "orig": [
+        11224.98999786377,
+        10208.707000732422
+      ],
+      "world": [
+        9864.44,
+        10111.71
+      ],
+      "moved": 1364.003,
+      "deleted": true
+    },
+    {
+      "id": 518,
+      "name": "Night Boss - Northwest Corner",
+      "orig": [
+        10825.880001068115,
+        10173.659999847412
+      ],
+      "world": [
+        9824.44,
+        10111.71
+      ],
+      "moved": 1003.354,
+      "deleted": true
+    },
+    {
+      "id": 519,
+      "name": "Night Boss - East of Noklateo Entrance",
+      "orig": [
+        11339,
+        9664
+      ],
+      "world": [
+        9784.44,
+        10111.71
+      ],
+      "moved": 1617.746,
+      "deleted": true
+    },
+    {
+      "id": 522,
+      "name": "Event - Gnoster, Southeast Lake",
+      "orig": [
+        11224,
+        9315
+      ],
+      "world": [
+        9744.44,
+        10111.71
+      ],
+      "moved": 1680.43,
+      "deleted": true
+    },
+    {
+      "id": 523,
+      "name": "Event - Gnoster, Northwest Lake",
+      "orig": [
+        11061,
+        9432
+      ],
+      "world": [
+        9704.44,
+        10111.71
+      ],
+      "moved": 1517.32,
+      "deleted": true
+    },
+    {
+      "id": 524,
+      "name": "Event - Gnoster, South of Castle",
+      "orig": [
+        11153,
+        9542
+      ],
+      "world": [
+        9664.44,
+        10111.71
+      ],
+      "moved": 1593.857,
+      "deleted": true
+    },
+    {
+      "id": 526,
+      "name": "Event - Gnoster, Castle Front",
+      "orig": [
+        11339,
+        9664
+      ],
+      "world": [
+        9624.44,
+        10111.71
+      ],
+      "moved": 1772.05,
+      "deleted": true
+    },
+    {
+      "id": 527,
+      "name": "Event - Gnoster, East of Saintsbridge",
+      "orig": [
+        11358,
+        10090
+      ],
+      "world": [
+        9584.44,
+        10111.71
+      ],
+      "moved": 1773.693,
+      "deleted": true
+    },
+    {
+      "id": 528,
+      "name": "Event - Gnoster, Northeast Corner",
+      "orig": [
+        11730,
+        10130
+      ],
+      "world": [
+        9864.44,
+        10071.71
+      ],
+      "moved": 1866.47,
+      "deleted": true
+    },
+    {
+      "id": 529,
+      "name": "Event - Gnoster, Southwest Mistwood",
+      "orig": [
+        11560,
+        9440
+      ],
+      "world": [
+        9824.44,
+        10071.71
+      ],
+      "moved": 1846.95,
+      "deleted": true
+    },
+    {
+      "id": 530,
+      "name": "Event - Gnoster, Northwest Mistwood",
+      "orig": [
+        11557.529998779297,
+        9696.330001831055
+      ],
+      "world": [
+        9784.44,
+        10071.71
+      ],
+      "moved": 1812.39,
+      "deleted": true
+    },
+    {
+      "id": 532,
+      "name": "Event - Gnoster, Northwest Rotted Woods",
+      "orig": [
+        11617.469999313354,
+        9653.869998931885
+      ],
+      "world": [
+        9744.44,
+        10071.71
+      ],
+      "moved": 1919.071,
+      "deleted": true
+    },
+    {
+      "id": 533,
+      "name": "Event - Gnoster, Southeast Mountaintop",
+      "orig": [
+        11109.459999084473,
+        9891.819999694824
+      ],
+      "world": [
+        9704.44,
+        10071.71
+      ],
+      "moved": 1416.489,
+      "deleted": true
+    },
+    {
+      "id": 534,
+      "name": "Event - Gnoster, North of Crater",
+      "orig": [
+        11224.98999786377,
+        10208.707000732422
+      ],
+      "world": [
+        9664.44,
+        10071.71
+      ],
+      "moved": 1566.552,
+      "deleted": true
+    },
+    {
+      "id": 535,
+      "name": "Event - Gnoster, East of Noklateo Entrance",
+      "orig": [
+        11339,
+        9664
+      ],
+      "world": [
+        9624.44,
+        10071.71
+      ],
+      "moved": 1762.369,
+      "deleted": true
+    },
+    {
+      "id": 536,
+      "name": "Event - Gnoster, Noklateo Entrance",
+      "orig": [
+        11172.380001068115,
+        9641.319999694824
+      ],
+      "world": [
+        9584.44,
+        10071.71
+      ],
+      "moved": 1645.232,
+      "deleted": true
+    },
+    {
+      "id": 542,
+      "name": "Event - Morgott, Southeast Lake",
+      "orig": [
+        11224,
+        9315
+      ],
+      "world": [
+        9864.44,
+        10031.71
+      ],
+      "moved": 1536.905,
+      "deleted": true
+    },
+    {
+      "id": 543,
+      "name": "Event - Morgott, Northwest Lake",
+      "orig": [
+        11061,
+        9432
+      ],
+      "world": [
+        9824.44,
+        10031.71
+      ],
+      "moved": 1374.312,
+      "deleted": true
+    },
+    {
+      "id": 544,
+      "name": "Event - Morgott, South of Castle",
+      "orig": [
+        11153,
+        9542
+      ],
+      "world": [
+        9784.44,
+        10031.71
+      ],
+      "moved": 1453.538,
+      "deleted": true
+    },
+    {
+      "id": 546,
+      "name": "Event - Morgott, Castle Front",
+      "orig": [
+        11339,
+        9664
+      ],
+      "world": [
+        9744.44,
+        10031.71
+      ],
+      "moved": 1636.408,
+      "deleted": true
+    },
+    {
+      "id": 547,
+      "name": "Event - Morgott, East of Saintsbridge",
+      "orig": [
+        11358,
+        10090
+      ],
+      "world": [
+        9704.44,
+        10031.71
+      ],
+      "moved": 1654.587,
+      "deleted": true
+    },
+    {
+      "id": 548,
+      "name": "Event - Morgott, Northeast Corner",
+      "orig": [
+        11730,
+        10130
+      ],
+      "world": [
+        9664.44,
+        10031.71
+      ],
+      "moved": 2067.897,
+      "deleted": true
+    },
+    {
+      "id": 549,
+      "name": "Event - Morgott, Southwest Mistwood",
+      "orig": [
+        11560,
+        9440
+      ],
+      "world": [
+        9624.44,
+        10031.71
+      ],
+      "moved": 2023.984,
+      "deleted": true
+    },
+    {
+      "id": 550,
+      "name": "Event - Morgott, Northwest Mistwood",
+      "orig": [
+        11557.529998779297,
+        9696.330001831055
+      ],
+      "world": [
+        9584.44,
+        10031.71
+      ],
+      "moved": 2001.39,
+      "deleted": true
+    },
+    {
+      "id": 551,
+      "name": "Event - Morgott, Southeast Rotted Woods",
+      "orig": [
+        11440.900001525879,
+        9435.349998474121
+      ],
+      "world": [
+        9864.44,
+        9991.71
+      ],
+      "moved": 1671.754,
+      "deleted": true
+    },
+    {
+      "id": 552,
+      "name": "Event - Morgott, Northwest Rotted Woods",
+      "orig": [
+        11617.469999313354,
+        9653.869998931885
+      ],
+      "world": [
+        9824.44,
+        9991.71
+      ],
+      "moved": 1824.58,
+      "deleted": true
+    },
+    {
+      "id": 553,
+      "name": "Event - Morgott, Southeast Mountaintop",
+      "orig": [
+        11109.459999084473,
+        9891.819999694824
+      ],
+      "world": [
+        9784.44,
+        9991.71
+      ],
+      "moved": 1328.78,
+      "deleted": true
+    },
+    {
+      "id": 554,
+      "name": "Event - Morgott, North of Crater",
+      "orig": [
+        11224.98999786377,
+        10208.707000732422
+      ],
+      "world": [
+        9744.44,
+        9991.71
+      ],
+      "moved": 1496.368,
+      "deleted": true
+    },
+    {
+      "id": 555,
+      "name": "Event - Morgott, East of Noklateo Entrance",
+      "orig": [
+        11339,
+        9664
+      ],
+      "world": [
+        9704.44,
+        9991.71
+      ],
+      "moved": 1667.087,
+      "deleted": true
+    },
+    {
+      "id": 556,
+      "name": "Event - Morgott, Noklateo Entrance",
+      "orig": [
+        11172.380001068115,
+        9641.319999694824
+      ],
+      "world": [
+        9664.44,
+        9991.71
+      ],
+      "moved": 1548.114,
+      "deleted": true
+    },
+    {
+      "id": 562,
+      "name": "Event - Maris, Southeast Lake",
+      "orig": [
+        11224,
+        9315
+      ],
+      "world": [
+        9624.44,
+        9991.71
+      ],
+      "moved": 1736.816,
+      "deleted": true
+    },
+    {
+      "id": 563,
+      "name": "Event - Maris, Northwest Lake",
+      "orig": [
+        11061,
+        9432
+      ],
+      "world": [
+        9584.44,
+        9991.71
+      ],
+      "moved": 1579.084,
+      "deleted": true
+    },
+    {
+      "id": 564,
+      "name": "Event - Maris, South of Castle",
+      "orig": [
+        11153,
+        9542
+      ],
+      "world": [
+        9864.44,
+        9951.71
+      ],
+      "moved": 1352.128,
+      "deleted": true
+    },
+    {
+      "id": 566,
+      "name": "Event - Maris, Castle Front",
+      "orig": [
+        11339,
+        9664
+      ],
+      "world": [
+        9824.44,
+        9951.71
+      ],
+      "moved": 1541.645,
+      "deleted": true
+    },
+    {
+      "id": 567,
+      "name": "Event - Maris, East of Saintsbridge",
+      "orig": [
+        11358,
+        10090
+      ],
+      "world": [
+        9784.44,
+        9951.71
+      ],
+      "moved": 1579.625,
+      "deleted": true
+    },
+    {
+      "id": 568,
+      "name": "Event - Maris, Northeast Corner",
+      "orig": [
+        11730,
+        10130
+      ],
+      "world": [
+        9744.44,
+        9951.71
+      ],
+      "moved": 1993.549,
+      "deleted": true
+    },
+    {
+      "id": 569,
+      "name": "Event - Maris, Southwest Mistwood",
+      "orig": [
+        11560,
+        9440
+      ],
+      "world": [
+        9704.44,
+        9951.71
+      ],
+      "moved": 1924.825,
+      "deleted": true
+    },
+    {
+      "id": 570,
+      "name": "Event - Maris, Northwest Mistwood",
+      "orig": [
+        11557.529998779297,
+        9696.330001831055
+      ],
+      "world": [
+        9664.44,
+        9951.71
+      ],
+      "moved": 1910.238,
+      "deleted": true
+    },
+    {
+      "id": 573,
+      "name": "Event - Maris, Southeast Mountaintop",
+      "orig": [
+        11109.459999084473,
+        9891.819999694824
+      ],
+      "world": [
+        9624.44,
+        9951.71
+      ],
+      "moved": 1486.227,
+      "deleted": true
+    },
+    {
+      "id": 574,
+      "name": "Event - Maris, North of Crater",
+      "orig": [
+        11224.98999786377,
+        10208.707000732422
+      ],
+      "world": [
+        9584.44,
+        9951.71
+      ],
+      "moved": 1660.558,
+      "deleted": true
+    },
+    {
+      "id": 576,
+      "name": "Event - Maris, East of Noklateo Entrance",
+      "orig": [
+        11339,
+        9664
+      ],
+      "world": [
+        9864.44,
+        9911.71
+      ],
+      "moved": 1495.222,
+      "deleted": true
+    },
+    {
+      "id": 577,
+      "name": "Event - Maris, Noklateo Entrance",
+      "orig": [
+        11172.380001068115,
+        9641.319999694824
+      ],
+      "world": [
+        9824.44,
+        9911.71
+      ],
+      "moved": 1374.792,
+      "deleted": true
+    },
+    {
+      "id": 582,
+      "name": "Event - Libra, Southeast Lake",
+      "orig": [
+        11224,
+        9315
+      ],
+      "world": [
+        9784.44,
+        9911.71
+      ],
+      "moved": 1558.331,
+      "deleted": true
+    },
+    {
+      "id": 583,
+      "name": "Event - Libra, Northwest Lake",
+      "orig": [
+        11061,
+        9432
+      ],
+      "world": [
+        9744.44,
+        9911.71
+      ],
+      "moved": 1401.232,
+      "deleted": true
+    },
+    {
+      "id": 584,
+      "name": "Event - Libra, South of Castle",
+      "orig": [
+        11153,
+        9542
+      ],
+      "world": [
+        9704.44,
+        9911.71
+      ],
+      "moved": 1494.996,
+      "deleted": true
+    },
+    {
+      "id": 586,
+      "name": "Event - Libra, Castle Front",
+      "orig": [
+        11339,
+        9664
+      ],
+      "world": [
+        9664.44,
+        9911.71
+      ],
+      "moved": 1692.782,
+      "deleted": true
+    },
+    {
+      "id": 587,
+      "name": "Event - Libra, East of Saintsbridge",
+      "orig": [
+        11358,
+        10090
+      ],
+      "world": [
+        9624.44,
+        9911.71
+      ],
+      "moved": 1742.704,
+      "deleted": true
+    },
+    {
+      "id": 588,
+      "name": "Event - Libra, Northeast Corner",
+      "orig": [
+        11730,
+        10130
+      ],
+      "world": [
+        9584.44,
+        9911.71
+      ],
+      "moved": 2156.636,
+      "deleted": true
+    },
+    {
+      "id": 589,
+      "name": "Event - Libra, Southwest Mistwood",
+      "orig": [
+        11560,
+        9440
+      ],
+      "world": [
+        9864.44,
+        9871.71
+      ],
+      "moved": 1749.656,
+      "deleted": true
+    },
+    {
+      "id": 590,
+      "name": "Event - Libra, Northwest Mistwood",
+      "orig": [
+        11557.529998779297,
+        9696.330001831055
+      ],
+      "world": [
+        9824.44,
+        9871.71
+      ],
+      "moved": 1741.941,
+      "deleted": true
+    },
+    {
+      "id": 591,
+      "name": "Event - Libra, Southeast Rotted Woods",
+      "orig": [
+        11440.900001525879,
+        9435.349998474121
+      ],
+      "world": [
+        9784.44,
+        9871.71
+      ],
+      "moved": 1712.971,
+      "deleted": true
+    },
+    {
+      "id": 592,
+      "name": "Event - Libra, Northwest Rotted Woods",
+      "orig": [
+        11617.469999313354,
+        9653.869998931885
+      ],
+      "world": [
+        9744.44,
+        9871.71
+      ],
+      "moved": 1885.655,
+      "deleted": true
+    },
+    {
+      "id": 593,
+      "name": "Event - Libra, Southeast Mountaintop",
+      "orig": [
+        11109.459999084473,
+        9891.819999694824
+      ],
+      "world": [
+        9704.44,
+        9871.71
+      ],
+      "moved": 1405.164,
+      "deleted": true
+    },
+    {
+      "id": 594,
+      "name": "Event - Libra, North of Crater",
+      "orig": [
+        11224.98999786377,
+        10208.707000732422
+      ],
+      "world": [
+        9664.44,
+        9871.71
+      ],
+      "moved": 1596.522,
+      "deleted": true
+    },
+    {
+      "id": 595,
+      "name": "Event - Libra, East of Noklateo Entrance",
+      "orig": [
+        11339,
+        9664
+      ],
+      "world": [
+        9624.44,
+        9871.71
+      ],
+      "moved": 1727.096,
+      "deleted": true
+    },
+    {
+      "id": 596,
+      "name": "Event - Libra, Noklateo Entrance",
+      "orig": [
+        11172.380001068115,
+        9641.319999694824
+      ],
+      "world": [
+        9584.44,
+        9871.71
+      ],
+      "moved": 1604.566,
+      "deleted": true
+    },
+    {
+      "id": 615,
+      "name": "Night Horde - ",
+      "orig": [
+        10991.349998474121,
+        9330.210000038147
+      ],
+      "world": [
+        9864.44,
+        9831.71
+      ],
+      "moved": 1233.462,
+      "deleted": true
+    },
+    {
+      "id": 624,
+      "name": "Night Horde - ",
+      "orig": [
+        10830.209999084473,
+        10190.23999786377
+      ],
+      "world": [
+        9824.44,
+        9831.71
+      ],
+      "moved": 1067.763,
+      "deleted": true
+    },
+    {
+      "id": 626,
+      "name": "Night Horde - ",
+      "orig": [
+        11000.269996643066,
+        10027.639999389648
+      ],
+      "world": [
+        9784.44,
+        9831.71
+      ],
+      "moved": 1231.516,
+      "deleted": true
+    },
+    {
+      "id": 627,
+      "name": "Night Horde - ",
+      "orig": [
+        11137.230000019073,
+        9416.569999694824
+      ],
+      "world": [
+        9744.44,
+        9831.71
+      ],
+      "moved": 1453.343,
+      "deleted": true
+    },
+    {
+      "id": 628,
+      "name": "Night Horde - ",
+      "orig": [
+        11249.449996948242,
+        9401.680000305176
+      ],
+      "world": [
+        9704.44,
+        9831.71
+      ],
+      "moved": 1603.74,
+      "deleted": true
+    },
+    {
+      "id": 629,
+      "name": "Night Horde - ",
+      "orig": [
+        11195.180000305176,
+        9234.459999084473
+      ],
+      "world": [
+        9664.44,
+        9831.71
+      ],
+      "moved": 1643.129,
+      "deleted": true
+    },
+    {
+      "id": 630,
+      "name": "Night Horde - ",
+      "orig": [
+        11255.139999389648,
+        9505.629997253418
+      ],
+      "world": [
+        9624.44,
+        9831.71
+      ],
+      "moved": 1662.982,
+      "deleted": true
+    },
+    {
+      "id": 631,
+      "name": "Night Horde - ",
+      "orig": [
+        11093.75,
+        9592.630000114441
+      ],
+      "world": [
+        9584.44,
+        9831.71
+      ],
+      "moved": 1528.128,
+      "deleted": true
+    },
+    {
+      "id": 632,
+      "name": "Night Horde - ",
+      "orig": [
+        11047.91000366211,
+        9704.639999389648
+      ],
+      "world": [
+        9864.44,
+        9791.71
+      ],
+      "moved": 1186.669,
+      "deleted": true
+    },
+    {
+      "id": 633,
+      "name": "Night Horde - ",
+      "orig": [
+        11236.73999786377,
+        9869.10000038147
+      ],
+      "world": [
+        9824.44,
+        9791.71
+      ],
+      "moved": 1414.419,
+      "deleted": true
+    },
+    {
+      "id": 635,
+      "name": "Night Horde - ",
+      "orig": [
+        11053.800003051758,
+        9944.580001831055
+      ],
+      "world": [
+        9784.44,
+        9791.71
+      ],
+      "moved": 1278.532,
+      "deleted": true
+    },
+    {
+      "id": 637,
+      "name": "Night Horde - ",
+      "orig": [
+        11064.190002441406,
+        10061.459999084473
+      ],
+      "world": [
+        9744.44,
+        9791.71
+      ],
+      "moved": 1347.036,
+      "deleted": true
+    },
+    {
+      "id": 638,
+      "name": "Night Horde - ",
+      "orig": [
+        11222.779998779297,
+        10115.420000076294
+      ],
+      "world": [
+        9704.44,
+        9791.71
+      ],
+      "moved": 1552.464,
+      "deleted": true
+    },
+    {
+      "id": 639,
+      "name": "Night Horde - ",
+      "orig": [
+        11407.380000114441,
+        9347.599999904633
+      ],
+      "world": [
+        9664.44,
+        9791.71
+      ],
+      "moved": 1798.631,
+      "deleted": true
+    },
+    {
+      "id": 640,
+      "name": "Night Horde - ",
+      "orig": [
+        11334.279998779297,
+        9432.019996643066
+      ],
+      "world": [
+        9624.44,
+        9791.71
+      ],
+      "moved": 1747.263,
+      "deleted": true
+    },
+    {
+      "id": 641,
+      "name": "Night Horde - ",
+      "orig": [
+        11291.110000610352,
+        9293.139999389648
+      ],
+      "world": [
+        9584.44,
+        9791.71
+      ],
+      "moved": 1778.003,
+      "deleted": true
+    },
+    {
+      "id": 642,
+      "name": "Night Horde - ",
+      "orig": [
+        11309.360000610352,
+        9585.85000038147
+      ],
+      "world": [
+        9864.44,
+        9751.71
+      ],
+      "moved": 1454.408,
+      "deleted": true
+    },
+    {
+      "id": 643,
+      "name": "Night Horde - ",
+      "orig": [
+        11404.25,
+        9639.279998779297
+      ],
+      "world": [
+        9824.44,
+        9751.71
+      ],
+      "moved": 1583.806,
+      "deleted": true
+    },
+    {
+      "id": 644,
+      "name": "Night Horde - ",
+      "orig": [
+        11479.25,
+        9703.809997558594
+      ],
+      "world": [
+        9784.44,
+        9751.71
+      ],
+      "moved": 1695.487,
+      "deleted": true
+    },
+    {
+      "id": 645,
+      "name": "Night Horde - ",
+      "orig": [
+        11290.98999786377,
+        9840.970000267029
+      ],
+      "world": [
+        9744.44,
+        9751.71
+      ],
+      "moved": 1549.124,
+      "deleted": true
+    },
+    {
+      "id": 646,
+      "name": "Night Horde - ",
+      "orig": [
+        11333.009998321533,
+        9746.569999694824
+      ],
+      "world": [
+        9704.44,
+        9751.71
+      ],
+      "moved": 1628.578,
+      "deleted": true
+    },
+    {
+      "id": 647,
+      "name": "Night Horde - ",
+      "orig": [
+        11405.310000419617,
+        9963.029998779297
+      ],
+      "world": [
+        9664.44,
+        9751.71
+      ],
+      "moved": 1753.649,
+      "deleted": true
+    },
+    {
+      "id": 648,
+      "name": "Night Horde - ",
+      "orig": [
+        11306.51000213623,
+        10013.580001831055
+      ],
+      "world": [
+        9624.44,
+        9751.71
+      ],
+      "moved": 1702.332,
+      "deleted": true
+    },
+    {
+      "id": 649,
+      "name": "Night Horde - ",
+      "orig": [
+        11321.150001525879,
+        10115.880000114441
+      ],
+      "world": [
+        9584.44,
+        9751.71
+      ],
+      "moved": 1774.481,
+      "deleted": true
+    },
+    {
+      "id": 650,
+      "name": "Night Horde - ",
+      "orig": [
+        11422.979999542236,
+        10193.919998168945
+      ],
+      "world": [
+        9864.44,
+        9711.71
+      ],
+      "moved": 1631.433,
+      "deleted": true
+    },
+    {
+      "id": 651,
+      "name": "Night Horde - ",
+      "orig": [
+        11738.269996643066,
+        9457
+      ],
+      "world": [
+        9824.44,
+        9711.71
+      ],
+      "moved": 1930.705,
+      "deleted": true
+    },
+    {
+      "id": 652,
+      "name": "Night Horde - ",
+      "orig": [
+        11645.670000076294,
+        9275.629997253418
+      ],
+      "world": [
+        9784.44,
+        9711.71
+      ],
+      "moved": 1911.634,
+      "deleted": true
+    },
+    {
+      "id": 653,
+      "name": "Night Horde - ",
+      "orig": [
+        11541.169998168945,
+        9384.459999084473
+      ],
+      "world": [
+        9744.44,
+        9711.71
+      ],
+      "moved": 1826.289,
+      "deleted": true
+    },
+    {
+      "id": 654,
+      "name": "Night Horde - ",
+      "orig": [
+        11565.720001220703,
+        9550.25
+      ],
+      "world": [
+        9704.44,
+        9711.71
+      ],
+      "moved": 1868.27,
+      "deleted": true
+    },
+    {
+      "id": 655,
+      "name": "Night Horde - ",
+      "orig": [
+        11594.04999923706,
+        9646.75
+      ],
+      "world": [
+        9664.44,
+        9711.71
+      ],
+      "moved": 1930.703,
+      "deleted": true
+    },
+    {
+      "id": 656,
+      "name": "Night Horde - ",
+      "orig": [
+        11689.95000076294,
+        9616.530000686646
+      ],
+      "world": [
+        9624.44,
+        9711.71
+      ],
+      "moved": 2067.702,
+      "deleted": true
+    },
+    {
+      "id": 657,
+      "name": "Night Horde - ",
+      "orig": [
+        11602.20000076294,
+        9955.059997558594
+      ],
+      "world": [
+        9584.44,
+        9711.71
+      ],
+      "moved": 2032.382,
+      "deleted": true
+    },
+    {
+      "id": 658,
+      "name": "Night Horde - ",
+      "orig": [
+        11760.599998474121,
+        9904.650001525879
+      ],
+      "world": [
+        9864.44,
+        9671.71
+      ],
+      "moved": 1910.415,
+      "deleted": true
+    },
+    {
+      "id": 659,
+      "name": "Night Horde - ",
+      "orig": [
+        11641.19000005722,
+        9754.790000915527
+      ],
+      "world": [
+        9824.44,
+        9671.71
+      ],
+      "moved": 1818.649,
+      "deleted": true
+    },
+    {
+      "id": 660,
+      "name": "Night Horde - ",
+      "orig": [
+        11558.540000915527,
+        10090.069999694824
+      ],
+      "world": [
+        9784.44,
+        9671.71
+      ],
+      "moved": 1822.761,
+      "deleted": true
+    },
+    {
+      "id": 661,
+      "name": "Night Horde - ",
+      "orig": [
+        11649.05999994278,
+        10069.990001678467
+      ],
+      "world": [
+        9744.44,
+        9671.71
+      ],
+      "moved": 1945.817,
+      "deleted": true
+    },
+    {
+      "id": 662,
+      "name": "Night Horde - ",
+      "orig": [
+        11543.330001831055,
+        10219.680000305176
+      ],
+      "world": [
+        9704.44,
+        9671.71
+      ],
+      "moved": 1918.798,
+      "deleted": true
+    },
+    {
+      "id": 702,
+      "name": "",
+      "orig": [
+        11089.099998474121,
+        9491.26000213623
+      ],
+      "world": [
+        9664.44,
+        9671.71
+      ],
+      "moved": 1436.043,
+      "deleted": true
+    },
+    {
+      "id": 703,
+      "name": "",
+      "orig": [
+        11130.80999994278,
+        9838.559999465942
+      ],
+      "world": [
+        9624.44,
+        9671.71
+      ],
+      "moved": 1515.582,
+      "deleted": true
+    },
+    {
+      "id": 704,
+      "name": "",
+      "orig": [
+        11327.040000915527,
+        9340.200000047684
+      ],
+      "world": [
+        9584.44,
+        9671.71
+      ],
+      "moved": 1773.853,
+      "deleted": true
+    },
+    {
+      "id": 705,
+      "name": "",
+      "orig": [
+        11492.919998168945,
+        9343.97000000067
+      ],
+      "world": [
+        9864.44,
+        9631.71
+      ],
+      "moved": 1653.705,
+      "deleted": true
+    },
+    {
+      "id": 706,
+      "name": "",
+      "orig": [
+        11323.970001220703,
+        9694.379997253418
+      ],
+      "world": [
+        9824.44,
+        9631.71
+      ],
+      "moved": 1500.839,
+      "deleted": true
+    },
+    {
+      "id": 707,
+      "name": "",
+      "orig": [
+        11272.319999694824,
+        10139.719999313354
+      ],
+      "world": [
+        9784.44,
+        9631.71
+      ],
+      "moved": 1572.215,
+      "deleted": true
+    },
+    {
+      "id": 708,
+      "name": "",
+      "orig": [
+        11693.090000152588,
+        10087.510000228882
+      ],
+      "world": [
+        9744.44,
+        9631.71
+      ],
+      "moved": 2001.247,
+      "deleted": true
+    },
+    {
+      "id": 711,
+      "name": "Event - Scale-Bearing Merchant, Northwest Corner",
+      "orig": [
+        10929.951999664307,
+        10067.736999511719
+      ],
+      "world": [
+        9704.44,
+        9631.71
+      ],
+      "moved": 1300.769,
+      "deleted": true
+    },
+    {
+      "id": 712,
+      "name": "Event - Scale-Bearing Merchant, South of Castle",
+      "orig": [
+        11085.768001556396,
+        9488.457000732422
+      ],
+      "world": [
+        9664.44,
+        9631.71
+      ],
+      "moved": 1428.529,
+      "deleted": true
+    },
+    {
+      "id": 713,
+      "name": "Event - Scale-Bearing Merchant, Ruins North of Castle",
+      "orig": [
+        11127.050999641418,
+        9832.517999649048
+      ],
+      "world": [
+        9624.44,
+        9631.71
+      ],
+      "moved": 1515.97,
+      "deleted": true
+    },
+    {
+      "id": 714,
+      "name": "",
+      "orig": [
+        11495.027000427246,
+        9337.381999969482
+      ],
+      "world": [
+        9584.44,
+        9631.71
+      ],
+      "moved": 1933.125,
+      "deleted": true
+    },
+    {
+      "id": 715,
+      "name": "Event - Scale-Bearing Merchant, Southeast Lakeshore",
+      "orig": [
+        11326.168998718262,
+        9317.204999923706
+      ],
+      "world": [
+        9864.44,
+        9591.71
+      ],
+      "moved": 1487.281,
+      "deleted": true
+    },
+    {
+      "id": 716,
+      "name": "Event - Scale-Bearing Merchant, Castle Front",
+      "orig": [
+        11341.360000610352,
+        9621.34700012207
+      ],
+      "world": [
+        9824.44,
+        9591.71
+      ],
+      "moved": 1517.209,
+      "deleted": true
+    },
+    {
+      "id": 717,
+      "name": "Event - Scale-Bearing Merchant, East of Saintsbridge",
+      "orig": [
+        11272,
+        10144.965000152588
+      ],
+      "world": [
+        9784.44,
+        9591.71
+      ],
+      "moved": 1587.112,
+      "deleted": true
+    },
+    {
+      "id": 718,
+      "name": "Event - Scale-Bearing Merchant, Northeast Corner",
+      "orig": [
+        11692.291000366211,
+        10089.979000091553
+      ],
+      "world": [
+        9744.44,
+        9591.71
+      ],
+      "moved": 2010.571,
+      "deleted": true
+    },
+    {
+      "id": 802,
+      "name": "",
+      "orig": [
+        11224,
+        9315
+      ],
+      "world": [
+        9704.44,
+        9591.71
+      ],
+      "moved": 1544.549,
+      "deleted": true
+    },
+    {
+      "id": 803,
+      "name": "",
+      "orig": [
+        11061,
+        9432
+      ],
+      "world": [
+        9664.44,
+        9591.71
+      ],
+      "moved": 1405.663,
+      "deleted": true
+    },
+    {
+      "id": 804,
+      "name": "",
+      "orig": [
+        11153,
+        9542
+      ],
+      "world": [
+        9624.44,
+        9591.71
+      ],
+      "moved": 1529.368,
+      "deleted": true
+    },
+    {
+      "id": 806,
+      "name": "",
+      "orig": [
+        11339,
+        9664
+      ],
+      "world": [
+        9584.44,
+        9591.71
+      ],
+      "moved": 1756.049,
+      "deleted": true
+    },
+    {
+      "id": 807,
+      "name": "",
+      "orig": [
+        11358,
+        10090
+      ],
+      "world": [
+        9864.44,
+        9551.71
+      ],
+      "moved": 1587.601,
+      "deleted": true
+    },
+    {
+      "id": 808,
+      "name": "",
+      "orig": [
+        11730,
+        10130
+      ],
+      "world": [
+        9824.44,
+        9551.71
+      ],
+      "moved": 1991.376,
+      "deleted": true
+    },
+    {
+      "id": 809,
+      "name": "",
+      "orig": [
+        11560,
+        9440
+      ],
+      "world": [
+        9784.44,
+        9551.71
+      ],
+      "moved": 1779.071,
+      "deleted": true
+    },
+    {
+      "id": 810,
+      "name": "",
+      "orig": [
+        11557.529998779297,
+        9696.330001831055
+      ],
+      "world": [
+        9744.44,
+        9551.71
+      ],
+      "moved": 1818.849,
+      "deleted": true
+    },
+    {
+      "id": 811,
+      "name": "",
+      "orig": [
+        11440.900001525879,
+        9435.349998474121
+      ],
+      "world": [
+        9704.44,
+        9551.71
+      ],
+      "moved": 1740.354,
+      "deleted": true
+    },
+    {
+      "id": 812,
+      "name": "",
+      "orig": [
+        11617.469999313354,
+        9653.869998931885
+      ],
+      "world": [
+        9664.44,
+        9551.71
+      ],
+      "moved": 1955.7,
+      "deleted": true
+    },
+    {
+      "id": 813,
+      "name": "",
+      "orig": [
+        11109.459999084473,
+        9891.819999694824
+      ],
+      "world": [
+        9624.44,
+        9551.71
+      ],
+      "moved": 1523.469,
+      "deleted": true
+    },
+    {
+      "id": 814,
+      "name": "",
+      "orig": [
+        11224.98999786377,
+        10208.707000732422
+      ],
+      "world": [
+        9584.44,
+        9551.71
+      ],
+      "moved": 1767.215,
+      "deleted": true
+    },
+    {
+      "id": 815,
+      "name": "",
+      "orig": [
+        10825.880001068115,
+        10173.659999847412
+      ],
+      "world": [
+        9864.44,
+        9511.71
+      ],
+      "moved": 1167.281,
+      "deleted": true
+    },
+    {
+      "id": 816,
+      "name": "",
+      "orig": [
+        11339,
+        9664
+      ],
+      "world": [
+        9824.44,
+        9511.71
+      ],
+      "moved": 1522.197,
+      "deleted": true
+    },
+    {
+      "id": 817,
+      "name": "",
+      "orig": [
+        11172.380001068115,
+        9641.319999694824
+      ],
+      "world": [
+        9784.44,
+        9511.71
+      ],
+      "moved": 1393.979,
+      "deleted": true
+    },
+    {
+      "id": 118,
+      "name": "",
+      "orig": [
+        11008,
+        9948
+      ],
+      "world": [
+        9744.44,
+        9511.71
+      ],
+      "moved": 1336.762,
+      "deleted": true
+    },
+    {
+      "id": 119,
+      "name": "",
+      "orig": [
+        11136,
+        10035
+      ],
+      "world": [
+        9704.44,
+        9511.71
+      ],
+      "moved": 1524.204,
+      "deleted": true
+    },
+    {
+      "id": 365,
+      "name": "",
+      "orig": [
+        11411.461999893188,
+        10156
+      ],
+      "world": [
+        9664.44,
+        9511.71
+      ],
+      "moved": 1862.041,
+      "deleted": true
+    },
+    {
+      "id": 531,
+      "name": "",
+      "orig": [
+        11440.900001525879,
+        9435.349998474121
+      ],
+      "world": [
+        9624.44,
+        9511.71
+      ],
+      "moved": 1818.064,
+      "deleted": true
+    },
+    {
+      "id": 571,
+      "name": "",
+      "orig": [
+        11440.900001525879,
+        9435.349998474121
+      ],
+      "world": [
+        9584.44,
+        9511.71
+      ],
+      "moved": 1858.03,
+      "deleted": true
+    },
+    {
+      "id": 572,
+      "name": "",
+      "orig": [
+        11617.469999313354,
+        9653.869998931885
+      ],
+      "world": [
+        9864.44,
+        9471.71
+      ],
+      "moved": 1762.469,
+      "deleted": true
+    },
+    {
+      "id": 575,
+      "name": "",
+      "orig": [
+        11394,
+        9843
+      ],
+      "world": [
+        9824.44,
+        9471.71
+      ],
+      "moved": 1612.878,
+      "deleted": true
+    },
+    {
+      "id": 2118,
+      "name": "",
+      "orig": [
+        11008,
+        9948
+      ],
+      "world": [
+        9784.44,
+        9471.71
+      ],
+      "moved": 1312.993,
+      "deleted": true
+    },
+    {
+      "id": 2119,
+      "name": "",
+      "orig": [
+        11136,
+        10035
+      ],
+      "world": [
+        9744.44,
+        9471.71
+      ],
+      "moved": 1501.244,
+      "deleted": true
+    },
+    {
+      "id": 2365,
+      "name": "",
+      "orig": [
+        11411.461999893188,
+        10156
+      ],
+      "world": [
+        9704.44,
+        9471.71
+      ],
+      "moved": 1839.07,
+      "deleted": true
+    },
+    {
+      "id": 2500,
+      "name": "",
+      "orig": [
+        10906,
+        9340
+      ],
+      "world": [
+        9664.44,
+        9471.71
+      ],
+      "moved": 1248.527,
+      "deleted": true
+    },
+    {
+      "id": 2502,
+      "name": "",
+      "orig": [
+        10826,
+        9877
+      ],
+      "world": [
+        9624.44,
+        9471.71
+      ],
+      "moved": 1268.072,
+      "deleted": true
+    },
+    {
+      "id": 2503,
+      "name": "",
+      "orig": [
+        11224,
+        9315
+      ],
+      "world": [
+        9584.44,
+        9471.71
+      ],
+      "moved": 1647.032,
+      "deleted": true
+    },
+    {
+      "id": 2504,
+      "name": "",
+      "orig": [
+        11061,
+        9432
+      ],
+      "world": [
+        9864.44,
+        9431.71
+      ],
+      "moved": 1196.56,
+      "deleted": true
+    },
+    {
+      "id": 2505,
+      "name": "",
+      "orig": [
+        11153,
+        9542
+      ],
+      "world": [
+        9824.44,
+        9431.71
+      ],
+      "moved": 1333.13,
+      "deleted": true
+    },
+    {
+      "id": 2506,
+      "name": "",
+      "orig": [
+        11052,
+        9794
+      ],
+      "world": [
+        9784.44,
+        9431.71
+      ],
+      "moved": 1318.318,
+      "deleted": true
+    },
+    {
+      "id": 2507,
+      "name": "",
+      "orig": [
+        11339,
+        9664
+      ],
+      "world": [
+        9744.44,
+        9431.71
+      ],
+      "moved": 1611.391,
+      "deleted": true
+    },
+    {
+      "id": 2509,
+      "name": "",
+      "orig": [
+        11358,
+        10090
+      ],
+      "world": [
+        9704.44,
+        9431.71
+      ],
+      "moved": 1779.777,
+      "deleted": true
+    },
+    {
+      "id": 2510,
+      "name": "",
+      "orig": [
+        11172.380001068115,
+        9641.319999694824
+      ],
+      "world": [
+        9664.44,
+        9431.71
+      ],
+      "moved": 1522.439,
+      "deleted": true
+    },
+    {
+      "id": 2511,
+      "name": "",
+      "orig": [
+        11730,
+        10130
+      ],
+      "world": [
+        9624.44,
+        9431.71
+      ],
+      "moved": 2218.331,
+      "deleted": true
+    },
+    {
+      "id": 2512,
+      "name": "",
+      "orig": [
+        11560,
+        9440
+      ],
+      "world": [
+        9584.44,
+        9431.71
+      ],
+      "moved": 1975.577,
+      "deleted": true
+    },
+    {
+      "id": 2513,
+      "name": "",
+      "orig": [
+        11557.529998779297,
+        9696.330001831055
+      ],
+      "world": [
+        9864.44,
+        9391.71
+      ],
+      "moved": 1720.275,
+      "deleted": true
+    },
+    {
+      "id": 2514,
+      "name": "",
+      "orig": [
+        11440.900001525879,
+        9435.349998474121
+      ],
+      "world": [
+        9824.44,
+        9391.71
+      ],
+      "moved": 1617.049,
+      "deleted": true
+    },
+    {
+      "id": 2515,
+      "name": "",
+      "orig": [
+        11617.469999313354,
+        9653.869998931885
+      ],
+      "world": [
+        9784.44,
+        9391.71
+      ],
+      "moved": 1851.682,
+      "deleted": true
+    },
+    {
+      "id": 2516,
+      "name": "",
+      "orig": [
+        11109.459999084473,
+        9891.819999694824
+      ],
+      "world": [
+        9744.44,
+        9391.71
+      ],
+      "moved": 1453.75,
+      "deleted": true
+    },
+    {
+      "id": 2517,
+      "name": "",
+      "orig": [
+        11224.98999786377,
+        10208.707000732422
+      ],
+      "world": [
+        9704.44,
+        9391.71
+      ],
+      "moved": 1726.139,
+      "deleted": true
+    },
+    {
+      "id": 2518,
+      "name": "",
+      "orig": [
+        10825.880001068115,
+        10173.659999847412
+      ],
+      "world": [
+        9664.44,
+        9391.71
+      ],
+      "moved": 1400.139,
+      "deleted": true
+    },
+    {
+      "id": 2519,
+      "name": "",
+      "orig": [
+        11339,
+        9664
+      ],
+      "world": [
+        9624.44,
+        9391.71
+      ],
+      "moved": 1736.047,
+      "deleted": true
+    },
+    {
+      "id": 2551,
+      "name": "",
+      "orig": [
+        11440.900001525879,
+        9435.349998474121
+      ],
+      "world": [
+        9584.44,
+        9391.71
+      ],
+      "moved": 1856.973,
+      "deleted": true
+    },
+    {
+      "id": 2552,
+      "name": "",
+      "orig": [
+        11617.469999313354,
+        9653.869998931885
+      ],
+      "world": [
+        9864.44,
+        9351.71
+      ],
+      "moved": 1778.88,
+      "deleted": true
+    },
+    {
+      "id": 2554,
+      "name": "",
+      "orig": [
+        11224.98999786377,
+        10208.707000732422
+      ],
+      "world": [
+        9824.44,
+        9351.71
+      ],
+      "moved": 1641.945,
+      "deleted": true
+    },
+    {
+      "id": 2560,
+      "name": "",
+      "orig": [
+        10906,
+        9340
+      ],
+      "world": [
+        9784.44,
+        9351.71
+      ],
+      "moved": 1121.621,
+      "deleted": true
+    },
+    {
+      "id": 2566,
+      "name": "",
+      "orig": [
+        11339,
+        9664
+      ],
+      "world": [
+        9744.44,
+        9351.71
+      ],
+      "moved": 1624.853,
+      "deleted": true
+    },
+    {
+      "id": 2571,
+      "name": "",
+      "orig": [
+        11440.900001525879,
+        9435.349998474121
+      ],
+      "world": [
+        9704.44,
+        9351.71
+      ],
+      "moved": 1738.473,
+      "deleted": true
+    },
+    {
+      "id": 2572,
+      "name": "",
+      "orig": [
+        11617.469999313354,
+        9653.869998931885
+      ],
+      "world": [
+        9664.44,
+        9351.71
+      ],
+      "moved": 1976.266,
+      "deleted": true
+    },
+    {
+      "id": 2573,
+      "name": "",
+      "orig": [
+        11109.459999084473,
+        9891.819999694824
+      ],
+      "world": [
+        9624.44,
+        9351.71
+      ],
+      "moved": 1580.191,
+      "deleted": true
+    },
+    {
+      "id": 2575,
+      "name": "",
+      "orig": [
+        11394,
+        9843
+      ],
+      "world": [
+        9584.44,
+        9351.71
+      ],
+      "moved": 1875.066,
+      "deleted": true
+    },
+    {
+      "id": 2576,
+      "name": "",
+      "orig": [
+        11339,
+        9664
+      ],
+      "world": [
+        9864.44,
+        9311.71
+      ],
+      "moved": 1516.059,
+      "deleted": true
+    },
+    {
+      "id": 2577,
+      "name": "",
+      "orig": [
+        11172.380001068115,
+        9641.319999694824
+      ],
+      "world": [
+        9824.44,
+        9311.71
+      ],
+      "moved": 1387.654,
+      "deleted": true
+    },
+    {
+      "id": 2591,
+      "name": "",
+      "orig": [
+        11440.900001525879,
+        9435.349998474121
+      ],
+      "world": [
+        9784.44,
+        9311.71
+      ],
+      "moved": 1661.068,
+      "deleted": true
+    },
+    {
+      "id": 2592,
+      "name": "",
+      "orig": [
+        11617.469999313354,
+        9653.869998931885
+      ],
+      "world": [
+        9744.44,
+        9311.71
+      ],
+      "moved": 1904.026,
+      "deleted": true
+    },
+    {
+      "id": 2593,
+      "name": "",
+      "orig": [
+        11109.459999084473,
+        9891.819999694824
+      ],
+      "world": [
+        9704.44,
+        9311.71
+      ],
+      "moved": 1520.069,
+      "deleted": true
+    },
+    {
+      "id": 2594,
+      "name": "",
+      "orig": [
+        11224.98999786377,
+        10208.707000732422
+      ],
+      "world": [
+        9664.44,
+        9311.71
+      ],
+      "moved": 1799.978,
+      "deleted": true
+    },
+    {
+      "id": 2595,
+      "name": "",
+      "orig": [
+        11339,
+        9664
+      ],
+      "world": [
+        9624.44,
+        9311.71
+      ],
+      "moved": 1750.378,
+      "deleted": true
+    },
+    {
+      "id": 2596,
+      "name": "",
+      "orig": [
+        11172.380001068115,
+        9641.319999694824
+      ],
+      "world": [
+        9584.44,
+        9311.71
+      ],
+      "moved": 1621.788,
+      "deleted": true
+    },
+    {
+      "id": 2621,
+      "name": "",
+      "orig": [
+        10815.930000305176,
+        9811.270000457764
+      ],
+      "world": [
+        9864.44,
+        9271.71
+      ],
+      "moved": 1093.827,
+      "deleted": true
+    },
+    {
+      "id": 2622,
+      "name": "",
+      "orig": [
+        10777,
+        9905.130001068115
+      ],
+      "world": [
+        9824.44,
+        9271.71
+      ],
+      "moved": 1143.937,
+      "deleted": true
+    },
+    {
+      "id": 2623,
+      "name": "",
+      "orig": [
+        10914.330001831055,
+        9892.930000305176
+      ],
+      "world": [
+        9784.44,
+        9271.71
+      ],
+      "moved": 1289.405,
+      "deleted": true
+    },
+    {
+      "id": 2624,
+      "name": "",
+      "orig": [
+        10830.209999084473,
+        10190.23999786377
+      ],
+      "world": [
+        9744.44,
+        9271.71
+      ],
+      "moved": 1422.179,
+      "deleted": true
+    },
+    {
+      "id": 2625,
+      "name": "",
+      "orig": [
+        10937.259998321533,
+        10128.370000839233
+      ],
+      "world": [
+        9704.44,
+        9271.71
+      ],
+      "moved": 1501.237,
+      "deleted": true
+    },
+    {
+      "id": 2626,
+      "name": "",
+      "orig": [
+        11000.269996643066,
+        10027.639999389648
+      ],
+      "world": [
+        9664.44,
+        9271.71
+      ],
+      "moved": 1534.885,
+      "deleted": true
+    },
+    {
+      "id": 2627,
+      "name": "",
+      "orig": [
+        11137.230000019073,
+        9416.569999694824
+      ],
+      "world": [
+        9624.44,
+        9271.71
+      ],
+      "moved": 1519.71,
+      "deleted": true
+    },
+    {
+      "id": 2633,
+      "name": "",
+      "orig": [
+        11236.73999786377,
+        9869.10000038147
+      ],
+      "world": [
+        9584.44,
+        9271.71
+      ],
+      "moved": 1756.978,
+      "deleted": true
+    },
+    {
+      "id": 2634,
+      "name": "",
+      "orig": [
+        11190.990001678467,
+        9761.360000610352
+      ],
+      "world": [
+        9864.44,
+        9231.71
+      ],
+      "moved": 1428.378,
+      "deleted": true
+    },
+    {
+      "id": 2635,
+      "name": "",
+      "orig": [
+        11053.800003051758,
+        9944.580001831055
+      ],
+      "world": [
+        9824.44,
+        9231.71
+      ],
+      "moved": 1421.095,
+      "deleted": true
+    },
+    {
+      "id": 2636,
+      "name": "",
+      "orig": [
+        11025.309997558594,
+        10221.699996948242
+      ],
+      "world": [
+        9784.44,
+        9231.71
+      ],
+      "moved": 1587.4,
+      "deleted": true
+    },
+    {
+      "id": 2637,
+      "name": "",
+      "orig": [
+        11064.190002441406,
+        10061.459999084473
+      ],
+      "world": [
+        9744.44,
+        9231.71
+      ],
+      "moved": 1558.918,
+      "deleted": true
+    },
+    {
+      "id": 2638,
+      "name": "",
+      "orig": [
+        11222.779998779297,
+        10115.420000076294
+      ],
+      "world": [
+        9704.44,
+        9231.71
+      ],
+      "moved": 1756.787,
+      "deleted": true
+    },
+    {
+      "id": 2639,
+      "name": "",
+      "orig": [
+        11407.380000114441,
+        9347.599999904633
+      ],
+      "world": [
+        9664.44,
+        9231.71
+      ],
+      "moved": 1746.789,
+      "deleted": true
+    },
+    {
+      "id": 2655,
+      "name": "",
+      "orig": [
+        11594.04999923706,
+        9646.75
+      ],
+      "world": [
+        9624.44,
+        9231.71
+      ],
+      "moved": 2012.864,
+      "deleted": true
+    },
+    {
+      "id": 2660,
+      "name": "",
+      "orig": [
+        11558.540000915527,
+        10090.069999694824
+      ],
+      "world": [
+        9584.44,
+        9231.71
+      ],
+      "moved": 2152.639,
+      "deleted": true
+    },
+    {
+      "id": 2700,
+      "name": "",
+      "orig": [
+        10937.509998321533,
+        9419.779998779297
+      ],
+      "world": [
+        9864.44,
+        9191.71
+      ],
+      "moved": 1097.039,
+      "deleted": true
+    },
+    {
+      "id": 2701,
+      "name": "",
+      "orig": [
+        10960.949996948242,
+        10077.779998779297
+      ],
+      "world": [
+        9824.44,
+        9191.71
+      ],
+      "moved": 1441.102,
+      "deleted": true
+    },
+    {
+      "id": 2702,
+      "name": "",
+      "orig": [
+        11089.099998474121,
+        9491.26000213623
+      ],
+      "world": [
+        9784.44,
+        9191.71
+      ],
+      "moved": 1338.607,
+      "deleted": true
+    },
+    {
+      "id": 2703,
+      "name": "",
+      "orig": [
+        11130.80999994278,
+        9838.559999465942
+      ],
+      "world": [
+        9744.44,
+        9191.71
+      ],
+      "moved": 1529.849,
+      "deleted": true
+    },
+    {
+      "id": 2704,
+      "name": "",
+      "orig": [
+        11327.040000915527,
+        9340.200000047684
+      ],
+      "world": [
+        9704.44,
+        9191.71
+      ],
+      "moved": 1629.38,
+      "deleted": true
+    },
+    {
+      "id": 2705,
+      "name": "",
+      "orig": [
+        11492.919998168945,
+        9343.97000000067
+      ],
+      "world": [
+        9664.44,
+        9191.71
+      ],
+      "moved": 1834.808,
+      "deleted": true
+    },
+    {
+      "id": 2706,
+      "name": "",
+      "orig": [
+        11323.970001220703,
+        9694.379997253418
+      ],
+      "world": [
+        9624.44,
+        9191.71
+      ],
+      "moved": 1772.309,
+      "deleted": true
+    },
+    {
+      "id": 2707,
+      "name": "",
+      "orig": [
+        11272.319999694824,
+        10139.719999313354
+      ],
+      "world": [
+        9584.44,
+        9191.71
+      ],
+      "moved": 1935.888,
+      "deleted": true
+    },
+    {
+      "id": 2708,
+      "name": "",
+      "orig": [
+        11693.090000152588,
+        10087.510000228882
+      ],
+      "world": [
+        9864.44,
+        9151.71
+      ],
+      "moved": 2054.187,
+      "deleted": true
+    },
+    {
+      "id": 2751,
+      "name": "",
+      "orig": [
+        10833.770000457764,
+        9778.470001220703
+      ],
+      "world": [
+        9824.44,
+        9151.71
+      ],
+      "moved": 1188.097,
+      "deleted": true
+    },
+    {
+      "id": 2752,
+      "name": "",
+      "orig": [
+        10767.309997558594,
+        9938.199996948242
+      ],
+      "world": [
+        9784.44,
+        9151.71
+      ],
+      "moved": 1258.809,
+      "deleted": true
+    },
+    {
+      "id": 2800,
+      "name": "",
+      "orig": [
+        10906,
+        9340
+      ],
+      "world": [
+        9744.44,
+        9151.71
+      ],
+      "moved": 1176.722,
+      "deleted": true
+    },
+    {
+      "id": 2801,
+      "name": "",
+      "orig": [
+        10826,
+        9877
+      ],
+      "world": [
+        9704.44,
+        9151.71
+      ],
+      "moved": 1335.643,
+      "deleted": true
+    },
+    {
+      "id": 2802,
+      "name": "",
+      "orig": [
+        11224,
+        9315
+      ],
+      "world": [
+        9664.44,
+        9151.71
+      ],
+      "moved": 1568.085,
+      "deleted": true
+    },
+    {
+      "id": 2803,
+      "name": "",
+      "orig": [
+        11061,
+        9432
+      ],
+      "world": [
+        9624.44,
+        9151.71
+      ],
+      "moved": 1463.649,
+      "deleted": true
+    },
+    {
+      "id": 2804,
+      "name": "",
+      "orig": [
+        11153,
+        9542
+      ],
+      "world": [
+        9584.44,
+        9151.71
+      ],
+      "moved": 1616.387,
+      "deleted": true
+    },
+    {
+      "id": 2805,
+      "name": "",
+      "orig": [
+        11052,
+        9794
+      ],
+      "world": [
+        9864.44,
+        9111.71
+      ],
+      "moved": 1369.605,
+      "deleted": true
+    },
+    {
+      "id": 2806,
+      "name": "",
+      "orig": [
+        11339,
+        9664
+      ],
+      "world": [
+        9824.44,
+        9111.71
+      ],
+      "moved": 1612.115,
+      "deleted": true
+    },
+    {
+      "id": 2807,
+      "name": "",
+      "orig": [
+        11358,
+        10090
+      ],
+      "world": [
+        9784.44,
+        9111.71
+      ],
+      "moved": 1852.874,
+      "deleted": true
+    },
+    {
+      "id": 2808,
+      "name": "",
+      "orig": [
+        11730,
+        10130
+      ],
+      "world": [
+        9744.44,
+        9111.71
+      ],
+      "moved": 2231.449,
+      "deleted": true
+    },
+    {
+      "id": 2809,
+      "name": "",
+      "orig": [
+        11560,
+        9440
+      ],
+      "world": [
+        9704.44,
+        9111.71
+      ],
+      "moved": 1884.377,
+      "deleted": true
+    },
+    {
+      "id": 2810,
+      "name": "",
+      "orig": [
+        11557.529998779297,
+        9696.330001831055
+      ],
+      "world": [
+        9664.44,
+        9111.71
+      ],
+      "moved": 1981.305,
+      "deleted": true
+    },
+    {
+      "id": 2811,
+      "name": "",
+      "orig": [
+        11440.900001525879,
+        9435.349998474121
+      ],
+      "world": [
+        9624.44,
+        9111.71
+      ],
+      "moved": 1845.066,
+      "deleted": true
+    },
+    {
+      "id": 2812,
+      "name": "",
+      "orig": [
+        11617.469999313354,
+        9653.869998931885
+      ],
+      "world": [
+        9584.44,
+        9111.71
+      ],
+      "moved": 2104.079,
+      "deleted": true
+    },
+    {
+      "id": 2813,
+      "name": "",
+      "orig": [
+        11109.459999084473,
+        9891.819999694824
+      ],
+      "world": [
+        9864.44,
+        9071.71
+      ],
+      "moved": 1490.857,
+      "deleted": true
+    },
+    {
+      "id": 2814,
+      "name": "",
+      "orig": [
+        11224.98999786377,
+        10208.707000732422
+      ],
+      "world": [
+        9824.44,
+        9071.71
+      ],
+      "moved": 1803.969,
+      "deleted": true
+    },
+    {
+      "id": 2815,
+      "name": "",
+      "orig": [
+        10825.880001068115,
+        10173.659999847412
+      ],
+      "world": [
+        9784.44,
+        9071.71
+      ],
+      "moved": 1516.209,
+      "deleted": true
+    },
+    {
+      "id": 2816,
+      "name": "",
+      "orig": [
+        11339,
+        9664
+      ],
+      "world": [
+        9744.44,
+        9071.71
+      ],
+      "moved": 1701.008,
+      "deleted": true
+    },
+    {
+      "id": 2817,
+      "name": "",
+      "orig": [
+        11172.380001068115,
+        9641.319999694824
+      ],
+      "world": [
+        9704.44,
+        9071.71
+      ],
+      "moved": 1574.58,
+      "deleted": true
+    },
+    {
+      "id": 310,
+      "name": "Minor Base - Northeast of Saintsbridge",
+      "orig": [
+        11320,
+        10156
+      ],
+      "world": [
+        11328.117790563867,
+        10162.945903337168
+      ],
+      "moved": 10.684,
+      "deleted": false
+    },
+    {
+      "id": 117,
+      "name": "Major Base - Summonwater",
+      "orig": [
+        11592,
+        10166
+      ],
+      "world": [
+        11612.693164556962,
+        10170.016098964326
+      ],
+      "moved": 21.079,
+      "deleted": false
+    },
+    {
+      "id": 116,
+      "name": "Major Base - Northeast Mistwood",
+      "orig": [
+        11692,
+        9953
+      ],
+      "world": [
+        11709.90835443038,
+        9848.322197928654
+      ],
+      "moved": 106.199,
+      "deleted": false
+    },
+    {
+      "id": 313,
+      "name": "Minor Base - Third Church",
+      "orig": [
+        11687,
+        9847
+      ],
+      "world": [
+        11720.513647871117,
+        9945.537387802071
+      ],
+      "moved": 104.081,
+      "deleted": false
+    },
+    {
+      "id": 113,
+      "name": "Major Base - South Mistwood",
+      "orig": [
+        11643,
+        9364
+      ],
+      "world": [
+        11644.509044879173,
+        9388.759482163405
+      ],
+      "moved": 24.805,
+      "deleted": false
+    },
+    {
+      "id": 114,
+      "name": "Major Base - Minor Erdtree",
+      "orig": [
+        11652,
+        9532
+      ],
+      "world": [
+        11678.09247410817,
+        9528.395845799769
+      ],
+      "moved": 26.34,
+      "deleted": false
+    },
+    {
+      "id": 312,
+      "name": "Minor Base - Minor Erdtree",
+      "orig": [
+        11734,
+        9604
+      ],
+      "world": [
+        11741.72423475259,
+        9607.935546605293
+      ],
+      "moved": 8.669,
+      "deleted": false
+    },
+    {
+      "id": 607,
+      "name": "Evergaol - East Edge",
+      "orig": [
+        11709.869998931885,
+        9746.379997253418
+      ],
+      "world": [
+        11718.746098964328,
+        9742.269263521288
+      ],
+      "moved": 9.782,
+      "deleted": false
+    },
+    {
+      "id": 763,
+      "name": "Field Boss - ",
+      "orig": [
+        11670.180000305176,
+        9717.690002441406
+      ],
+      "world": [
+        11678.09247410817,
+        9713.988481012657
+      ],
+      "moved": 8.735,
+      "deleted": false
+    },
+    {
+      "id": 111,
+      "name": "Major Base - Northwest Mistwood",
+      "orig": [
+        11518,
+        9786
+      ],
+      "world": [
+        11529.61836593786,
+        9788.225535097812
+      ],
+      "moved": 11.83,
+      "deleted": false
+    },
+    {
+      "id": 606,
+      "name": "Evergaol - East of Ravine",
+      "orig": [
+        11465.220001220703,
+        9938.150001525879
+      ],
+      "world": [
+        11473.056800920598,
+        9933.164545454545
+      ],
+      "moved": 9.288,
+      "deleted": false
+    },
+    {
+      "id": 759,
+      "name": "Field Boss - ",
+      "orig": [
+        11220.860000610352,
+        9944.75
+      ],
+      "world": [
+        11232.67014959724,
+        9940.234741081702
+      ],
+      "moved": 12.644,
+      "deleted": false
+    },
+    {
+      "id": 603,
+      "name": "Evergaol - West of Ravine",
+      "orig": [
+        11180.369998931885,
+        9909.180000305176
+      ],
+      "world": [
+        11190.248975834293,
+        9903.116214039124
+      ],
+      "moved": 11.592,
+      "deleted": false
+    },
+    {
+      "id": 106,
+      "name": "Major Base - Alexander Spot",
+      "orig": [
+        11136,
+        10035
+      ],
+      "world": [
+        11154.897997698505,
+        10021.541990794016
+      ],
+      "moved": 23.2,
+      "deleted": false
+    },
+    {
+      "id": 602,
+      "name": "Evergaol - Northwest of Lake",
+      "orig": [
+        11028.650001525879,
+        9525.650001525879
+      ],
+      "world": [
+        11034.704672036825,
+        9530.163394706558
+      ],
+      "moved": 7.552,
+      "deleted": false
+    },
+    {
+      "id": 307,
+      "name": "Minor Base - Southeast of Lake",
+      "orig": [
+        11437,
+        9442
+      ],
+      "world": [
+        11384.679355581127,
+        9254.42576524741
+      ],
+      "moved": 194.735,
+      "deleted": false
+    },
+    {
+      "id": 108,
+      "name": "Major Base - Waypoint Ruins",
+      "orig": [
+        11370,
+        9272
+      ],
+      "world": [
+        11443.00846950518,
+        9422.342911392405
+      ],
+      "moved": 167.132,
+      "deleted": false
+    },
+    {
+      "id": 308,
+      "name": "Minor Base - East of Cavalry Bridge",
+      "orig": [
+        11340,
+        9524
+      ],
+      "world": [
+        11345.793279631762,
+        9516.023003452243
+      ],
+      "moved": 9.859,
+      "deleted": false
+    },
+    {
+      "id": 605,
+      "name": "Evergaol - South Cliff",
+      "orig": [
+        11449.29999923706,
+        9317.45000076294
+      ],
+      "world": [
+        11458.916409666284,
+        9312.75487917146
+      ],
+      "moved": 10.701,
+      "deleted": false
+    }
+  ]
+}

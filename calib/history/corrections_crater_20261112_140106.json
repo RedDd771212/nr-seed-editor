@@ -1,0 +1,161 @@
+{
+  "bin": "D:\\nrtest\\base.bin",
+  "map": "crater",
+  "savedAt": "2026-11-12 14:01:06",
+  "items": [
+    {
+      "id": 759,
+      "name": "Field Boss - ",
+      "orig": [
+        11232.67,
+        9940.235
+      ],
+      "world": [
+        11232.67,
+        9940.235
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 603,
+      "name": "Evergaol - West of Ravine",
+      "orig": [
+        11190.249,
+        9903.116
+      ],
+      "world": [
+        11190.249,
+        9903.116
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 306,
+      "name": "Minor Base - Above Stormhill Tunnel Entrance",
+      "orig": [
+        11061.218,
+        9873.068
+      ],
+      "world": [
+        11061.218,
+        9873.068
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 106,
+      "name": "Major Base - Alexander Spot",
+      "orig": [
+        11154.898,
+        10021.542
+      ],
+      "world": [
+        11154.898,
+        10021.542
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 107,
+      "name": "Major Base - Northeast Stormhill",
+      "orig": [
+        11130.152,
+        10217.74
+      ],
+      "world": [
+        11130.152,
+        10217.74
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 604,
+      "name": "Evergaol - North Ravine",
+      "orig": [
+        11243.275,
+        10191.227
+      ],
+      "world": [
+        11243.275,
+        10191.227
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 310,
+      "name": "Minor Base - Northeast of Saintsbridge",
+      "orig": [
+        11328.118,
+        10162.946
+      ],
+      "world": [
+        11328.118,
+        10162.946
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 760,
+      "name": "Field Boss - ",
+      "orig": [
+        11342.459999084473,
+        9911.630001068115
+      ],
+      "world": [
+        11342.459999084473,
+        9911.630001068115
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 110,
+      "name": "Major Base - Artist's Shack",
+      "orig": [
+        11394,
+        9843
+      ],
+      "world": [
+        11394,
+        9843
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 112,
+      "name": "Major Base - Summonwater Approach",
+      "orig": [
+        11465,
+        10048
+      ],
+      "world": [
+        11465,
+        10048
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 761,
+      "name": "Field Boss - ",
+      "orig": [
+        11471.16000366211,
+        10162.830001831055
+      ],
+      "world": [
+        11471.16000366211,
+        10162.830001831055
+      ],
+      "moved": 0,
+      "deleted": true
+    }
+  ]
+}
