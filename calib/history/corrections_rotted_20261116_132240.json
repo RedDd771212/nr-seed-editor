@@ -1,0 +1,147 @@
+{
+  "bin": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ELDEN RING NIGHTREIGN\\Game\\moremap\\regulation.bin",
+  "map": "rotted",
+  "savedAt": "2026-11-16 13:22:40",
+  "items": [
+    {
+      "id": 108,
+      "name": "Major Base - Waypoint Ruins",
+      "orig": [
+        11443.008,
+        9422.343
+      ],
+      "world": [
+        11865.452658227849,
+        9420.575362485615
+      ],
+      "moved": 422.448,
+      "deleted": true
+    },
+    {
+      "id": 605,
+      "name": "Evergaol - South Cliff",
+      "orig": [
+        11458.916,
+        9312.755
+      ],
+      "world": [
+        11897.268538550059,
+        9358.711150747986
+      ],
+      "moved": 440.755,
+      "deleted": true
+    },
+    {
+      "id": 109,
+      "name": "Major Base - West Mistwood",
+      "orig": [
+        11467,
+        9591
+      ],
+      "world": [
+        11883.128147295743,
+        9493.04486766398
+      ],
+      "moved": 427.502,
+      "deleted": true
+    },
+    {
+      "id": 114,
+      "name": "Major Base - Minor Erdtree",
+      "orig": [
+        11678.092,
+        9528.396
+      ],
+      "world": [
+        11883.128147295743,
+        9583.189861910241
+      ],
+      "moved": 212.231,
+      "deleted": true
+    },
+    {
+      "id": 312,
+      "name": "Minor Base - Minor Erdtree",
+      "orig": [
+        11741.724,
+        9607.936
+      ],
+      "world": [
+        11897.268538550059,
+        9637.983878020712
+      ],
+      "moved": 158.42,
+      "deleted": true
+    },
+    {
+      "id": 763,
+      "name": "Field Boss - ",
+      "orig": [
+        11678.092,
+        9713.988
+      ],
+      "world": [
+        11909.641380897585,
+        9699.848089758341
+      ],
+      "moved": 231.981,
+      "deleted": true
+    },
+    {
+      "id": 308,
+      "name": "Minor Base - East of Cavalry Bridge",
+      "orig": [
+        11345.793,
+        9516.023
+      ],
+      "world": [
+        11877.825500575374,
+        9328.662819332565
+      ],
+      "moved": 564.059,
+      "deleted": true
+    },
+    {
+      "id": 762,
+      "name": "Field Boss - ",
+      "orig": [
+        11545.069999694824,
+        9297.619998931885
+      ],
+      "world": [
+        11865.452658227849,
+        9277.403901035672
+      ],
+      "moved": 321.02,
+      "deleted": true
+    },
+    {
+      "id": 113,
+      "name": "Major Base - South Mistwood",
+      "orig": [
+        11644.509,
+        9388.759
+      ],
+      "world": [
+        11860.15001150748,
+        9220.842336018412
+      ],
+      "moved": 273.308,
+      "deleted": true
+    },
+    {
+      "id": 307,
+      "name": "Minor Base - Southeast of Lake",
+      "orig": [
+        11384.679,
+        9254.426
+      ],
+      "world": [
+        11833.636777905638,
+        9187.258906789411
+      ],
+      "moved": 453.954,
+      "deleted": true
+    }
+  ]
+}

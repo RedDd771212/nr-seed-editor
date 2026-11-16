@@ -170,17 +170,24 @@ class SeedModel:
                 icon_id = self.wm_icons.get(ic, {}).get("iconId", ic)
                 break
         if icon_id is None:
+            # 2026-11-16：大空洞的堡垒 tile（Western/Eastern Underground Fort）define 里
+            # icon1 全是 0，行名/组名也是空的 —— 得把 **变体名**（tile 名）也算进来才认得出 "fort"
             nm = " ".join(
-                [row.get("_name", "")] + [self.define[d].get("_name", "") for d in parents]
+                [row.get("_name", ""), (var.get("_name") or "")]
+                + [self.define[d].get("_name", "") for d in parents]
             ).lower()
             for kw, iid in NAME_ICON_FALLBACK:
                 if kw == "encounter:" and "setup" in nm:
                     continue          # "Encounter Setup: Ruins" 不是野外 BOSS
+                if kw == "fort":
+                    continue          # 2026-11-16：大空洞堡垒没有配图标，兜底出来的效果不好 → 不兜底
                 if kw in nm:
                     icon_id = iid
                     break
 
         # 小营地 / 车队 / 夜之军团 / 夜王 本身没有 pin，绝不借用大营地图标（m00832）
+        # 注意：这里只认「行名 + define 组名」，不认 tile 变体名 —— 否则夜王塔的
+        # "Night Boss - xxx" 也会被误伤成无图标。
         nm_all = " ".join(
             [row.get("_name", "")] + [self.define[d].get("_name", "") for d in parents]
         ).lower()

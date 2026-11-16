@@ -1,0 +1,472 @@
+{
+  "_note": "tile（smallBaseMapId）名称表。en 来自 Smithbox 社区命名，cn 可手工补；编辑器的「名称表」界面会改这个文件，改完立即生效。",
+  "tiles": {
+    "3000": {
+      "en": "Fort A (Open Fort)"
+    },
+    "3030": {
+      "en": "Fort B (Sewer Fort)"
+    },
+    "3200": {
+      "en": "Encampment A (Standard)"
+    },
+    "3210": {
+      "en": "Encampment B (Tower)"
+    },
+    "3220": {
+      "en": "Encampment C (Ruined)"
+    },
+    "3400": {
+      "en": "Ruins A"
+    },
+    "3410": {
+      "variants": {
+        "0": "调香师",
+        "1": "堕落调香师"
+      },
+      "en": "Ruins B"
+    },
+    "3420": {
+      "en": "Ruins C"
+    },
+    "3430": {
+      "en": "Ruins D"
+    },
+    "3790": {
+      "en": "Township"
+    },
+    "3800": {
+      "en": "Temple A (Above ground)"
+    },
+    "3810": {
+      "en": "Temple B (Underground)"
+    },
+    "4000": {
+      "en": "Sorcerer's Rise A"
+    },
+    "4090": {
+      "en": "Sorcerer's Rise B"
+    },
+    "4100": {
+      "en": "Church A (Standard)"
+    },
+    "4101": {
+      "en": "Church B (Starter)"
+    },
+    "4130": {
+      "en": "Church (Rotted Woods)"
+    },
+    "4300": {
+      "en": "Camp A"
+    },
+    "4301": {
+      "en": "Camp B"
+    },
+    "4302": {
+      "en": "Camp C"
+    },
+    "4330": {
+      "en": "Camp (Rotted Woods)"
+    },
+    "4340": {
+      "en": "Camp D"
+    },
+    "4341": {
+      "en": "Camp E"
+    },
+    "4350": {
+      "en": "Camp F"
+    },
+    "4401": {
+      "en": "Shack"
+    },
+    "4500": {
+      "en": "Caravans A"
+    },
+    "4501": {
+      "en": "Caravans B"
+    },
+    "4551": {
+      "en": "Field Boss - Black Knife Assassin"
+    },
+    "4552": {
+      "en": "Boss Raid - Augur (Maris)"
+    },
+    "4553": {
+      "en": "Boss Raid - Sentient Pest (Gnoster)"
+    },
+    "4555": {
+      "en": "Boss Raid - Demon (Libra)"
+    },
+    "4600": {
+      "en": "Night Horde - Royal Army"
+    },
+    "4601": {
+      "en": "Night Horde - Giant Dogs and Crows"
+    },
+    "4602": {
+      "en": "Night Horde - Giant Ants"
+    },
+    "4603": {
+      "en": "Night Horde - Fingercreepers"
+    },
+    "4604": {
+      "en": "Night Horde - Dragons"
+    },
+    "4605": {
+      "en": "Night Horde - Guardian Golems"
+    },
+    "4606": {
+      "en": "Night Horde - Mounted Revenant Followers"
+    },
+    "4650": {
+      "en": "Evergaol A - Tier 1"
+    },
+    "4651": {
+      "en": "Field Boss - Red Wolf of the King Consort"
+    },
+    "4652": {
+      "en": "Field Boss - Draconic Tree Sentinel"
+    },
+    "4653": {
+      "en": "Field Boss - Tree Sentinel"
+    },
+    "4654": {
+      "en": "Field Boss - Royal Carian Knight"
+    },
+    "4655": {
+      "en": "Field Boss - Leonine Misbegotten"
+    },
+    "4656": {
+      "en": "Field Boss - Bell Bearing Hunter"
+    },
+    "4657": {
+      "en": "Field Boss - Elder Lion"
+    },
+    "4658": {
+      "en": "Field Boss - Flying Dragon of the Hills"
+    },
+    "4659": {
+      "en": "Field Boss - Royal Revenant"
+    },
+    "4660": {
+      "en": "Evergaol B - Tier 2"
+    },
+    "4662": {
+      "en": "Field Boss - Night's Cavalry"
+    },
+    "4663": {
+      "en": "Field Boss - Ulcerated Tree Spirit"
+    },
+    "4664": {
+      "en": "Field Boss - Ancestor Spirit"
+    },
+    "4665": {
+      "en": "Field Boss - Grafted Scion"
+    },
+    "4666": {
+      "en": "Field Boss - Black Blade Kindred"
+    },
+    "4667": {
+      "en": "Field Boss - Erdtree Avatar"
+    },
+    "4668": {
+      "en": "Field Boss - Magma Wyrm"
+    },
+    "4669": {
+      "en": "Field Boss - Ancient Hero of Zamor"
+    },
+    "4670": {
+      "en": "Evergaol C - Tier 2"
+    },
+    "4671": {
+      "en": "Field Boss - Miranda Blossom"
+    },
+    "4672": {
+      "en": "Field Boss - Golden Hippopotamus"
+    },
+    "4674": {
+      "en": "Field Boss - Death Rite Bird"
+    },
+    "4677": {
+      "en": "Field Boss - Demi-Human Queen"
+    },
+    "4678": {
+      "en": "Boss Raid - Fell Omen (Morgott)"
+    },
+    "4680": {
+      "en": "Evergaol D - Tier 3"
+    },
+    "4681": {
+      "en": "Basement Boss - Black Knife Assassin"
+    },
+    "4682": {
+      "en": "Basement Boss - Red Wolf of the King Consort"
+    },
+    "4686": {
+      "en": "Basement Boss - Leonine Misbegotten"
+    },
+    "4687": {
+      "en": "Basement Boss - Bell Bearing Hunter"
+    },
+    "4688": {
+      "en": "Basement Boss - Royal Revenant"
+    },
+    "4691": {
+      "en": "Basement Boss - Grafted Scion"
+    },
+    "4695": {
+      "en": "Basement Boss - Ancient Hero of Zamor"
+    },
+    "4770": {
+      "en": "Night Boss - Tibia Mariner/Those Who Live in Death"
+    },
+    "4780": {
+      "en": "Night Boss - Gaping Dragon"
+    },
+    "4790": {
+      "en": "Night Boss - Centipede Demon"
+    },
+    "4800": {
+      "en": "Night Boss - Duke's Dear Freja"
+    },
+    "4810": {
+      "en": "Night Boss - Smelter Demon"
+    },
+    "4820": {
+      "en": "Night Boss - Nameless King"
+    },
+    "4830": {
+      "en": "Night Boss - Dancer of the Boreal Valley"
+    },
+    "4840": {
+      "en": "Night Boss - Fell Omen (Morgott)"
+    },
+    "4850": {
+      "en": "Night Boss - Draconic Tree Sentinel/Royal Cavalrymen"
+    },
+    "4860": {
+      "en": "Night Boss - Tree Sentinel/Royal Cavalrymen"
+    },
+    "4870": {
+      "en": "Night Boss - Godskin Apostle"
+    },
+    "4880": {
+      "en": "Night Boss - Godskin Duo"
+    },
+    "4890": {
+      "en": "Night Boss - Wormface"
+    },
+    "4900": {
+      "en": "Night Boss - Tibia Mariner/Those Who Live in Death"
+    },
+    "4910": {
+      "en": "Night Boss - Grafted Monarch (Godrick)"
+    },
+    "4917": {
+      "en": "Night Boss - Valiant Gargoyle"
+    },
+    "4918": {
+      "en": "Night Boss - Great Wyrm"
+    },
+    "4919": {
+      "en": "Night Boss - Ancient Dragon"
+    },
+    "4920": {
+      "en": "Night Boss - Full-Grown Fallingstar Beast"
+    },
+    "4921": {
+      "en": "Night Boss - Death Rite Bird"
+    },
+    "4923": {
+      "en": "Night Boss - Nox Dragonkin Soldier"
+    },
+    "4924": {
+      "en": "Night Boss - Bell-bearing Hunter (Elemer)"
+    },
+    "4925": {
+      "en": "Night Boss - Crucible Knight/Golden Hippopotamus"
+    },
+    "4926": {
+      "en": "Night Boss - Outland Commander (Niall)"
+    },
+    "4927": {
+      "en": "Night Boss - Battlefield Commander (O'Neil)"
+    },
+    "4928": {
+      "en": "Night Boss - Night's Cavalry Duo"
+    },
+    "4929": {
+      "en": "Night Boss - Demi-Human Queen/Demi-Human Swordmaster"
+    },
+    "4930": {
+      "en": "Night Boss - Royal Revenant"
+    },
+    "4940": {
+      "en": "Scale-bearing Merchant (Libra)"
+    },
+    "4941": {
+      "en": "Castle A - Banished Knights"
+    },
+    "4942": {
+      "en": "Castle B - Pot Trolls"
+    },
+    "4943": {
+      "en": "Castle C - Crucible Knights"
+    },
+    "4990": {
+      "en": "Night Boss - Ulcerated Tree Spirit"
+    },
+    "5000": {
+      "en": "Marsh A - Poison"
+    },
+    "5001": {
+      "en": "Marsh B - Poison"
+    },
+    "5002": {
+      "en": "Marsh A - Frost"
+    },
+    "5003": {
+      "en": "Marsh A - Sleep"
+    },
+    "5004": {
+      "en": "Marsh A - Rot"
+    },
+    "5005": {
+      "en": "Marsh B - Madness"
+    },
+    "5006": {
+      "en": "Marsh B - Blood"
+    },
+    "5010": {
+      "en": "Blacksmith Village A (Upper Boss)"
+    },
+    "5011": {
+      "en": "Blacksmith Village B (Spread Group)"
+    },
+    "5100": {
+      "en": "Church - Great Hollow"
+    },
+    "5105": {
+      "en": "Small Camp - Great Hollow"
+    },
+    "5110": {
+      "en": "Sorcerer's Rise - Great Hollow"
+    },
+    "5115": {
+      "en": "Caravans - Great Hollow"
+    },
+    "5200": {
+      "en": "Night Boss - Curseblade/Divine Beast Warrior"
+    },
+    "5201": {
+      "en": "Night Boss - Great Red Bear"
+    },
+    "5202": {
+      "en": "Night Boss - Death Knights"
+    },
+    "5203": {
+      "en": "Night Boss - Demon in Pain/Demon from Below"
+    },
+    "5210": {
+      "en": "Night Boss - Lord of Blood (Mohg)"
+    },
+    "5211": {
+      "en": "Night Boss - Divine Beast Dancing Lion"
+    },
+    "5212": {
+      "en": "Night Boss - Knight Artorias"
+    },
+    "5213": {
+      "en": "Night Boss - Demon Prince"
+    },
+    "5240": {
+      "en": "Great Church A - Holy (Great Hollow)"
+    },
+    "5242": {
+      "cn": "大空洞冰教堂",
+      "en": "Great Church A - Frost (Great Hollow)"
+    },
+    "5245": {
+      "en": "Great Church B - Sleep (Great Hollow)"
+    },
+    "5246": {
+      "en": "Great Church B - Lightning (Great Hollow)"
+    },
+    "5250": {
+      "en": "Ruins A - Blood (Great Hollow)"
+    },
+    "5252": {
+      "en": "Ruins A - Poison (Great Hollow)"
+    },
+    "5255": {
+      "en": "Ruins B - Magic (Great Hollow)"
+    },
+    "5257": {
+      "en": "Ruins B - Sleep (Great Hollow)"
+    },
+    "5300": {
+      "en": "Boss Raid - Tricephalos (Gladius)"
+    },
+    "5305": {
+      "en": "Boss Raid - Fissure in the Fog (Caligo)"
+    },
+    "5349": {
+      "en": "Western Underground Fort (Underground Part) - Bloodhound Knight"
+    },
+    "5350": {
+      "en": "Western Underground Fort (Main) - Fire"
+    },
+    "5351": {
+      "en": "Western Underground Fort (Main) - Magic"
+    },
+    "5352": {
+      "en": "Western Underground Fort (Underground) - Omenkillers"
+    },
+    "5353": {
+      "en": "Western Underground Fort (Underground) - Bloodhound Knights"
+    },
+    "5354": {
+      "en": "Western Underground Fort (Icon) - Fire"
+    },
+    "5355": {
+      "en": "Western Underground Fort (Library) - Sorcerers"
+    },
+    "5356": {
+      "en": "Western Underground Fort (Library) - Carians"
+    },
+    "5357": {
+      "en": "Western Underground Fort (Icon) - Magic"
+    },
+    "5361": {
+      "en": "Western Underground Fort (Underground Part)"
+    },
+    "5362": {
+      "en": "Western Underground Fort (Outside) - Fire Knights"
+    },
+    "5363": {
+      "en": "Western Underground Fort (Outside) - Blackflame Monks"
+    },
+    "5367": {
+      "en": "Eastern Underground Fort (Main) - Rot"
+    },
+    "5368": {
+      "en": "Eastern Underground Fort (Main) - Holy"
+    },
+    "5370": {
+      "en": "Eastern Underground Fort (Interior) - Banished Knights"
+    },
+    "5371": {
+      "en": "Eastern Underground Fort (Interior) - Curseblades"
+    },
+    "5372": {
+      "en": "Eastern Underground Fort (Interior) - Omen"
+    },
+    "5380": {
+      "en": "Eastern Underground Fort (Icon) - Rot"
+    },
+    "5382": {
+      "en": "Eastern Underground Fort (Icon) - Holy"
+    }
+  }
+}

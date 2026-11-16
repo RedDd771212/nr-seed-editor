@@ -21,6 +21,8 @@
 """
 from __future__ import annotations
 
+import json
+import re
 from collections import Counter
 from dataclasses import dataclass, field
 
@@ -251,9 +253,24 @@ class PatternModel:
         self.p = params
         self.sets: dict[int, PatternSet] = {}
         self.patterns: dict[int, Pattern] = {}
+        self.groups: dict[int, dict] = {}   # 成组点：代表 attachId → 组规则（由 server 注入）
+        # 空 set 的身份（创建时选了夜王/地图类型，但没有 flag 行可存）→ sid: (boss, rare)
+        # 由 server 从 work\custom_sets.json 注入并维护
+        self.set_combos: dict[int, tuple[int, int]] = {}
+        # 当前地图校准过的 attach 池（随机种子用，由 server 注入）
+        self.attach_pool: list[int] = []
+        # 当前地图校准留下的点（随机时的地点集合，由 server 注入）
+        self.calib_points: list[int] = []
+        # 随机表勾选的参与项（attach / playarea / night / tiles），空 = 全选
+        self.random_sel: dict = {}
         self.base_combos = self._load_base_combos()
         self.boss_names = self._load_boss_names()
         self._load()
+        # 随机种子要用：tile → 变体 / 官方用法。直接读表（PatternModel 里原来没有）
+        try:
+            self.variation = self.p.rows('SmallBaseMapVariationParam')
+        except Exception:  # noqa: BLE001
+            self.variation = {}
 
     # ---- 载入 ----
     def _load(self):
@@ -313,6 +330,15 @@ class PatternModel:
                 nm = (r.get('_name') or '').strip()
                 if nm:
                     out[rid] = nm
+        # 兜底：游戏原始 bin 的 NightBossMenuParam 名字常是空的 → 用随包的 boss_names.json
+        try:
+            from pathlib import Path
+            f = Path(__file__).resolve().parents[2] / 'src' / 'data' / 'boss_names.json'
+            for k, v in json.loads(f.read_text(encoding='utf-8')).items():
+                if str(k).isdigit():
+                    out.setdefault(int(k), v)
+        except Exception:  # noqa: BLE001
+            pass
         return out
 
     # ---- 分组与编号 ----
@@ -616,8 +642,8 @@ class PatternModel:
             off += s2.count
         new_pid = base + off + idx
 
-        # 组合：默认沿用这个 set 的身份；set 是空的就用传进来的
-        target_combo = combo or st.combo or src.combo
+        # 组合：默认沿用这个 set 的身份；空 set 用「创建时记下来的身份」；最后才退源 pid
+        target_combo = (combo or st.combo or self.set_combos.get(sid) or src.combo)
         if target_combo is None:
             return plan.fail('这个 set 没有身份（空 set），请指定 combo=(夜王, 地图类型)')
         if src.combo and src.combo != target_combo:
@@ -673,6 +699,210 @@ class PatternModel:
         plan.notes.append(f'克隆内容：{len(src.flags)} 条 flag + 1 条 playarea + {src.spot_count} 个地点；'
                           f'flag 的 targetBoss/rareMap/地图类型旗标会改成 {self.combo_text(target_combo)}'
                           + (f'，夜间 BOSS 参照 pid {ref.pid}' if ref else ''))
+        return plan
+
+    def _attach_tiles(self) -> dict:
+        """attachId → 官方种子里在这个位置用过的 tile 集合（随机种子用，带缓存）。
+
+        注意合并「孪生号」：attach 101 和 2101 是同一个世界位置（坐标完全一样），
+        DLC 的锻造村 / 毒池（tile 5000/5001/5010/5011…）只挂在 21xx 那边，
+        不合并的话基础点位随机永远选不到锻造村/毒池。
+        """
+        if getattr(self, '_at_cache', None) is None:
+            out: dict[int, set] = {}
+            for pt in self.patterns.values():
+                for r in pt.spots:
+                    a, t = _i(r.get('attachId')), _i(r.get('smallBaseMapId'))
+                    if not (a and t):
+                        continue
+                    out.setdefault(a, set()).add(t)
+                    # 只合并 ±2000 的 DLC 孪生（101 ↔ 2101，坐标完全相同）。
+                    # 不要用 ±1000/±3000 —— 那会把 1103 并进 2103（不同位置）。
+                    for off in (-2000, 2000):
+                        if a + off > 0:
+                            out.setdefault(a + off, set()).add(t)
+            self._at_cache = out
+        return self._at_cache
+
+    def _variants_of(self, tile: int) -> list:
+        v = self.variation.get(tile) or {}
+        return [slot - 1 for slot in range(1, 11) if v.get(f'variationValue_{slot}')]
+
+    def _night_sets(self):
+        """官方出现过的第一晚 / 第二晚 BOSS 集合（两晚不混），以及 bossId→modifier。"""
+        n1, n2, mods = set(), set(), {}
+        for pt in self.patterns.values():
+            r = pt.playarea
+            if not r:
+                continue
+            b1, m1 = _i(r.get('bossId1')), _i(r.get('bossModifier1'))
+            b2, m2 = _i(r.get('bossId2')), _i(r.get('bossModifier2'))
+            if b1 > 0:
+                n1.add(b1)
+                if m1 is not None:
+                    mods.setdefault(b1, m1)
+            if b2 > 0:
+                n2.add(b2)
+                if m2 is not None:
+                    mods.setdefault(b2, m2)
+        return sorted(n1), sorted(n2), mods
+
+    def _area_candidates(self, rare: int | None = None):
+        """缩圈候选。传 rare 时只取这张地图类型用过的（不会给 limveld 选出大空洞的缩圈）。"""
+        a1, a2 = set(), set()
+        for pt in self.patterns.values():
+            r = pt.playarea
+            if not r:
+                continue
+            if rare is not None and pt.rare_map != rare:
+                continue
+            x, y = _i(r.get('playArea1')), _i(r.get('playArea2'))
+            if x > 0:
+                a1.add(x)
+            if y > 0:
+                a2.add(y)
+        return sorted(a1), sorted(a2)
+
+    def plan_random_pattern(self, sid: int, opts: dict | None = None) -> Plan:
+        """在 set 末尾加一个「随机种子」：克隆同地图类型的官方种子，再按勾选项随机内容。
+
+        opts: {attach: 地点(建筑+变体)随机, playarea: 缩圈随机, night: 夜晚BOSS随机}
+        - 组点（大空洞那 4 组）沿用模板，不参与随机（组必须成套，随机容易破坏）
+        - 夜晚 BOSS 分两晚随机：第一晚只从「官方第一晚 BOSS」里抽，第二晚同理，绝不混
+        """
+        import random as _r
+        opts = opts or {}
+        do_attach = bool(opts.get('attach', True))
+        do_area = bool(opts.get('playarea', False))
+        do_night = bool(opts.get('night', False))
+
+        st = self.sets.get(sid)
+        plan = Plan(op='random_pattern', title=f'在 set {sid} 加一个随机种子')
+        if not st:
+            return plan.fail(f'set {sid} 不存在')
+        combo = st.combo or self.set_combos.get(sid)
+        if not combo:
+            return plan.fail('这个 set 还没有身份（夜王 + 地图类型），先在「新建 set」时选好')
+        rare = int(combo[1])
+
+        cands = [pt for s2 in self.sets.values() if not s2.name.startswith('[Custom]')
+                 for pt in s2.patterns if pt.rare_map == rare]
+        if not cands:
+            return plan.fail(f'官方没有地图类型 {rare} 的种子可以当模板')
+        src = _r.choice(cands)
+        plan.notes.append(f'模板种子：pid {src.pid}（{self.combo_text(src.combo)}，随机挑的）')
+
+        # 新 pid：落在 set 末尾
+        idx = st.count
+        grp = st.group
+        base = grp * GROUP_SIZE
+        off = sum(s2.count for s2 in sorted(self.sets.values(), key=lambda x: x.sid)
+                  if s2.group == grp and s2.sid < sid)
+        new_pid = base + off + idx
+        plan.moves = self._shift_map(grp, new_pid, +1)
+
+        # ---- 地点：只改「模板里有且勾选了」的点位，建筑按全局权重随机 ----
+        # 没勾的点位保持模板原样；模板没有的点位不额外加（数量跟模板走）。
+        spot_over: dict = {}
+        if do_attach:
+            group_members = {int(a) for g in (self.groups or {}).values()
+                             for a in (g.get('members') or [])}
+            sel_attach = set(int(x) for x in (self.random_sel.get('attach') or []))
+            tile_w = {int(k): int(v) for k, v in (self.random_sel.get('tiles') or {}).items()
+                      if int(v) > 0}
+            if not tile_w:
+                # 没配置权重 → 默认「所有候选建筑权重 10」
+                at = self._attach_tiles()
+                tids = set()
+                for a in (self.calib_points or []):
+                    tids |= set(at.get(int(a)) or set())
+                tile_w = {int(t): 10 for t in tids}
+            var_w = self.random_sel.get('variants') or {}
+            tiles_of = self._attach_tiles()
+            if not tile_w:
+                plan.warnings.append('建筑权重表是空的，地点不会随机')
+            else:
+                changed = 0
+                kept = 0
+                skipped = 0
+                for i, r in enumerate(src.spots):
+                    aid = _i(r.get('attachId'))
+                    if aid in group_members:      # 组点保持模板（必须成套）
+                        continue
+                    if sel_attach and aid not in sel_attach:
+                        kept += 1
+                        continue                  # 没勾 → 保持模板原样
+                    # 候选 = 该点位自己官方用过的（已含 ±2000 孪生），再按全局权重过滤。
+                    # 绝不能从「全部建筑」里抽 —— 否则野外 BOSS 点会长出建筑。
+                    cand = [int(t) for t in (tiles_of.get(aid) or ())
+                            if tile_w.get(int(t), 0) > 0]
+                    if not cand:
+                        kept += 1                 # 这个点位没有可用建筑 → 保持模板
+                        skipped += 1
+                        continue
+                    tile = _r.choices(cand, weights=[tile_w[t] for t in cand], k=1)[0]
+                    vmap = {int(k): int(v) for k, v in (var_w.get(tile) or {}).items() if int(v) > 0}
+                    if vmap:
+                        vids = list(vmap)
+                        vs = [vmap[v] for v in vids]
+                        var = _r.choices(vids, weights=vs, k=1)[0]
+                    else:
+                        var = 0
+                    spot_over[i] = {'attachId': aid, 'tile': tile, 'variationId': var}
+                    changed += 1
+                plan.notes.append(f'地点：模板 {len(src.spots)} 个 → 随机了 {changed} 个，'
+                                  f'保持原样 {kept} 个' + (f'（{skipped} 个没有可用建筑）' if skipped else ''))
+
+        # ---- 缩圈随机（只在该地图类型的候选里选）----
+        area_over = {}
+        if do_area:
+            a1, a2 = self._area_candidates(rare)
+            sel = self.random_sel.get('playarea') or []
+            if sel:
+                h1 = [x for x in a1 if x in sel]
+                h2 = [x for x in a2 if x in sel]
+                if h1:
+                    a1 = h1
+                if h2:
+                    a2 = h2
+            if a1:
+                area_over['playArea1'] = _r.choice(a1)
+            if a2:
+                area_over['playArea2'] = _r.choice(a2)
+            plan.notes.append(f'缩圈随机（该地图候选 {len(a1)}/{len(a2)} 个）：{area_over}')
+
+        # ---- 夜晚 BOSS 随机（两晚分开）----
+        night = (None, None)
+        if do_night:
+            n1, n2, mods = self._night_sets()
+            sel = self.random_sel.get('night') or []
+            if sel:
+                n1 = [x for x in n1 if x in sel] or n1
+                n2 = [x for x in n2 if x in sel] or n2
+            m1 = mods.get(_r.choice(n1)) if n1 else None
+            m2 = mods.get(_r.choice(n2)) if n2 else None
+            night = (m1, m2)
+            plan.notes.append(f'夜晚 BOSS 随机：第一晚 modifier {m1} / 第二晚 modifier {m2}'
+                              f'（第一晚候选 {len(n1)} 个、第二晚 {len(n2)} 个）')
+            if not n1 or not n2:
+                plan.warnings.append('没有找到足够的夜晚 BOSS 候选')
+
+        plan.new_pids.append({
+            'pid': new_pid, 'set': sid, 'source_pid': src.pid, 'combo': tuple(combo),
+            'maptype_flag': maptype_flag(rare), 'maptype_mod': maptype_mod(rare),
+            'night': night,
+            'ref_pid': src.pid,
+            'flags': len(src.flags),
+            'spots': src.spot_count,
+            'spot_overrides': spot_over,
+            'playarea_overrides': area_over,
+        })
+        plan.count_edits.append({'sid': sid, 'old': st.declared_count,
+                                 'new': st.declared_count + 1})
+        plan.added_rows = {T_FLAG: len(src.flags), T_AREA: 1, T_SPOT: len(src.spots)}
+        plan.touched_rows = self._row_counts_for_moves(plan.moves)
+        plan.notes.append(f'新 pid = {new_pid}（set {sid} 末尾）')
+        plan.notes.append(f'同组平移 {len(plan.moves)} 个 pid')
         return plan
 
     def plan_delete_pattern(self, pid: int) -> Plan:
@@ -779,6 +1009,15 @@ class PatternModel:
                         changed += 1
         if not st.patterns:
             plan.notes.append('空 set：没有 flag 行要改，只改工具侧记录 + 名字')
+        # 名字里的 [夜王] 前缀跟着换（否则会留下「名字是 Harmonia、组合是 Straghess」的错配）
+        # 不依赖旧 combo —— 已经错配过的 set 也能靠这步修回来
+        new_short = (self.boss_name(boss) or '').split('/')[-1].strip()
+        nm = st.name or ''
+        mt = re.match(r'^\[([^\]]+)\]', nm)
+        if new_short and mt and mt.group(1) != new_short:
+            new_nm = f'[{new_short}]' + nm[mt.end():]
+            plan.set_edits.append({'sid': sid, 'field': '_name', 'old': nm, 'new': new_nm})
+            plan.notes.append(f'名字跟着换：{nm} → {new_nm}')
         if recopy_pools and src is not None:
             src_set = self.sets[src]
             for i in range(1, 9):
@@ -870,12 +1109,45 @@ class PatternModel:
         if not p:
             return plan.fail(f'pid {pid} 不存在')
         tile = int(tile)
-        used = [_i(r.get('mapIndex')) for r in p.spots if _i(r.get('smallBaseMapId')) == tile]
-        mi = (max(used) + 1) if used else 0
+        attach_id = int(attach_id)
+
+        # 成组点（大空洞 4 组）：官方种子里整组出现，加代表点时要按配套表把整组一起加，
+        # 否则种子会出现官方不存在的「残缺组」。
+        adds = [(attach_id, tile)]
+        grp = self.group_rule(attach_id)
+        if grp:
+            members = [int(x) for x in grp.get('members') or []]
+            sets = [[int(t) for t in s] for s in (grp.get('sets') or [])]
+            if attach_id in members and sets:
+                pos = members.index(attach_id)
+                idx = next((i for i, s in enumerate(sets)
+                            if len(s) == len(members) and s[pos] == tile), None)
+                if idx is None:
+                    plan.warnings.append(
+                        f'tile {tile} 不在「{grp.get("name", "组")}」的配套表里 —— '
+                        f'只加这一个点，种子里会缺组员')
+                else:
+                    adds = list(zip(members, sets[idx]))
+                    labels = grp.get('labels') or []
+                    lb = labels[idx] if idx < len(labels) else f'第 {idx + 1} 套'
+                    plan.notes.append(f'「{grp.get("name", "组")}」整组一起加（{lb}）：'
+                                      + '、'.join(f'{m}={t}' for m, t in adds))
+
+        existing = {_i(r.get('attachId')) for r in p.spots}
         src = int(p.spots[0]['_id']) if p.spots else None
-        plan.spot_adds.append({'pid': pid, 'source_row': src, 'attachId': int(attach_id),
-                               'tile': tile, 'variationId': int(variation_id or 0), 'mapIndex': mi})
-        plan.notes.append(f'新地点的 mapIndex = {mi}（该 tile 已有 {len(used)} 个）')
+        added = []
+        for aid, t in adds:
+            if aid in existing:
+                if len(adds) > 1:
+                    plan.warnings.append(f'组员 {aid} 已经在种子里，跳过')
+                continue
+            used = [_i(r.get('mapIndex')) for r in p.spots if _i(r.get('smallBaseMapId')) == t]
+            mi = (max(used) + 1) if used else 0
+            plan.spot_adds.append({'pid': pid, 'source_row': src, 'attachId': aid,
+                                   'tile': t, 'variationId': int(variation_id or 0), 'mapIndex': mi})
+            added.append((aid, t, mi))
+        for aid, t, mi in added:
+            plan.notes.append(f'新地点 attach {aid} / tile {t}，mapIndex = {mi}')
         return plan
 
     def plan_spot_remove(self, pid: int, row_id: int) -> Plan:
@@ -909,7 +1181,8 @@ class PatternModel:
 
     def plan_spot_tile(self, pid: int, row_id: int, tile: int,
                        variation_id: int | None = None) -> Plan:
-        """把某个地点换成另一种建筑（改 smallBaseMapId）；mapIndex 按新 tile 重排。"""
+        """把某个地点换成另一种建筑（改 smallBaseMapId）；mapIndex 按新 tile 重排。
+        大空洞这类「成组出现」的点，同组其他地点会按配套表自动跟着改。"""
         p = self.patterns.get(pid)
         plan = Plan(op='spot_tile', title=f'改 pid {pid} 地点的建筑')
         if not p:
@@ -938,11 +1211,67 @@ class PatternModel:
                                           'old': _i(row.get('variationId')),
                                           'new': 0 if vary is None else vary})
             plan.notes.append(f'tile {old_tile} → {tile}，mapIndex 改成 {mi}')
+            self._apply_group(plan, p, _i(row.get('attachId')), tile)
         elif vary is not None:
             plan.spot_field_edits.append({'row_id': int(row_id), 'field': 'variationId',
                                           'old': _i(row.get('variationId')), 'new': vary})
             plan.notes.append(f'variationId → {vary}')
         return plan
+
+    def group_rule(self, attach_id: int):
+        """成组点规则（代表 attachId → 组定义），由编辑器按地图档案注入。"""
+        return (self.groups or {}).get(int(attach_id))
+
+    def _apply_group(self, plan: Plan, p: Pattern, attach_id: int, tile: int) -> None:
+        """大空洞：这 4 组在官方种子里 100% 整组出现、tile 固定配套（2026-11-16 实测 80/80）。
+        改组里任何一个点，同组其他点按配套表补齐，避免出现官方不存在的组合。"""
+        grp = self.group_rule(attach_id)
+        if not grp:
+            return
+        members = [int(x) for x in grp.get('members') or []]
+        sets = [[int(t) for t in s] for s in (grp.get('sets') or [])]
+        if attach_id not in members or not sets:
+            return
+        pos = members.index(attach_id)
+        cand = [i for i, s in enumerate(sets)
+                if len(s) == len(members) and s[pos] == int(tile)]
+        if not cand:
+            plan.warnings.append(
+                f'tile {tile} 不在「{grp.get("name", "组")}」的配套表里 —— 同组不会跟着改，'
+                f'游戏里可能不是官方组合')
+            return
+
+        def _diff(i):
+            """和现状差几行（用于在有多个候选套时挑最贴近现状的那套，
+            这样 1148 这种独立二选一的点不会被硬改）。"""
+            d = 0
+            for m, t in zip(members, sets[i]):
+                row2 = next((r for r in p.spots if _i(r.get('attachId')) == m), None)
+                if row2 and _i(row2.get('smallBaseMapId')) != t:
+                    d += 1
+            return d
+
+        idx = min(cand, key=_diff)
+        changed = []
+        for m, t in zip(members, sets[idx]):
+            if m == attach_id:
+                continue
+            row2 = next((r for r in p.spots if _i(r.get('attachId')) == m), None)
+            if not row2:
+                plan.warnings.append(f'组员 {m} 在这个种子里没有地点行，跳过')
+                continue
+            old_t = _i(row2.get('smallBaseMapId'))
+            if old_t == t:
+                continue
+            plan.spot_field_edits.append({'row_id': int(row2['_id']), 'field': 'smallBaseMapId',
+                                          'old': old_t, 'new': t})
+            plan.spot_field_edits.append({'row_id': int(row2['_id']), 'field': 'mapIndex',
+                                          'old': _i(row2.get('mapIndex')), 'new': 0})
+            changed.append(f'{m}: {old_t}→{t}')
+        labels = grp.get('labels') or []
+        label = labels[idx] if idx < len(labels) else f'第 {idx + 1} 套'
+        plan.notes.append(f'「{grp.get("name", "组")}」整组换成『{label}』'
+                          + (('，连带：' + '；'.join(changed)) if changed else '（同组本来就是这套）'))
 
     def plan_playarea(self, pid: int, fields: dict) -> Plan:
         """改这个种子的缩圈 / 夜晚 BOSS（直接给 playarea 行字段）。"""

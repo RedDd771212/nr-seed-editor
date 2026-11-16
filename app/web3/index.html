@@ -11,6 +11,7 @@
   <input id="binPath" placeholder="regulation.bin 路径（或它所在文件夹）">
   <button id="btnOpen">打开</button>
   <button id="btnSave" class="primary" disabled>保存</button>
+  <button id="btnNames" title="建筑 tile 名称表（改完立即生效）">名称表</button>
   <span id="ctx" class="muted"></span>
 </header>
 
@@ -28,6 +29,11 @@
   </aside>
 
   <section id="center">
+    <div id="layerBar" hidden>
+      <span class="muted">层</span>
+      <button class="lay on" data-layer="surface">上层 L0</button>
+      <button class="lay" data-layer="under">下层 B1</button>
+    </div>
     <div id="mapWrap">
       <div id="mapBox"><canvas id="map" width="1536" height="1536"></canvas><canvas id="hl" width="1536" height="1536"></canvas></div>
     </div>
@@ -39,6 +45,74 @@
 </main>
 
 <div id="toast"></div>
+
+<div id="namesModal" hidden>
+  <div class="nm-box">
+    <div class="nm-head">
+      <b>名称表</b>
+      <button class="tab on" data-tab="tile">建筑</button>
+      <button class="tab" data-tab="boss">夜晚 BOSS</button>
+      <input id="nmSearch" placeholder="搜索 id / 名称">
+      <span id="nmInfo" class="muted"></span>
+      <span class="sp"></span>
+      <button id="nmSave" class="primary">保存</button>
+      <button id="nmClose">关闭</button>
+    </div>
+    <div class="nm-body">
+      <div id="nmTilePane">
+        <table id="nmTable">
+          <thead><tr><th>tile</th><th>英文名</th><th>中文名（优先显示）</th><th>属性变体</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div id="nmBossPane" hidden>
+        <table id="nmBossTable">
+          <thead><tr><th>bossId</th><th>modifier</th><th>名字 / 中文名</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="randomModal" hidden>
+  <div class="rm-box">
+    <div class="rm-head">
+      <b>随机表</b>
+      <button class="ptab on" data-page="t1">表1 · 点位 / 建筑</button>
+      <button class="ptab" data-page="t2">表2 · 夜王 / 缩圈</button>
+      <span class="sp"></span>
+      <button id="rmSave" class="primary">保存</button>
+      <button id="rmClose">关闭</button>
+    </div>
+    <div id="rmPage1" class="rm-body">
+      <div class="rm-col" style="flex:.85">
+        <div class="rm-title">点位（勾选 = 参与随机）<span id="rmPtInfo" class="muted"></span></div>
+        <div class="rm-tabs">
+          <button class="ptab on" data-pt="calibrated">已校准</button>
+          <button class="ptab" data-pt="uncalibrated">未校准</button>
+        </div>
+        <div id="rmPts" class="rm-list"></div>
+      </div>
+      <div class="rm-col" style="flex:1.15">
+        <div class="rm-title">建筑（权重，0 = 不参与）<span id="rmTileInfo" class="muted"></span></div>
+        <div id="rmTiles" class="rm-list"></div>
+      </div>
+    </div>
+    <div id="rmPage2" class="rm-body" hidden>
+      <div class="rm-col">
+        <div class="rm-title">夜晚 BOSS<span id="rmNightInfo" class="muted"></span></div>
+        <div id="rmNight" class="rm-list"></div>
+      </div>
+      <div class="rm-col">
+        <div class="rm-title">缩圈<span id="rmAreaInfo" class="muted"></span></div>
+        <div id="rmAreas" class="rm-list"></div>
+      </div>
+    </div>
+    <div class="rm-foot"><a id="rmLog" title="开发者工具：把随机记录导出成 JSON">导出随机日志</a></div>
+  </div>
+</div>
+
 <script src="/app.js"></script>
 </body>
 </html>

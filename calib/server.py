@@ -24,12 +24,18 @@ OX, OZ = 10504.44, 10491.71     # 和编辑器同一套标定
 TILE, CENTER = 256.0, 128.0
 
 MAPS = {
-    "limveld": ("宁姆韦德（普通）", "limveld.png", "all"),
-    "mountaintop": ("山顶（Mountaintop）", "mountaintop.png", "anchors"),
-    "crater": ("火山口（The Crater）", "crater.png", "anchors"),
-    "rotted": ("腐败森林（Rotted Woods）", "rotted.png", "anchors"),
-    "shroud": ("隐城（Shrouded City）", "shroud.png", "anchors"),
+    # (显示名, 底图, 摊点模式, rareMap)
+    # 模式：all = 全摊 0xxx；anchors = 47 个校准建筑位；used = 这张图种子实际引用的点
+    "limveld": ("宁姆韦德（普通）", "limveld.png", "all", 0),
+    "mountaintop": ("山顶（Mountaintop）", "mountaintop.png", "anchors", 1),
+    "crater": ("火山口（The Crater）", "crater.png", "anchors", 2),
+    "rotted": ("腐败森林（Rotted Woods）", "rotted.png", "rotted", 3),
+    "shroud": ("隐城（Shrouded City）", "shroud.png", "anchors", 5),
 }
+
+# 腐败森林专属的点（Limveld 那 47 个建筑位里没有）：Rotted Woods 区域点 + Event 点
+ROTTED_EXTRA = [309, 315, 316, 317, 318, 319, 320, 321, 322,
+                531, 532, 551, 552, 591, 592]
 
 STATE = {"project": None, "bin": None, "used": None, "map": "limveld"}
 
@@ -86,10 +92,80 @@ def _all_rows(p: Project):
     return out
 
 
+def _used_rows(p: Project, rare: int):
+    """这张图的种子（rareMap）实际引用过的 attach 点（只要 0xxx 本体，2xxx 是孪生副本）。"""
+    from app.core.patternset import PatternModel
+    m = PatternModel(p.params)
+    pids = {pt.pid for s in m.sets.values() if s.rare_map == rare for pt in s.patterns}
+    used = set()
+    for r in p.params.rows('LotResultSmallBaseAndSpot').values():
+        if r.get('patternId') in pids:
+            aid = int(r.get('attachId') or 0)
+            if 0 < aid < 1000:
+                used.add(aid)
+            elif 2000 <= aid < 3000:      # 孪生副本折回本体
+                used.add(aid - 2000)
+    out = []
+    for aid in sorted(used):
+        ap = p.model.attach.get(aid)
+        if not ap:
+            continue
+        gx, gz = ap.get('gridXNo'), ap.get('gridZNo')
+        if gx is None or gz is None:
+            continue
+        px, pz = ap.get('posX') or 0.0, ap.get('posZ') or 0.0
+        out.append({
+            "id": aid,
+            "name": ap.get("_name") or "",
+            "grid": [gx, gz],
+            "pos": [px, ap.get("posY") or 0.0, pz],
+            "world": [gx * TILE + CENTER + px, gz * TILE + CENTER + pz],
+            "pad": p.attach_pad().get(aid, 0),
+            "size": p.model.attach_size(ap.get("_name") or ""),
+            "used": (STATE["used"] or {}).get(aid, 0),
+        })
+    return out
+
+
+def _rows_of(p: Project, ids):
+    """指定 attachId 列表 → 摊点数据（腐败森林专属点用）。"""
+    pad = p.attach_pad()
+    used = STATE["used"] or {}
+    out = []
+    for aid in ids:
+        ap = p.model.attach.get(aid)
+        if not ap:
+            continue
+        gx, gz = ap.get("gridXNo"), ap.get("gridZNo")
+        if gx is None or gz is None:
+            continue
+        px, pz = ap.get("posX") or 0.0, ap.get("posZ") or 0.0
+        out.append({
+            "id": aid,
+            "name": ap.get("_name") or "",
+            "grid": [gx, gz],
+            "pos": [px, ap.get("posY") or 0.0, pz],
+            "world": [gx * TILE + CENTER + px, gz * TILE + CENTER + pz],
+            # pad 一律报 0：这批是腐败森林专属点（pad=3），在这张图上就是正常建筑位，
+            # 不该被「含特殊地形」过滤器藏起来
+            "pad": 0,
+            "size": p.model.attach_size(ap.get("_name") or ""),
+            "used": used.get(aid, 0),
+        })
+    return out
+
+
 def _points():
     p = STATE["project"]
     kind = MAPS[STATE["map"]][2]
-    rows = _anchor_rows(p) if kind == "anchors" else _all_rows(p)
+    if kind == "anchors":
+        rows = _anchor_rows(p)
+    elif kind == "rotted":
+        rows = _anchor_rows(p) + _rows_of(p, ROTTED_EXTRA)
+    elif kind == "used":
+        rows = _used_rows(p, MAPS[STATE["map"]][3])
+    else:
+        rows = _all_rows(p)
     rows.sort(key=lambda x: x["id"])
     return rows
 

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>大空洞 · 点位校准</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: #14161a; color: #e8e8ea;
+       font: 14px/1.5 "Microsoft YaHei", "Segoe UI", sans-serif;
+       height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+#bar { display: flex; align-items: center; gap: 10px; padding: 8px 14px;
+       background: #1c1f24; border-bottom: 1px solid #2e333b; flex-shrink: 0; }
+#bar h1 { font-size: 15px; margin: 0 4px 0 0; font-weight: 600; letter-spacing: .5px; }
+#prog { font-size: 13px; color: #b8c0c8; }
+#prog b { color: #fff; font-weight: 600; }
+#hint { font-size: 12px; color: #7d8792; }
+#bar .sp { flex: 1; }
+button { background: #2b3038; color: #e8e8ea; border: 1px solid #3a414b;
+         border-radius: 6px; padding: 5px 12px; cursor: pointer; font-size: 13px; }
+button:hover { background: #343a44; }
+button.primary { background: #2f6fd0; border-color: #3a7de0; }
+button.primary:hover { background: #3a7de0; }
+#msg { font-size: 12px; color: #8fd18f; min-width: 150px; }
+#wrap { flex: 1; display: flex; gap: 10px; padding: 10px; min-height: 0; }
+.pane { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.cap { font-size: 12px; color: #9aa3ad; padding: 3px 2px; display: flex;
+       justify-content: space-between; flex-shrink: 0; }
+.stage { position: relative; width: min(100%, calc(100vh - 130px)); aspect-ratio: 1 / 1;
+         margin: 0 auto; background: #0b0c0e;
+         border: 1px solid #2e333b; border-radius: 8px; overflow: hidden; touch-action: none; }
+.stage img { position: absolute; inset: 0; width: 100%; height: 100%;
+             display: block; user-select: none; pointer-events: none; }
+.dots { position: absolute; inset: 0; }
+.dot { position: absolute; width: 15px; height: 15px; margin: -7.5px 0 0 -7.5px;
+       border-radius: 50%; border: 2px solid rgba(255,255,255,.88); cursor: grab;
+       transition: transform .08s; z-index: 2; }
+.dot.s { background: #ff5252; }
+.dot.u { background: #4a9bff; }
+.dot.del { background: #5a6068; border-color: #8a929c; opacity: .55; }
+.dot.del::after { content: "×"; position: absolute; left: 50%; top: 50%;
+                  transform: translate(-50%, -54%); font-size: 13px; font-weight: 700;
+                  color: #fff; line-height: 1; }
+.dot.dim { opacity: .2; }
+.dot.del.dim { opacity: .12; }
+.dot:hover { transform: scale(1.45); }
+.dot.sel { box-shadow: 0 0 0 4px #ffe066; z-index: 3; }
+.dot.dragging { cursor: grabbing; z-index: 4; }
+#tip { position: fixed; pointer-events: none; background: #000d; padding: 4px 9px;
+       border-radius: 5px; font-size: 12px; display: none; z-index: 9; white-space: nowrap; }
+#legend { font-size: 12px; color: #9aa3ad; display: flex; gap: 12px; align-items: center; }
+#legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%;
+            border: 1px solid #fff; margin-right: 4px; vertical-align: -1px; }
+</style>
+</head>
+<body>
+<div id="bar">
+  <h1>大空洞 · 点位校准</h1>
+  <span id="prog">加载中…</span>
+  <span class="sp"></span>
+  <span id="hint">单击切层 · 拖动挪位 · 右键删除 · Ctrl+Z 撤销</span>
+  <button id="btnUndo" title="Ctrl+Z">撤销</button>
+  <button id="btnReload">重载存档</button>
+  <button id="btnClear">清空存档</button>
+  <button class="primary" id="btnSave">保存</button>
+  <span id="msg"></span>
+</div>
+<div id="wrap">
+  <div class="pane">
+    <div class="cap"><span>上层 · L0（地表）</span><span id="c0"></span></div>
+    <div class="stage" id="s0"><img src="/bg0.png"><div class="dots" data-host="surface"></div></div>
+  </div>
+  <div class="pane">
+    <div class="cap"><span>下层 · B1（地底）</span><span id="c1"></span></div>
+    <div class="stage" id="s1"><img src="/bg1.png"><div class="dots" data-host="under"></div></div>
+  </div>
+</div>
+<div id="tip"></div>
+<script>
+let PTS = [], INIT = {}, SIZE = 1536;
+let UNDO = [], DRAG = null, DOTMAP = new Map();
+const tip = document.getElementById('tip');
+const boxes = [...document.querySelectorAll('.dots')];
+const stages = [document.getElementById('s0'), document.getElementById('s1')];
+
+const snap = () => PTS.map(p => ({ id: p.id, layer: p.layer, deleted: p.deleted,
+                                   rx: p.rx, ry: p.ry, px: p.px, py: p.py }));
+
+function pushUndo() {
+  UNDO.push(snap());
+  if (UNDO.length > 80) UNDO.shift();
+}
+
+function cls(p, host) {
+  let c = 'dot ';
+  if (p.deleted) c += 'del';
+  else c += (p.layer === 'under' ? 'u' : 's');
+  if (!p.deleted && p.layer !== host) c += ' dim';
+  if (p.deleted) c += ' dim';
+  if (p.flash && Date.now() - p.flash < 900) c += ' sel';
+  return c;
+}
+
+function render() {
+  DOTMAP.clear();
+  const list = [['surface', 0], ['under', 1]];
+  for (const [host, i] of list) {
+    const box = boxes[i];
+    box.innerHTML = '';
+    for (const p of PTS) {
+      const d = document.createElement('div');
+      d.className = cls(p, host);
+      d.style.left = (p.px / SIZE * 100) + '%';
+      d.style.top = (p.py / SIZE * 100) + '%';
+      d.dataset.id = p.id;
+      d.onpointerdown = e => onDown(e, p);
+      d.oncontextmenu = e => { e.preventDefault(); toggleDel(p); };
+      d.onmouseenter = () => {
+        tip.style.display = 'block';
+        const used = (p.usedBy && p.usedBy.length)
+          ? p.usedBy.join('<br>') : '<i style="color:#8a929c">种子里不用（备用点）</i>';
+        tip.innerHTML = `<b>${p.id}</b> · posY ${p.posY}<br>${used}` + (p.deleted ? '<br><span style="color:#ff9">已标记删除</span>' : '');
+      };
+      d.onmousemove = e => {
+        tip.style.left = (e.clientX + 14) + 'px';
+        tip.style.top = (e.clientY + 14) + 'px';
+      };
+      d.onmouseleave = () => { tip.style.display = 'none'; };
+      box.appendChild(d);
+      if (!DOTMAP.has(p.id)) DOTMAP.set(p.id, []);
+      DOTMAP.get(p.id).push(d);
+    }
+  }
+  const u = PTS.filter(p => p.layer === 'under' && !p.deleted).length;
+  const s = PTS.filter(p => p.layer === 'surface' && !p.deleted).length;
+  const d = PTS.filter(p => p.deleted).length;
+  const m = PTS.filter(p => {
+    const o = INIT[p.id];
+    return o && (Math.abs(p.rx - o.rx) > 0.5 || Math.abs(p.ry - o.ry) > 0.5);
+  }).length;
+  document.getElementById('prog').innerHTML =
+    `共 ${PTS.length} · 地表 <b>${s}</b> · 地底 <b>${u}</b> · 删除 <b>${d}</b> · 挪过 <b>${m}</b>`;
+  document.getElementById('c0').textContent = `地表 ${s}`;
+  document.getElementById('c1').textContent = `地底 ${u}`;
+}
+
+function toggleLayer(p) {
+  pushUndo();
+  p.layer = p.layer === 'under' ? 'surface' : 'under';
+  p.flash = Date.now();
+  render();
+  setTimeout(render, 950);
+}
+
+function toggleDel(p) {
+  pushUndo();
+  p.deleted = !p.deleted;
+  p.flash = Date.now();
+  render();
+  setTimeout(render, 950);
+}
+
+function onDown(e, p) {
+  if (e.button !== 0) return;
+  e.preventDefault();
+  e.stopPropagation();
+  const stage = e.currentTarget.closest('.stage');
+  const rect = stage.getBoundingClientRect();
+  // x/y 分开换算：万一面板不是严格正方形，纵向位移也不会算错
+  const sx = SIZE / rect.width, sy = SIZE / rect.height;
+  DRAG = { p, x0: e.clientX, y0: e.clientY, rx0: p.rx, ry0: p.ry,
+           px0: p.px, py0: p.py, sx, sy, moved: false };
+  window.addEventListener('pointermove', onMove);
+  window.addEventListener('pointerup', onUp, { once: true });
+}
+
+function onMove(e) {
+  if (!DRAG) return;
+  const dx = (e.clientX - DRAG.x0) * DRAG.sx;
+  const dy = (e.clientY - DRAG.y0) * DRAG.sy;
+  if (!DRAG.moved && Math.abs(e.clientX - DRAG.x0) < 4 && Math.abs(e.clientY - DRAG.y0) < 4) return;
+  if (!DRAG.moved) { pushUndo(); DRAG.moved = true; }
+  const p = DRAG.p;
+  p.rx = DRAG.rx0 + dx;
+  p.ry = DRAG.ry0 + dy;
+  p.px = DRAG.px0 + dx;
+  p.py = DRAG.py0 + dy;
+  p.rx = Math.max(0, Math.min(SIZE, p.rx));
+  p.ry = Math.max(0, Math.min(SIZE, p.ry));
+  p.px = Math.max(0, Math.min(SIZE, p.px));
+  p.py = Math.max(0, Math.min(SIZE, p.py));
+  for (const d of (DOTMAP.get(p.id) || [])) {
+    d.style.left = (p.px / SIZE * 100) + '%';
+    d.style.top = (p.py / SIZE * 100) + '%';
+    d.classList.add('dragging');
+  }
+}
+
+function onUp() {
+  window.removeEventListener('pointermove', onMove);
+  if (!DRAG) return;
+  const d = DRAG;
+  DRAG = null;
+  for (const el of (DOTMAP.get(d.p.id) || [])) el.classList.remove('dragging');
+  if (d.moved) render();
+  else toggleLayer(d.p);
+}
+
+function undo() {
+  const s = UNDO.pop();
+  if (!s) { msg('没有可撤销的操作'); return; }
+  const byId = new Map(s.map(q => [q.id, q]));
+  for (const p of PTS) {
+    const q = byId.get(p.id);
+    if (!q) continue;
+    p.layer = q.layer; p.deleted = q.deleted;
+    p.rx = q.rx; p.ry = q.ry; p.px = q.px; p.py = q.py;
+  }
+  render();
+}
+
+function msg(t) {
+  document.getElementById('msg').textContent = t;
+  clearTimeout(msg._t);
+  msg._t = setTimeout(() => { document.getElementById('msg').textContent = ''; }, 4500);
+}
+
+async function load() {
+  const r = await fetch('/api/state').then(x => x.json());
+  SIZE = r.size || 1536;
+  PTS = r.points || [];
+  INIT = {};
+  PTS.forEach(p => { INIT[p.id] = { rx: p.rx, ry: p.ry }; });
+  render();
+}
+
+document.getElementById('btnSave').onclick = async () => {
+  const body = JSON.stringify({ points: PTS.map(p => ({
+    id: p.id, layer: p.layer, deleted: p.deleted, rx: p.rx, ry: p.ry, px: p.px, py: p.py,
+  })) });
+  const r = await fetch('/api/save', { method: 'POST', body }).then(x => x.json());
+  msg(r.ok ? `已保存 · 地表 ${r.surface} / 地底 ${r.under} / 删除 ${r.deleted} / 挪过 ${r.moved}`
+           : ('失败：' + (r.error || '')));
+};
+document.getElementById('btnUndo').onclick = undo;
+document.getElementById('btnReload').onclick = async () => { UNDO = []; await load(); msg('已重载存档'); };
+document.getElementById('btnClear').onclick = async () => {
+  if (!confirm('清空已保存的 great_hollow_layers.json？')) return;
+  await fetch('/api/reset', { method: 'POST', body: '{}' });
+  msg('存档已清空，点「重载存档」生效');
+};
+window.addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') { e.preventDefault(); undo(); }
+});
+load();
+</script>
+</body>
+</html>

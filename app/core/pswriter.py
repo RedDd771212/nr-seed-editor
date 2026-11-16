@@ -101,6 +101,8 @@ class Table:
         rid = self.max_id() + 1
         while rid in self.data:
             rid += 1
+        if rid > 0xFFFFFFFF:
+            raise ValueError(f'{self.name} 的行 id 已经到 u32 上限，没法再加行')
         return rid
 
     # ---- 改 ----
@@ -216,9 +218,12 @@ def _apply_core(plan, params_dir: Path, def_dir, model: PatternModel) -> ApplyRe
     rep = ApplyReport(params_dir=str(params_dir))
     tables = {
         'set': Table(params_dir, T_SET, order_by='id', renumber=False),
-        'flag': Table(params_dir, T_FLAG, order_by='pid', renumber=True),
-        'area': Table(params_dir, T_AREA, order_by='pid', renumber=True),
-        'spot': Table(params_dir, T_SPOT, order_by='pid', renumber=True),
+        # 三张结果表：**按 pid 排序行顺序，但不重编号** ——
+        # renumber=True 会把行 id 重排成 1..N，官方原本的 id↔行 对应关系就被打乱了
+        # （虽然目前没发现别的表引用这些 id，但保留官方编号更安全，也方便和 Smithbox 对照）。
+        'flag': Table(params_dir, T_FLAG, order_by='pid', renumber=False),
+        'area': Table(params_dir, T_AREA, order_by='pid', renumber=False),
+        'spot': Table(params_dir, T_SPOT, order_by='pid', renumber=False),
     }
 
     try:
@@ -437,7 +442,11 @@ def _apply_set_edits(plan, tables: dict):
     for e in plan.set_edits:
         if not t.exists(e['sid']):
             raise KeyError(f"MapPatternSet 没有 set {e['sid']}")
-        t.set_field(e['sid'], e['field'], e['new'])
+        if e['field'] == '_name':          # 行名不在 paramdef 字段里，走 names 表
+            t.names[int(e['sid'])] = e['new'] or ''
+            t.dirty = True
+        else:
+            t.set_field(e['sid'], e['field'], e['new'])
 
 
 def _apply_flag_row_edits(plan, tables: dict):
@@ -531,13 +540,54 @@ def _apply_new_pids(plan, model: PatternModel, tables: dict):
         if n2 is not None:
             a.set_field(aid, 'bossId2', _boss_id_of(model, n2))
             a.set_field(aid, 'bossModifier2', n2)
+        for k, v in (np.get('playarea_overrides') or {}).items():
+            a.set_field(aid, k, int(v))
 
         # --- spot 行 ---
-        for i, r in enumerate(src.spots):
-            data = bytearray(tables['spot'].data[int(r['_id'])])
-            sid = tables['spot'].new_id()
-            tables['spot'].add(sid, data, f'p{pid}_{i:02d}')
-            tables['spot'].set_field(sid, 'patternId', pid)
+        custom = np.get('spots_custom')
+        if custom is not None:
+            # 随机种子：按给定的点位生成（不再克隆模板的 spots）
+            if not src.spots:
+                raise ValueError(f'源 pid {src.pid} 没有 spot 行可当字节模板')
+            template = bytearray(tables['spot'].data[int(src.spots[0]['_id'])])
+            used: dict[int, int] = {}
+            for i, c in enumerate(custom):
+                sid = tables['spot'].new_id()
+                tables['spot'].add(sid, bytearray(template), f'p{pid}_{i:02d}')
+                t = tables['spot']
+                t.set_field(sid, 'patternId', pid)
+                t.set_field(sid, 'attachId', int(c['attachId']))
+                t.set_field(sid, 'smallBaseMapId', int(c['tile']))
+                t.set_field(sid, 'variationId', int(c.get('variationId') or 0))
+                tile = int(c['tile'])
+                mi = used.get(tile, 0)
+                t.set_field(sid, 'mapIndex', mi)
+                used[tile] = mi + 1
+        else:
+            overrides = np.get('spot_overrides') or {}
+            new_spot_ids = []
+            for i, r in enumerate(src.spots):
+                data = bytearray(tables['spot'].data[int(r['_id'])])
+                sid = tables['spot'].new_id()
+                tables['spot'].add(sid, data, f'p{pid}_{i:02d}')
+                tables['spot'].set_field(sid, 'patternId', pid)
+                new_spot_ids.append(sid)
+            # 随机覆盖（attach / tile / 变体）+ 按新 tile 重算 mapIndex
+            if overrides:
+                used: dict[int, int] = {}
+                for i, sid in enumerate(new_spot_ids):
+                    o = overrides.get(i) or overrides.get(str(i))
+                    if o:
+                        if 'attachId' in o:
+                            tables['spot'].set_field(sid, 'attachId', int(o['attachId']))
+                        if 'tile' in o:
+                            tables['spot'].set_field(sid, 'smallBaseMapId', int(o['tile']))
+                        if 'variationId' in o:
+                            tables['spot'].set_field(sid, 'variationId', int(o['variationId']))
+                    tile = int(tables['spot'].field(sid, 'smallBaseMapId'))
+                    mi = used.get(tile, 0)
+                    tables['spot'].set_field(sid, 'mapIndex', mi)
+                    used[tile] = mi + 1
 
 
 def _boss_id_of(model: PatternModel, boss_modifier: int) -> int:

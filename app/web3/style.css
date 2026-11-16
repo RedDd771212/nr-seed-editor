@@ -113,3 +113,91 @@ table.flags td{padding:2px;border-bottom:1px solid #22262d}
 #toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,10px);background:rgba(20,24,30,.97);border:1px solid var(--accent);color:#eaf6ff;border-radius:8px;padding:8px 16px;font-size:12px;opacity:0;pointer-events:none;transition:.18s;z-index:99;max-width:70%;white-space:pre-wrap}
 #toast.on{opacity:1;transform:translate(-50%,0)}
 #toast.err{border-color:var(--err);color:#ffd7d9}
+
+/* 层切换（Great Hollow 这类上下两层的图） */
+#layerBar{flex:none;display:flex;align-items:center;gap:6px;padding:0 0 6px}
+#layerBar[hidden]{display:none}
+#layerBar .muted{font-size:12px}
+.lay{background:#23272e;color:var(--text);border:1px solid var(--line);border-radius:6px;padding:3px 11px;font:inherit;font-size:12px;cursor:pointer}
+.lay:hover{border-color:var(--accent)}
+.lay.on{background:#1f4f80;border-color:#2f6aa8;color:#fff}
+
+/* 成组点标记（大空洞 4 组） */
+.grp{display:inline-block;margin-left:4px;padding:0 5px;border-radius:4px;background:#2a3a52;border:1px solid #3d5573;color:#8fc0ff;font-size:10px;line-height:16px;vertical-align:1px}
+
+/* 建筑名称表弹窗 */
+#namesModal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:50}
+#namesModal[hidden]{display:none}
+.nm-box{width:min(880px,92vw);height:min(720px,86vh);background:#1c1f25;border:1px solid #2b3038;border-radius:10px;display:flex;flex-direction:column;overflow:hidden}
+.nm-head{flex:none;display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid #2b3038}
+.nm-head b{font-size:14px}
+.nm-head input{flex:0 1 280px;background:#23272e;color:var(--text);border:1px solid var(--line);border-radius:6px;padding:5px 9px;font:inherit;outline:none}
+.nm-head .sp{flex:1}
+.nm-head button{background:#23272e;color:var(--text);border:1px solid var(--line);border-radius:6px;padding:5px 12px;font:inherit;cursor:pointer}
+.nm-head button.primary{background:#1f4f80;border-color:#2f6aa8}
+.nm-body{flex:1;overflow:auto;padding:0 8px 8px}
+#nmTable{width:100%;border-collapse:collapse;font-size:12px}
+#nmTable th{position:sticky;top:0;background:#1c1f25;text-align:left;padding:7px 6px;color:var(--muted);font-weight:400;border-bottom:1px solid var(--line)}
+#nmTable td{padding:2px 4px;border-bottom:1px solid #22262d}
+#nmTable td:first-child{color:#8fc0ff;white-space:nowrap;width:70px}
+.nmin{width:100%;background:#23272e;color:var(--text);border:1px solid transparent;border-radius:4px;padding:3px 6px;font:inherit;font-size:12px;outline:none}
+.nmin:focus{border-color:var(--accent);background:#262b33}
+
+/* 名称表：tab + 变体列 */
+#namesModal .tab{background:#23272e;border:1px solid var(--line);border-radius:6px;padding:4px 10px;font:inherit;font-size:12px;cursor:pointer;color:var(--text)}
+#namesModal .tab:hover{border-color:var(--accent)}
+#namesModal .tab.on{background:#1f4f80;border-color:#2f6aa8;color:#fff}
+.varlist{color:#9aa3ad;font-size:11px;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* 名称表：变体名输入 */
+.varlist{max-width:270px;line-height:1.9}
+.vpair{display:inline-flex;align-items:center;gap:3px;margin:0 8px 2px 0}
+.vpair b{color:#8fc0ff;font-weight:400;font-size:11px}
+.vmin{width:60px;background:#23272e;color:var(--text);border:1px solid transparent;border-radius:4px;padding:2px 4px;font:inherit;font-size:11px;outline:none}
+.vmin:focus{border-color:var(--accent);background:#262b33}
+
+/* 随机内容勾选框 */
+.chk{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:var(--text);cursor:pointer;white-space:nowrap}
+.chk input{accent-color:#2f6fd0;cursor:pointer}
+
+/* 随机表弹窗 */
+#randomModal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:50}
+#randomModal[hidden]{display:none}
+.rm-box{width:min(1000px,94vw);height:min(760px,88vh);background:#1c1f25;border:1px solid #2b3038;border-radius:10px;display:flex;flex-direction:column;overflow:hidden}
+.rm-head{flex:none;display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid #2b3038}
+.rm-head b{font-size:14px}
+.rm-head .sp{flex:1}
+.rm-head button{background:#23272e;color:var(--text);border:1px solid var(--line);border-radius:6px;padding:5px 12px;font:inherit;cursor:pointer}
+.rm-head button.primary{background:#1f4f80;border-color:#2f6aa8}
+.rm-body{flex:1;display:flex;gap:8px;padding:8px;min-height:0}
+.rm-col{flex:1;display:flex;flex-direction:column;min-width:0;border:1px solid #2b3038;border-radius:8px;overflow:hidden}
+.rm-title{flex:none;padding:6px 10px;background:#23272e;font-size:12px;color:#b8c0c8;display:flex;gap:8px;align-items:center}
+.rm-tabs{flex:none;display:flex;gap:4px;padding:6px 8px;background:#191c21;border-bottom:1px solid #2b3038;flex-wrap:wrap}
+.rmtab{background:#23272e;color:var(--text);border:1px solid var(--line);border-radius:5px;padding:3px 9px;font:inherit;font-size:11px;cursor:pointer}
+.rmtab.on{background:#1f4f80;border-color:#2f6aa8;color:#fff}
+.rm-list{flex:1;overflow:auto;padding:4px 6px;font-size:12px}
+.rm-item{display:flex;align-items:center;gap:6px;padding:2px 4px;border-radius:4px;cursor:pointer}
+.rm-item:hover{background:#23272e}
+.rm-item input{accent-color:#2f6fd0;cursor:pointer}
+.rm-item .rid{color:#8fc0ff;min-width:52px}
+.rm-item .rnm{color:#9aa3ad;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rm-group{margin:6px 0 2px;padding:2px 6px;font-size:11px;color:#7d8892;background:#20242a;border-radius:4px}
+.rm-sum{padding:6px 10px;font-size:12px;color:#9aa3ad}
+
+/* 随机表 v2：建筑权重行 + 变体行 */
+.rm-tile{display:flex;align-items:center;gap:6px;padding:2px 4px;border-radius:4px}
+.rm-tile:hover{background:#23272e}
+.rm-tile.off{opacity:.45}
+.rm-exp{cursor:pointer;color:#8fc0ff;min-width:14px;text-align:center;font-size:10px;user-select:none}
+.rm-var{display:flex;align-items:center;gap:6px;padding:1px 4px 1px 24px;font-size:11px;color:#9aa3ad}
+.rexp-sp{min-width:14px}
+.rmw{width:48px;background:#23272e;color:var(--text);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font:inherit;font-size:11px;text-align:right;margin-left:auto}
+.rmw:focus{border-color:var(--accent);background:#262b33}
+
+/* 随机表分页：flex 会覆盖 [hidden]，得显式压掉 */
+.rm-body[hidden]{display:none}
+
+/* 随机表底部：开发者小入口 */
+.rm-foot{padding:4px 14px 8px;text-align:right;font-size:11px}
+.rm-foot a{color:#5c6670;cursor:pointer;text-decoration:none}
+.rm-foot a:hover{color:#8fc0ff;text-decoration:underline}

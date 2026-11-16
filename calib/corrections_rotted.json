@@ -1,0 +1,147 @@
+{
+  "bin": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ELDEN RING NIGHTREIGN\\Game\\moremap\\regulation.bin",
+  "map": "rotted",
+  "savedAt": "2026-11-16 13:28:31",
+  "items": [
+    {
+      "id": 605,
+      "name": "Evergaol - South Cliff",
+      "orig": [
+        11458.916,
+        9312.755
+      ],
+      "world": [
+        11458.916,
+        9312.755
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 762,
+      "name": "Field Boss - ",
+      "orig": [
+        11545.069999694824,
+        9297.619998931885
+      ],
+      "world": [
+        11545.069999694824,
+        9297.619998931885
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 307,
+      "name": "Minor Base - Southeast of Lake",
+      "orig": [
+        11384.679,
+        9254.426
+      ],
+      "world": [
+        11384.679,
+        9254.426
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 308,
+      "name": "Minor Base - East of Cavalry Bridge",
+      "orig": [
+        11345.793,
+        9516.023
+      ],
+      "world": [
+        11345.793,
+        9516.023
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 114,
+      "name": "Major Base - Minor Erdtree",
+      "orig": [
+        11678.092,
+        9528.396
+      ],
+      "world": [
+        11678.092,
+        9528.396
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 312,
+      "name": "Minor Base - Minor Erdtree",
+      "orig": [
+        11741.724,
+        9607.936
+      ],
+      "world": [
+        11741.724,
+        9607.936
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 763,
+      "name": "Field Boss - ",
+      "orig": [
+        11678.092,
+        9713.988
+      ],
+      "world": [
+        11678.092,
+        9713.988
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 109,
+      "name": "Major Base - West Mistwood",
+      "orig": [
+        11467,
+        9591
+      ],
+      "world": [
+        11467,
+        9591
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 113,
+      "name": "Major Base - South Mistwood",
+      "orig": [
+        11644.509,
+        9388.759
+      ],
+      "world": [
+        11644.509,
+        9388.759
+      ],
+      "moved": 0,
+      "deleted": true
+    },
+    {
+      "id": 108,
+      "name": "Major Base - Waypoint Ruins",
+      "orig": [
+        11443.008,
+        9422.343
+      ],
+      "world": [
+        11443.008,
+        9422.343
+      ],
+      "moved": 0,
+      "deleted": true
+    }
+  ]
+}

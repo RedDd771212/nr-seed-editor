@@ -375,16 +375,22 @@ class Project:
         local = {int(k): v for k, v in (prof.get('overrides') or {}).items()}
         overrides = {**overrides, **local}
         out = []
+        layer_sets = {}
+        for lname, ids in ((prof.get('layers') or {}) or {}).items():
+            for a in ids or []:
+                layer_sets[int(a)] = lname
         for aid, ap in self.model.attach.items():
-            if aid >= 1000:
-                continue
-            if pad.get(aid, 0) != 0:      # 特殊地形（pad != 0）不算普通地图的点
-                continue
             if pool is not None:
-                if aid not in pool:       # 这张图上没有这个建筑位（校准删除的）
+                # 有显式池子（大空洞等 1xxx 段）→ 完全按池子来，跳过 id/pad 过滤
+                if aid not in pool:
                     continue
-            elif aid in drop:
-                continue
+            else:
+                if aid >= 1000:
+                    continue
+                if pad.get(aid, 0) != 0:      # 特殊地形（pad != 0）不算普通地图的点
+                    continue
+                if aid in drop:
+                    continue
             gx, gz = ap.get('gridXNo'), ap.get('gridZNo')
             if gx is None or gz is None:
                 continue
@@ -394,6 +400,7 @@ class Project:
                 'attachId': aid,
                 'attachName': ap.get('_name') or '',
                 'attachSize': size,
+                'layer': layer_sets.get(aid),
                 'grid': [gx, gz],
                 'world': list(ov) if ov else [
                     gx * 256 + 128 + (ap.get('posX') or 0),
@@ -402,7 +409,12 @@ class Project:
         return sorted(out, key=lambda x: x['attachId'])
 
     def official_tiles(self) -> dict:
-        """attachId → 官方种子里在这个位置实际用过的 tile 集合（m05400）。"""
+        """attachId → 官方种子里在这个位置实际用过的 tile 集合（m05400）。
+
+        合并 ±2000 的 DLC 孪生：attach 101 和 2101 是同一个世界位置（坐标完全相同），
+        锻造村 / 毒池（tile 5000/5001/5010/5011…）只挂在 21xx 那边，
+        不合并的话 101 的候选列表里永远没有它们。
+        """
         if getattr(self, '_official_tiles', None) is not None:
             return self._official_tiles
         out: dict[int, set] = {}
@@ -411,7 +423,11 @@ class Project:
             tile = r.get('smallBaseMapId')
             if aid is None or tile is None:
                 continue
-            out.setdefault(int(aid), set()).add(int(tile))
+            a, t = int(aid), int(tile)
+            out.setdefault(a, set()).add(t)
+            for off in (-2000, 2000):
+                if a + off > 0:
+                    out.setdefault(a + off, set()).add(t)
         self._official_tiles = out
         return out
 

@@ -5,7 +5,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'dist' / 'NR地图种子编辑器_v3.0_20261115.zip'
+OUT = ROOT / 'dist' / 'NR地图种子编辑器_v3.1_20261116.zip'
 EXCLUDE_DIRS = {'work', 'dist', '__pycache__', '.git'}
 EXCLUDE_SUFFIX = {'.pyc'}
 
