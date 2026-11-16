@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'dist' / 'NR地图种子编辑器_v3.1_20261116.zip'
 EXCLUDE_DIRS = {'work', 'dist', '__pycache__', '.git'}
-EXCLUDE_SUFFIX = {'.pyc'}
+EXCLUDE_SUFFIX = {'.pyc', '.mp4'}   # 视频走 Releases，不进发布包
 
 OUT.parent.mkdir(parents=True, exist_ok=True)
 if OUT.exists():
