@@ -274,6 +274,7 @@ def _refresh_groups():
         'tiles': {int(k): int(v) for k, v in (sel.get('tiles') or {}).items()},
         'variants': {int(k): {int(v): int(w) for v, w in (vv or {}).items()}
                      for k, vv in (sel.get('variants') or {}).items()},
+        'lock_jail': bool(sel.get('lock_jail', True)),
     }
     _inject_combos()
 
@@ -816,6 +817,7 @@ class Handler(BaseHTTPRequestHandler):
                         'tiles': {int(k): int(v) for k, v in (body.get('tiles') or {}).items()},
                         'variants': {int(k): {int(v): int(w) for v, w in (vv or {}).items()}
                                      for k, vv in (body.get('variants') or {}).items()},
+                        'lock_jail': bool(body.get('lock_jail', True)),
                     }
                     _save_random_sel(sel)
                     return _json(self, {'ok': True,

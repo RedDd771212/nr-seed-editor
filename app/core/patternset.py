@@ -819,12 +819,18 @@ class PatternModel:
                 tile_w = {int(t): 10 for t in tids}
             var_w = self.random_sel.get('variants') or {}
             tiles_of = self._attach_tiles()
+            # 监牢点位（候选全是 4650/4660/4670/4680）同一种子里不能刷同一个「建筑+变体」，
+            # 否则游戏里监牢打不开。默认开，可在随机表里关掉。
+            lock_jail = self.random_sel.get('lock_jail', True)
+            JAIL_TILES = {4650, 4660, 4670, 4680}
+            used_jail = set()
             if not tile_w:
                 plan.warnings.append('建筑权重表是空的，地点不会随机')
             else:
                 changed = 0
                 kept = 0
                 skipped = 0
+                dedup = 0
                 for i, r in enumerate(src.spots):
                     aid = _i(r.get('attachId'))
                     if aid in group_members:      # 组点保持模板（必须成套）
@@ -834,24 +840,49 @@ class PatternModel:
                         continue                  # 没勾 → 保持模板原样
                     # 候选 = 该点位自己官方用过的（已含 ±2000 孪生），再按全局权重过滤。
                     # 绝不能从「全部建筑」里抽 —— 否则野外 BOSS 点会长出建筑。
-                    cand = [int(t) for t in (tiles_of.get(aid) or ())
-                            if tile_w.get(int(t), 0) > 0]
+                    own = set(int(t) for t in (tiles_of.get(aid) or ()))
+                    cand = [t for t in own if tile_w.get(t, 0) > 0]
                     if not cand:
                         kept += 1                 # 这个点位没有可用建筑 → 保持模板
                         skipped += 1
                         continue
-                    tile = _r.choices(cand, weights=[tile_w[t] for t in cand], k=1)[0]
-                    vmap = {int(k): int(v) for k, v in (var_w.get(tile) or {}).items() if int(v) > 0}
-                    if vmap:
+                    is_jail = lock_jail and own and own <= JAIL_TILES
+                    if is_jail:
+                        # 枚举可用的 (建筑, 变体)，排掉本种子已经用过的组合
+                        combos = []
+                        for t in cand:
+                            vmap = {int(k): int(v) for k, v in (var_w.get(t) or {}).items()
+                                    if int(v) > 0}
+                            if not vmap:
+                                # 没配置变体权重 → 默认该 tile 真实存在的变体，权重 10
+                                vmap = {v: 10 for v in self._variants_of(t)} or {0: 1}
+                            for v, vw in vmap.items():
+                                if (t, v) not in used_jail:
+                                    combos.append((t, v, tile_w[t] * vw))
+                        if not combos:
+                            kept += 1
+                            skipped += 1
+                            continue
+                        pick = _r.choices(range(len(combos)), weights=[c[2] for c in combos], k=1)[0]
+                        tile, var = combos[pick][0], combos[pick][1]
+                        used_jail.add((tile, var))
+                        dedup += 1
+                    else:
+                        tile = _r.choices(cand, weights=[tile_w[t] for t in cand], k=1)[0]
+                        vmap = {int(k): int(v) for k, v in (var_w.get(tile) or {}).items()
+                                if int(v) > 0}
+                        if not vmap:
+                            vmap = {v: 10 for v in self._variants_of(tile)} or {0: 1}
                         vids = list(vmap)
                         vs = [vmap[v] for v in vids]
                         var = _r.choices(vids, weights=vs, k=1)[0]
-                    else:
-                        var = 0
                     spot_over[i] = {'attachId': aid, 'tile': tile, 'variationId': var}
                     changed += 1
-                plan.notes.append(f'地点：模板 {len(src.spots)} 个 → 随机了 {changed} 个，'
-                                  f'保持原样 {kept} 个' + (f'（{skipped} 个没有可用建筑）' if skipped else ''))
+                plan.notes.append(
+                    f'地点：模板 {len(src.spots)} 个 → 随机了 {changed} 个，'
+                    f'保持原样 {kept} 个'
+                    + (f'（{skipped} 个没有可用建筑）' if skipped else '')
+                    + (f'，监牢去重 {dedup} 个' if dedup else ''))
 
         # ---- 缩圈随机（只在该地图类型的候选里选）----
         area_over = {}

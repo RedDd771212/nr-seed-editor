@@ -912,6 +912,7 @@ async function openRandomTable() {
     night: (s.night && s.night.length) ? s.night.slice() : [...(RPOOL.night || [])],
     tiles: tileW,
     variants: varW,
+    lock_jail: s.lock_jail !== false,
   };
   REXPAND.clear();
   document.getElementById('randomModal').hidden = false;
@@ -1021,8 +1022,10 @@ function renderRandom() {
     };
   });
   $('rmAreaInfo').textContent = ` ${RSEL.playarea.length} / ${(RPOOL.playarea || []).length}`;
+  if ($('rmLockJail')) $('rmLockJail').checked = RSEL.lock_jail !== false;
 }
 
+if ($('rmLockJail')) $('rmLockJail').onchange = () => { RSEL.lock_jail = $('rmLockJail').checked; };
 $('rmClose').onclick = () => { document.getElementById('randomModal').hidden = true; };
 document.querySelectorAll('#randomModal .ptab[data-page]').forEach(b => {
   b.onclick = () => showRPage(b.dataset.page);
@@ -1038,7 +1041,7 @@ document.querySelectorAll('#randomModal .ptab[data-pt]').forEach(b => {
 $('rmSave').onclick = async () => {
   const r = await api('/api3/random', {
     attach: RSEL.attach, playarea: RSEL.playarea, night: RSEL.night,
-    tiles: RSEL.tiles, variants: RSEL.variants,
+    tiles: RSEL.tiles, variants: RSEL.variants, lock_jail: RSEL.lock_jail !== false,
   });
   if (!r || !r.ok) { toast((r && r.error) || '保存失败', true); return; }
   toast(`随机表已保存（建筑权重 ${Object.keys(RSEL.tiles).length} 项）`);
